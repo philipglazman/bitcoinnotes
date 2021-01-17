@@ -11,33 +11,37 @@ Welcome!
 
 Bitcoin Notes is an updated list of hyperlinks, notes, and text I found to be useful while learning about Bitcoin.
 
-A lot of these notes were written quickly or copy/pasted from sources. I am working on adding footnotes.
-
+A lot of these notes were written quickly or copy/pasted from sources. Start with Introduction to get started.
 
 If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is best way to reach me.
 #+END_ABSTRACT
 #+TOC: headlines
 
-* Beginner Resources
-   /A list of hyperlinks to get started./
+* Introduction
+  I am hoping these notes serve a useful purpose to the reader in getting started with Bitcoin or refreshing old knowledge. The best way to use this document is to search for topics by heading and sub-heading and follow hyperlinks to the original resources.
 
-   [[http://diyhpl.us/~bryan/papers2/bitcoin/][Bryan Bishop's diyhpl.us Papers]]
-   [[http://diyhpl.us/wiki/transcripts/][Bryan Bihop's  diyphl.us Transcripts]]
-   [[https://github.com/ChristopherA/Learning-Bitcoin-from-the-Command-Line/blob/master/README.md][Learning Bitcoin from the Command Line]]
-   [[http://lopp.net/bitcoin.html][lopp.net]]
-   [[https://github.com/jashmenn/bitcoin-reading-list][jashmenn's Bitcoin Reading List]]
-   [[https://blog.bitjson.com/bitcoin-script-a-reading-list-656242edfa6c#.elntopnt6][A Bitcoin Script Reading List.]]
-  
-   Online Cources/Moocs:
-   [[http://soc1024.ece.illinois.edu/teaching/ece398sc/spring2018/][soc1024 1]]
-   [[http://soc1024.ece.illinois.edu/teaching/ece598am/fall2016/][soc1024 2]]
-   [[https://github.com/mit-dci/mas.s62][MIT DCI online course]]
-   [[https://github.com/bitcoinops/scaling-book][Scaling Bitcoin dev++]]
+  The audience of this document is expected to have a technical background, but this soft requirement should not let the reader become reluctant in learning about Bitcoin at a deep level.
 
-   
-   [[https://github.com/chaincodelabs/study-groups][Chaincode Study groups]]
-   [[https://github.com/chaincodelabs/bitcoin-curriculum][Chaincode Bitcoin course]]
-   [[https://github.com/chaincodelabs/lightning-curriculum][Chaincode Lightning course]]
+  The ideal state of this document is to become an authoritative resource and practical guide for software engineers that want to build applications with Bitcoin. Any suggestions to reach that state are highly appreciated. To follow the progress of this document, please refer to the git [[https://github.com/philipglazman/bitcoinnotes][respository]].
+
+  The following resources are an excellent starting point:
+  [[http://diyhpl.us/~bryan/papers2/bitcoin/][Bryan Bishop's diyhpl.us Papers]]
+  [[http://diyhpl.us/wiki/transcripts/][Bryan Bishop's  diyphl.us Transcripts]]
+  [[https://github.com/ChristopherA/Learning-Bitcoin-from-the-Command-Line/blob/master/README.md][Learning Bitcoin from the Command Line]]
+  [[http://lopp.net/bitcoin.html][Jameson Lopp's Bitcoin Information & Resources]]
+  [[https://github.com/jashmenn/bitcoin-reading-list][Jashmenn's Bitcoin Reading List]]
+  [[https://blog.bitjson.com/bitcoin-script-a-reading-list-656242edfa6c#.elntopnt6][A Bitcoin Script Reading List.]]
+
+  The following resources are structured:
+  [[http://soc1024.ece.illinois.edu/teaching/ece398sc/spring2018/][Smart Contracts and Blockchain Security]]
+  [[http://soc1024.ece.illinois.edu/teaching/ece598am/fall2016/][Cryptocurrency Security]]
+  [[https://github.com/mit-dci/mas.s62][MIT DCI online course]]
+  [[https://github.com/bitcoinops/scaling-book][Scaling Bitcoin Dev++]]
+
+  Strongly recommend these Chaincode resources:
+  [[https://github.com/chaincodelabs/study-groups][Chaincode Study Groups]]
+  [[https://github.com/chaincodelabs/bitcoin-curriculum][Chaincode Bitcoin Course]]
+  [[https://github.com/chaincodelabs/lightning-curriculum][Chaincode Lightning Course]]
 * Protocol
 ** Taproot/Schnorr
    /Notes on BIP340-342. All things concerning Schnorr, Taproot, and Tapscript./
@@ -1049,7 +1053,6 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
     hardcoded hashs exist in software ..hash(utxoset). similar to assumevalid.
 
     snapshots can obtained in same manner as block download. Doesn't matter about source cuz of content hash.
-
     
 ** CoinWitness
     Applications of ZK Snarks... ". Instead of embedding the rules that govern an output inside the blockchain, you'd instead embed a proof that the rules were followed. Instead of everyone checking that a transaction was permitted to be spent, they'd instead check that you checked." - Maxwell
@@ -1078,6 +1081,19 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
     ZKCP
 
     swapping information for value
+** Discreet Log Contracts
+   [[https://adiabat.github.io/dlc.pdf][Whitepaper]]
+   [[https://github.com/discreetlogcontracts/dlcspecs][DLC Spec]]
+* Statistics
+  /Analysis of the Bitcoin Blockchain./
 
+  At this momement, the size of the Bitcoin Blockchain is 300 GB. Dating back to 2009, there is a trove of interesting data on how users have used and continue to use Bitcoin's chain as a settlement layer. Monitoring the chain is useful exercise to detect trends, understand second-order affects from technical changes, and satisfy the data-curious.
+
+  [[https://txstats.com/dashboard/db/home-dashboard][TxStats - Latest stats on Bitcoin transaction types]]
+  [[https://jochen-hoenicke.de/queue/][Johoe's Bitcoin Mempool Statistics]]
+  [[https://dashboard.bitcoinops.org/d/TDhboADmk/bitcoin-optech-dashboards][Bitcoin Optech Dashboards]]
+  [[https://dsn.tm.kit.edu/bitcoin/][Bitcoin Monitoring - P2P]]
+  [[https://utxo-stats.com/][UTXO Stats]]
+  [[https://mempool.observer/][Mempool Observer]]
 * Footnotes
 [fn:1]https://eprint.iacr.org/2018/068 
