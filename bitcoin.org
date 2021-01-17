@@ -57,6 +57,17 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
   [[https://github.com/chaincodelabs/lightning-curriculum][Chaincode Lightning Course]]
 
 * Protocol
+  /An overview of the Bitcoin protocol and the building blocks of Bitcoin./
+
+  Ultimately, the behavior of Bitcoin is defined by codebase of the reference client. This is not a complete survey of the bitcoin protocol, but a piecemeal overview of different components that make up Bitcoin.
+
+  The reference client was originally written by Satoshi, but has since been an open source project. The C++ client is the most widely used implementation of Bitcoin.[fn:2] There is no formal specification of consensus, so consensus is adopted by running the reference client. There are several noteable alternative implementations of Bitcoin, but their usage for as consensus daemon are limited. An argument against adopting other implementations is the risk of breaking consensus with the network. For all its success, Bitcoin maintains known and unknown bugs in consensus. At the end of the day, it is code written by humans. The consensus we reach at every block is best maintained when we all agree to run the same consensus rules.
+** Primitives
+*** Blocks
+*** Transactions
+** Consensus
+** Script
+** Segregated Witness
 ** Taproot/Schnorr
    /Notes on BIP340-342. All things concerning Schnorr, Taproot, and Tapscript./
 
@@ -1116,4 +1127,6 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
   [[https://mempool.observer/][Mempool Observer]]
 
 * Footnotes
+
+[fn:2]https://luke.dashjr.org/programs/bitcoin/files/charts/software.html 
 [fn:1]https://eprint.iacr.org/2018/068 
