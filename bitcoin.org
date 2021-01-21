@@ -5,7 +5,7 @@
 #+OPTIONS: ^:nil
 #+AUTHOR: Philip Glazman
 #+ATTR_HTML: :textarea t :width 80
-
+#+HTML_HEAD: <link rel="stylesheet" href="https://sandyuraz.com/styles/org.min.css">
 #+BEGIN_ABSTRACT
 Welcome!
 
@@ -56,7 +56,36 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 
   [[https://github.com/chaincodelabs/lightning-curriculum][Chaincode Lightning Course]]
 
+  Of course, a link to the [[https://bitcoin.org/bitcoin.pdf][whitepaper]].
+
 * Protocol
+  /An overview of the Bitcoin protocol and the building blocks of Bitcoin./
+  [[https://en.bitcoin.it/wiki/Protocol_documentation][Protocol Documentation]]
+
+  Ultimately, the behavior of Bitcoin is defined by codebase of the reference client. This is not a complete survey of the bitcoin protocol, but a piecemeal overview of different components that make up Bitcoin.
+
+  The reference client, Bitcoin Core, was originally written by Satoshi, but has since been an open source project. The C++ client is the most widely used implementation of Bitcoin.[fn:2] One of the primary reasons to run the Bitcoin Core client is to stay in consensus with the rest of the network. There is no formal specification of consensus, so consensus is adopted by running the reference client. There are several noteable alternative implementations of Bitcoin, but their usage as consensus daemon are limited. An argument against adopting other implementations is the risk of breaking consensus with the network.
+
+** Primitives
+*** Hashes
+    Hashes are one-way functions that accept an input and return a fixed-length value. For the hash function to have integrity, the value returned must be unique. As a result, a strong hash function will make it unlikely that two different inptus have the same output. This is called a hash collision.
+
+    In Bitcoin, SHA-256 and RIPEMD-160 are used. It is common to see double hashing where an input is hashed twice.
+*** Merkle Trees
+    A merkle tree is a binary tree of hashes. It is a container that hashes items and concatenates the hashes in such a way that a final merkle root of the tree is a hash. This merkle root represents the the hashes and concatenation of all the items in the tree.
+
+    In Bitcoin, merkle trees are used in a variety of ways. Most notably, a block will have a merkle root of transactions. An excellent utility of merkle trees is proving that a leaf is part of the tree.
+*** Signatures
+    Digital signatures are used by a verifier to prove that a signature belongs to a public key. Signatures can only be created using a private key corresponding to the public key.
+
+    Bitcoin uses ECDSA, or Ellipitic Curve Digital Signature Algorithm, to sign for transactions and messages. The curve used is secp256k1.
+*** Addresses
+    Bitcoin addresses are a human readable format to represent a Bitcoin script. Addresses can be shared to others to receive payment. They should be treated as single-use tokens.
+*** Transactions
+*** Blocks
+** Consensus
+** Script
+** Segregated Witness
 ** Taproot/Schnorr
    /Notes on BIP340-342. All things concerning Schnorr, Taproot, and Tapscript./
 
@@ -1116,4 +1145,6 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
   [[https://mempool.observer/][Mempool Observer]]
 
 * Footnotes
+
+[fn:2]https://luke.dashjr.org/programs/bitcoin/files/charts/software.html 
 [fn:1]https://eprint.iacr.org/2018/068 
