@@ -56,7 +56,7 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 
   [[https://github.com/chaincodelabs/lightning-curriculum][Chaincode Lightning Course]]
 
-  Of course, a link to the [[https://bitcoin.org/bitcoin.pdf][whitepaper]].
+  Of course, a link to the [[file:bitcoin.pdf][whitepaper]].
 
 * Protocol
   /An overview of the Bitcoin protocol and the building blocks of Bitcoin./
@@ -82,9 +82,7 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 *** Addresses
     Bitcoin addresses are a human readable format to represent a Bitcoin script. Addresses can be shared to others to receive payment. They should be treated as single-use tokens.
 *** Transactions
-    A transaction is a container that is responsible for transfering value in Bitcoin. Ultimately, a transaction has inputs and outputs. An input is a reference a previous output. An output is a new output that will be created on the network.
 *** Blocks
-    A block is a container responsible for grouping transactions together. POW?
 ** Consensus
    The consensus of Bitcoin is a large topic and part of extensive research.
 
