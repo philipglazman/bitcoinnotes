@@ -261,6 +261,7 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
     [[https://slushpool.com/help/topic/stratum-protocol/][Stratum Protocol documentation]]
     The design of the Stratum protocol requires pool operators to build and distribute block templates to their clients.
 *** StratumV2
+    [[https://insights.deribit.com/market-research/stratum-v2-migration-and-decentralization/][StratumV2 Migration]]
 *** Betterhash
    * Work protocol: bitcoin
    * core <-> mining proxy
@@ -314,8 +315,12 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
    [[https://bitcoincore.org/en/segwit_wallet_dev/][SegWit wallet dev guide]]
     
    One of the immediate problems that SegWit solves is mitigating transaction malleability.
+** Covenants
+   A covenant is a bitcoin script that restricts the type of transaction that can spend a coin.
+
+   [[https://medium.com/blockstream/cat-and-schnorr-tricks-i-faf1b59bd298][OP_CAT and Schnorr - Part 1]]
 ** Vaults
-   [[https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html][vaults w/o covenants]]
+   [[https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html][Vaults without Covenants]]
    [[https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017231.html][more by bishop]]
 
    [[https://blockstream.com/2019/02/04/en-standardizing-bitcoin-proof-of-reserves/][proof of reserves - blockstream]]
@@ -358,6 +363,9 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
    [[https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Wallet-Class-Structure-Changes][Wallet Class Structure Changes]]
    [[https://gist.github.com/sipa/125cfa1615946d0c3f3eec2ad7f250a2][Sipa describing wallet changes]]
    [[http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-05-wallet-architecture/][Wallet Architecture transcripts]]
+
+   [[https://achow101.com/2020/10/0.21-wallets][What's Coming to Bitcoin Core Wallet in 2021]]
+   [[https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes.md#experimental-descriptor-wallets][Descriptor Wallets MD]]
 ** Descriptors 
    [[https://github.com/bitcoin/bitcoin/issues/17190][Bitcoin Issue 17190]]
    [[https://github.com/spesmilo/electrum/issues/5715][Electrum on Descriptors]]
@@ -434,6 +442,23 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
      Time series of a txn lifecyle until block inclusion in a small file format.
 
      https://github.com/kallewoof/mff
+**** Light Clients
+     [[https://bitcoindevkit.org/blog/2021/01/fee-estimation-for-light-clients-part-1/][Using AI for Fee Estimation]]
+** Backup and Recovery
+*** BIP39
+    US NIST recommends a salt length of 128 bits. Passphrase entropy in bits is log2(# of combinations).
+
+    BIP39 Wordlist is 2048 word dictionary. So log2(2048^s) = 22 bits of entropy. 
+*** Shamir's Secret Sharing
+    [fn:3]Shamir's Secret Sharing (SSS) is an algorithm to divide a secret into parts that can be recovered by combining a minimum number of parts.
+
+    Each part is called a share. The threshold is the number of shares that is needed to recover the original secret. There can be more shares than the threshold.
+    
+    There are several criticisms of SSS.
+    1. [[https://en.bitcoin.it/wiki/Shamir_Secret_Snakeoil][Shamir Secret Snakeoil]]
+    2. [[https://blog.keys.casa/shamirs-secret-sharing-security-shortcomings/][Shamir's Secret Sharing Shortcomings]]
+
+    [[https://bitcoin.stackexchange.com/questions/102007/is-sharding-a-good-alternative-to-multisig][Sharding vs Multisig?]]
 * Lightning Network
    /Lightning Network and related off-chain protocols./
    [[https://github.com/lnbook/lnbook][Master Lightning Book]]
@@ -703,6 +728,8 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
    [[https://gist.github.com/btcontract/d4122a79911eef2620f16b3dfe2850a8][gist on hosted channels]]
    interesting idea but need to look more into security assumptions..
 
+** Privacy
+   [[https://arxiv.org/abs/2003.12470][An Empirical Analysis of Privacy in the Lightning Network]]
 ** Routing
     Routing involves routing a lightning payment through either a public or private channel.
 
@@ -786,6 +813,7 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 
    [[https://github.com/6102bitcoin/CoinJoin-Research][coin join wiki]]
 
+   [[https://bitcoin.stackexchange.com/questions/101868/is-there-something-about-bitcoin-that-prevents-us-from-implementing-the-same-pri][Bitcoin vs "privacy coins"]]
 ** CoinJoins
     "So a world where "basically everyone uses CoinJoin" is cool for privacy, but could end up pretty bad for scalability, because these transactions are in addition to the normal payments."  - waxwing
 
@@ -904,6 +932,8 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
    [[https://link.springer.com/chapter/10.1007/978-3-030-00470-5_29][identifying key leakage in bitcoin]]
 ** Hardware Wallets
     [[https://thecharlatan.github.io/List-Of-Hardware-Wallet-Hacks/][list of hardware wallet hacks]]
+
+    [[https://shiftcrypto.ch/blog/remote-multisig-theft-attack-on-the-coldcard-hardware-wallet/][Remote MultiSig Theft Attack on Coldcard]]
 ** Mining
    Selfish mining attack is when a miner withholds a valid and worked block, and begin mining the next block. The miner has an edge over the network if they withhold the block and attempt to work on the next block.
 * Bitcoin Core 
@@ -939,48 +969,6 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 ** Architecture
     [[https://jameso.be/dev++2018/#1][overview of arch]]
 
-** Bitcoin PR Review
-**** #17487
-    [[https://github.com/bitcoin/bitcoin/17487][pr]]
-    UTXO cache is responsible for maintaining a view of the spendable coins based upon the txns in blocks. Major bottleneck during block validation.
-
-    UTXO set currently is more than 8 GB.
-    
-    For this reason, UTXO cache is across several layes: on-disk and in-memory.
-
-    The -dbcache param controls how much memory we allocate to the in-memory portion. As we validate blocks, we pull coins and we look up from disk into mem until we run out of memory.
-
-    We completely empty the UTXO cache by writing to disk by calling CCoinsViewCache::Flush()
-
-    We periodically flush the coins cache to avoid having to replay blocks if we shutdown improperly. 
-
-    Once we flush the cache, we are forced to read from and write to disk for all UTXO operations, which can be notably slower depending on the underlying disk. For this reason, separating the emptying of the cache from the writing to disk might allow us to ensure durability without losing the performance benefits of maintaining the cache.
-
-    Another case that requires writing to disk without necessarily emptying the cache can be found in the assumeutxo project. When loading a UTXO set from a serialized snapshot, it’s preferable to write out the newly constructed chainstate immediately after load to avoid having to reload the snapshot once again after a bad shutdown.
-
-    "the main benefit of this cache is to reduce the number of unnecessary writes, i.e. when a coin is created and then destroyed we save 2 disk writes. But when we flush, even without deleting the coins from RAM, we expect 1 write if the coin is spent before the tip, otherwise no write." - sjors
-
-    "For some reason (why?) you need to flush at the end of loading the snapshot, which normally means no coins are in RAM. This PR changes that last flush to keep stuff around."
-**** #17428
-     [[https://github.com/bitcoin/bitcoin/pull/17428][pr]]
-**** #20477
-     [[https://github.com/bitcoin/bitcoin/pull/20477][PR]]
-
-     Broken into two commits, first moving eviction node selection logic and adding unit testing.
-
-     [[https://bitcoincore.reviews/20477][Link to Questions]]
-
-     My Answers:
-     1. Keeps a healthy pool of new nodes. Prioritizes nodes with lower latency, better relaying capability.
-     2. Attacker cannot predict which peers are protected. There are some attributes that the attack knows, but is prohibitively expensive to do. Like moving geography to lower ping time. See net.cpp SelectNodeToEvict(...)
-     3. If we include these peers, then likely honest peers will be removed later on. Attacker can disconnect a bunch of peers during an inbound request. ?? - No, different threads.
-     4. ASN split the network up better than subnets. IP distribution has gotten mixed up between providers. Cannoy assume IP ranges are in different parts of the world anymore. ASNs are dynamic group of IP addr range assignments based on real world entities.
-     5. No, we do not reveal more than 23% of our addrman to any single peer.
-     6. We can flush out some candidates.??
-     7. 
-     8. Unit tests 
-     9. Move semantics in C++11 allow swapping pointer during copy instead. Much more efficient. If x is any type, x&& is the rvalue reference to x. x& is the lvalue reference. Rvalue reference allows compile-time branching. Any moveable object should be considered disposable.
-     10. 
 ** Wallet
     [[https://residency.chaincode.com/presentations/bitcoin/Wallet_Development.pdf][wallet dev presentation by John Newbery]]
     CPubKey - a public key, used to verify signatures. A point on the secp256k1 curve.
@@ -1159,5 +1147,8 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 
 * Footnotes
 
+[fn:3]https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing#Mathematical_definition 
+
 [fn:2]https://luke.dashjr.org/programs/bitcoin/files/charts/software.html 
+
 [fn:1]https://eprint.iacr.org/2018/068 

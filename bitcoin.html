@@ -1,0 +1,2940 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-01 Mon 21:39 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bitcoin Notes</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Philip Glazman" />
+<meta name="description" content="Bitcoin notes."
+ />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="https://sandyuraz.com/styles/org.min.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Bitcoin Notes</h1>
+<div class="ABSTRACT">
+<p>
+Welcome!<br />
+</p>
+
+<p>
+Bitcoin Notes is an updated list of hyperlinks, notes, and text I found to be useful while learning about Bitcoin.<br />
+</p>
+
+<p>
+A lot of these notes were written quickly or copy/pasted from sources. Start with Introduction to get started.<br />
+</p>
+
+<p>
+If you find any mistakes, <a href="https://twitter.com/philipglazman">Twitter DM</a> is best way to reach me.<br />
+</p>
+
+</div>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org57e41ad">1. Introduction</a></li>
+<li><a href="#org3aabcad">2. Protocol</a>
+<ul>
+<li><a href="#org5fe8c5f">2.1. Primitives</a>
+<ul>
+<li><a href="#org50e34db">2.1.1. Hashes</a></li>
+<li><a href="#org16e3c6b">2.1.2. Merkle Trees</a></li>
+<li><a href="#org08d9d60">2.1.3. Signatures</a></li>
+<li><a href="#org7683836">2.1.4. Addresses</a></li>
+<li><a href="#org6f3269d">2.1.5. Transactions</a></li>
+<li><a href="#org71a359e">2.1.6. Blocks</a></li>
+</ul>
+</li>
+<li><a href="#org3761541">2.2. Consensus</a></li>
+<li><a href="#org8af4d30">2.3. Script</a></li>
+<li><a href="#orgd52574a">2.4. Segregated Witness</a></li>
+<li><a href="#org14abd38">2.5. Taproot/Schnorr</a>
+<ul>
+<li><a href="#org59c89c3">2.5.1. Introduction</a></li>
+<li><a href="#org3cfdc2f">2.5.2. BIP340</a></li>
+<li><a href="#org6f0eb00">2.5.3. BIP341</a></li>
+<li><a href="#orgd5c36e9">2.5.4. BIP342</a></li>
+<li><a href="#orga88de22">2.5.5. MuSig</a></li>
+<li><a href="#orgfe6c09a">2.5.6. SIGHASH_ANYPREVOUT</a></li>
+</ul>
+</li>
+<li><a href="#org00e23b8">2.6. Mining</a>
+<ul>
+<li><a href="#org2ce2f7a">2.6.1. Introduction</a></li>
+<li><a href="#orge030702">2.6.2. GetBlockTemplate</a></li>
+<li><a href="#org3f1a24d">2.6.3. Stratum</a></li>
+<li><a href="#orgd7e411e">2.6.4. StratumV2</a></li>
+<li><a href="#orga8793b4">2.6.5. Betterhash</a></li>
+<li><a href="#org22ec864">2.6.6. Compact Blocks</a></li>
+</ul>
+</li>
+<li><a href="#org76420df">2.7. P2P</a></li>
+</ul>
+</li>
+<li><a href="#orgc160cf4">3. Wallet Engineering</a>
+<ul>
+<li><a href="#orge8418f1">3.1. BIP-32</a></li>
+<li><a href="#org29107ec">3.2. BIP-39</a></li>
+<li><a href="#orgcc143cc">3.3. Wallet Standards</a></li>
+<li><a href="#org40383bf">3.4. BIP-43</a></li>
+<li><a href="#orgc7a3030">3.5. BIP-44</a></li>
+<li><a href="#orgb9e367c">3.6. BIP-45</a></li>
+<li><a href="#orga1748e0">3.7. BIP-47</a></li>
+<li><a href="#org21cd765">3.8. SegWit</a></li>
+<li><a href="#orgd2d419d">3.9. Covenants</a></li>
+<li><a href="#org729165b">3.10. Vaults</a></li>
+<li><a href="#org09d228a">3.11. Batching</a></li>
+<li><a href="#orgdc0309e">3.12. Coin Selection</a></li>
+<li><a href="#org850f934">3.13. Bitcoin Core Wallet</a></li>
+<li><a href="#orge32866e">3.14. Descriptors</a></li>
+<li><a href="#orgffcec8d">3.15. Script</a></li>
+<li><a href="#org553d320">3.16. Fee Estimation</a></li>
+<li><a href="#org7961648">3.17. Backup and Recovery</a>
+<ul>
+<li><a href="#orgd86d27d">3.17.1. BIP39</a></li>
+<li><a href="#orgd8167e8">3.17.2. Shamir's Secret Sharing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb48e639">4. Lightning Network</a>
+<ul>
+<li><a href="#org408169f">4.1. BOLTs</a></li>
+<li><a href="#org4969de3">4.2. Implementations</a></li>
+<li><a href="#org1db63f8">4.3. anecdotal example</a></li>
+<li><a href="#org221c965">4.4. Lightning Conf 2019 Berlin</a></li>
+<li><a href="#orgad314a4">4.5. Discrete Log Contracts</a></li>
+<li><a href="#orgd7382c8">4.6. Security</a></li>
+<li><a href="#orgb0494ca">4.7. Privacy</a></li>
+<li><a href="#org16fee05">4.8. Routing</a></li>
+<li><a href="#org334aba0">4.9. Trampoline Payments</a></li>
+<li><a href="#org1992664">4.10. HTLCs</a></li>
+<li><a href="#org14e6e7e">4.11. PTLCs</a></li>
+<li><a href="#org801363b">4.12. Static/Send/Spontaneous/Push Payments</a></li>
+<li><a href="#org878b9df">4.13. Future</a></li>
+<li><a href="#org022caee">4.14. revocation_secret_derivation</a></li>
+<li><a href="#org108d574">4.15. Operations</a></li>
+<li><a href="#org70050be">4.16. Limitations</a></li>
+</ul>
+</li>
+<li><a href="#org0ff9d97">5. Privacy</a>
+<ul>
+<li><a href="#org526ee69">5.1. CoinJoins</a></li>
+<li><a href="#org258904e">5.2. BIP-79</a></li>
+<li><a href="#orga13183d">5.3. CoinSwaps</a></li>
+<li><a href="#org65ba5fb">5.4. TumbleBit</a></li>
+<li><a href="#org101be05">5.5. SNICKER</a></li>
+<li><a href="#org9d27b2d">5.6. PaySwap</a></li>
+<li><a href="#org411db1f">5.7. More Cryptography</a></li>
+<li><a href="#org8daf05a">5.8. Chain Analysis</a></li>
+</ul>
+</li>
+<li><a href="#org939b0e3">6. Security</a>
+<ul>
+<li><a href="#org837629f">6.1. Hardware Wallets</a></li>
+<li><a href="#orgc59fe46">6.2. Mining</a></li>
+</ul>
+</li>
+<li><a href="#orgc951ae8">7. Bitcoin Core</a>
+<ul>
+<li><a href="#orgc6f10c9">7.1. Debugging</a></li>
+<li><a href="#org77c929a">7.2. Architecture</a></li>
+<li><a href="#org7ecad06">7.3. Wallet</a></li>
+</ul>
+</li>
+<li><a href="#org9b31997">8. History</a></li>
+<li><a href="#org21ba549">9. Other</a>
+<ul>
+<li><a href="#orge48be77">9.1. Future directions of bitcoin</a></li>
+<li><a href="#org7df5bff">9.2. Utreexo</a></li>
+<li><a href="#org9ce17ca">9.3. Graftroof</a></li>
+<li><a href="#org06c88a4">9.4. AssumeUTXO</a></li>
+<li><a href="#org73509e3">9.5. CoinWitness</a></li>
+<li><a href="#orgdfe44d1">9.6. Covenants</a></li>
+<li><a href="#org976016b">9.7. Zero Knowledge Contigent Payment</a></li>
+<li><a href="#org4ce8ebe">9.8. Discreet Log Contracts</a></li>
+</ul>
+</li>
+<li><a href="#org3dc087c">10. Statistics</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org57e41ad" class="outline-2">
+<h2 id="org57e41ad"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+I am hoping these notes serve a useful purpose to the reader in getting started with Bitcoin or refreshing old knowledge. The best way to use this document is to search for topics by heading and sub-heading and follow hyperlinks to the original resources.<br />
+</p>
+
+<p>
+The audience of this document is expected to have a technical background, but this soft requirement should not let the reader become reluctant in learning about Bitcoin at a deep level.<br />
+</p>
+
+<p>
+The ideal state of this document is to become an authoritative resource and practical guide for software engineers that want to build applications with Bitcoin. Any suggestions to reach that state are highly appreciated. To follow the progress of this document, please refer to the git <a href="https://github.com/philipglazman/bitcoinnotes">respository</a>.<br />
+</p>
+
+<p>
+The following resources are an excellent starting point:<br />
+</p>
+
+<p>
+<a href="http://diyhpl.us/~bryan/papers2/bitcoin/">Bryan Bishop's diyhpl.us Papers</a><br />
+</p>
+
+<p>
+<a href="http://diyhpl.us/wiki/transcripts/">Bryan Bishop's  diyphl.us Transcripts</a><br />
+</p>
+
+<p>
+<a href="https://github.com/ChristopherA/Learning-Bitcoin-from-the-Command-Line/blob/master/README.md">Learning Bitcoin from the Command Line</a><br />
+</p>
+
+<p>
+<a href="http://lopp.net/bitcoin.html">Jameson Lopp's Bitcoin Information &amp; Resources</a><br />
+</p>
+
+<p>
+<a href="https://github.com/jashmenn/bitcoin-reading-list">Jashmenn's Bitcoin Reading List</a><br />
+</p>
+
+<p>
+<a href="https://blog.bitjson.com/bitcoin-script-a-reading-list-656242edfa6c#.elntopnt6">A Bitcoin Script Reading List.</a><br />
+</p>
+
+<p>
+The following resources are structured:<br />
+</p>
+
+<p>
+<a href="http://soc1024.ece.illinois.edu/teaching/ece398sc/spring2018/">Smart Contracts and Blockchain Security</a><br />
+</p>
+
+<p>
+<a href="http://soc1024.ece.illinois.edu/teaching/ece598am/fall2016/">Cryptocurrency Security</a><br />
+</p>
+
+<p>
+<a href="https://github.com/mit-dci/mas.s62">MIT DCI online course</a><br />
+</p>
+
+<p>
+<a href="https://github.com/bitcoinops/scaling-book">Scaling Bitcoin Dev++</a><br />
+</p>
+
+<p>
+Strongly recommend these Chaincode resources:<br />
+</p>
+
+<p>
+<a href="https://github.com/chaincodelabs/study-groups">Chaincode Study Groups</a><br />
+</p>
+
+<p>
+<a href="https://github.com/chaincodelabs/bitcoin-curriculum">Chaincode Bitcoin Course</a><br />
+</p>
+
+<p>
+<a href="https://github.com/chaincodelabs/lightning-curriculum">Chaincode Lightning Course</a><br />
+</p>
+
+<p>
+Of course, a link to the <a href="bitcoin.pdf">whitepaper</a>.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3aabcad" class="outline-2">
+<h2 id="org3aabcad"><span class="section-number-2">2</span> Protocol</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<i>An overview of the Bitcoin protocol and the building blocks of Bitcoin.</i><br />
+<a href="https://en.bitcoin.it/wiki/Protocol_documentation">Protocol Documentation</a><br />
+</p>
+
+<p>
+Ultimately, the behavior of Bitcoin is defined by codebase of the reference client. This is not a complete survey of the bitcoin protocol, but a piecemeal overview of different components that make up Bitcoin.<br />
+</p>
+
+<p>
+The reference client, Bitcoin Core, was originally written by Satoshi, but has since been an open source project. The C++ client is the most widely used implementation of Bitcoin.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> One of the primary reasons to run the Bitcoin Core client is to stay in consensus with the rest of the network. There is no formal specification of consensus, so consensus is adopted by running the reference client. There are several noteable alternative implementations of Bitcoin, but their usage as consensus daemon are limited. An argument against adopting other implementations is the risk of breaking consensus with the network.<br />
+</p>
+</div>
+
+<div id="outline-container-org5fe8c5f" class="outline-3">
+<h3 id="org5fe8c5f"><span class="section-number-3">2.1</span> Primitives</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org50e34db" class="outline-4">
+<h4 id="org50e34db"><span class="section-number-4">2.1.1</span> Hashes</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Hashes are one-way functions that accept an input and return a fixed-length value. For the hash function to have integrity, the value returned must be unique. As a result, a strong hash function will make it unlikely that two different inptus have the same output. This is called a hash collision.<br />
+</p>
+
+<p>
+In Bitcoin, SHA-256 and RIPEMD-160 are used. It is common to see double hashing where an input is hashed twice.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org16e3c6b" class="outline-4">
+<h4 id="org16e3c6b"><span class="section-number-4">2.1.2</span> Merkle Trees</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+A merkle tree is a binary tree of hashes. It is a container that hashes items and concatenates the hashes in such a way that a final merkle root of the tree is a hash. This merkle root represents the the hashes and concatenation of all the items in the tree.<br />
+</p>
+
+<p>
+In Bitcoin, merkle trees are used in a variety of ways. Most notably, a block will have a merkle root of transactions. An excellent utility of merkle trees is proving that a leaf is part of the tree.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org08d9d60" class="outline-4">
+<h4 id="org08d9d60"><span class="section-number-4">2.1.3</span> Signatures</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+Digital signatures are used by a verifier to prove that a signature belongs to a public key. Signatures can only be created using a private key corresponding to the public key.<br />
+</p>
+
+<p>
+Bitcoin uses ECDSA, or Ellipitic Curve Digital Signature Algorithm, to sign for transactions and messages. The curve used is secp256k1.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org7683836" class="outline-4">
+<h4 id="org7683836"><span class="section-number-4">2.1.4</span> Addresses</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<p>
+Bitcoin addresses are a human readable format to represent a Bitcoin script. Addresses can be shared to others to receive payment. They should be treated as single-use tokens.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org6f3269d" class="outline-4">
+<h4 id="org6f3269d"><span class="section-number-4">2.1.5</span> Transactions</h4>
+</div>
+<div id="outline-container-org71a359e" class="outline-4">
+<h4 id="org71a359e"><span class="section-number-4">2.1.6</span> Blocks</h4>
+</div>
+</div>
+<div id="outline-container-org3761541" class="outline-3">
+<h3 id="org3761541"><span class="section-number-3">2.2</span> Consensus</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+The consensus of Bitcoin is a large topic and part of extensive research.<br />
+</p>
+
+<p>
+A quick glimpse into how difficult it is to describe consensus can be found in David Harding's <a href="https://gist.github.com/harding/dabea3d83c695e6b937bf090eddf2bb3">Bitcoin Paper Errata and Details</a> document. The expectations of the software developer often does not match the reality of the code written. Ultimately, consensus is defined by the software that people choose to run on their machines. This software can have bugs and these bugs are technically part of consensus.<br />
+</p>
+
+<p>
+There is also social consensus, the ideas and narratives that people choose to adopt and identify with. Social consensus can drive technical consensus to adopt new rulesets.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org8af4d30" class="outline-3">
+<h3 id="org8af4d30"><span class="section-number-3">2.3</span> Script</h3>
+</div>
+<div id="outline-container-orgd52574a" class="outline-3">
+<h3 id="orgd52574a"><span class="section-number-3">2.4</span> Segregated Witness</h3>
+</div>
+<div id="outline-container-org14abd38" class="outline-3">
+<h3 id="org14abd38"><span class="section-number-3">2.5</span> Taproot/Schnorr</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+<i>Notes on BIP340-342. All things concerning Schnorr, Taproot, and Tapscript.</i><br />
+</p>
+</div>
+
+<div id="outline-container-org59c89c3" class="outline-4">
+<h4 id="org59c89c3"><span class="section-number-4">2.5.1</span> Introduction</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+<a href="https://prezi.com/view/AlXd19INd3isgt3SvW8g/">Slides from Sipa talk at SF Bitcoin Devs.</a><br />
+<a href="https://github.com/bitcoinops/taproot-workshop">Taproot Workshop</a><br />
+<a href="https://github.com/ajtowns/taproot-review">Taproot Review</a><br />
+</p>
+
+<p>
+immediate benefit of taproot: "if you lose this key, your funds are gone" to "if you lose this key, you'll have to recover 3 of your 5 backup keys that you sent to trusted friends, and pay a little more, but you won't have lost your funds"" - anthony towns<br />
+</p>
+
+<p>
+Notation to be used throughout (from BIP):<br />
+</p>
+<ul class="org-ul">
+<li>hashtag(x) notation to refer to SHA256(SHA256(tag) || SHA256(tag) || x)<br /></li>
+<li>q is taproot output key<br /></li>
+<li>p is taproot internal key<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3cfdc2f" class="outline-4">
+<h4 id="org3cfdc2f"><span class="section-number-4">2.5.2</span> BIP340</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<p>
+<a href="https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki">Link to BIP340</a><br />
+<a href="https://medium.com/blockstream/reducing-bitcoin-transaction-sizes-with-x-only-pubkeys-f86476af05d7">Why only x-pubkey?</a><br />
+</p>
+
+<p>
+Proposes standard for 64-byte Schnorr signatures.<br />
+</p>
+
+<p>
+Why Schnorr?<br />
+</p>
+<ul class="org-ul">
+<li>Provable security<br />
+Security of ECDSA rely on stronger assumptions. Schnorr signatures are provably secure.<br /></li>
+<li>Non-malleability<br />
+Schnorr signatures are implied to be non-malleable given SUF-CMA security. ECDSA sigs are inherently malleable.<br /></li>
+<li>Linearity<br /></li>
+</ul>
+
+<p>
+Encoding: Instead of DER, use fixed 64-byte format.<br />
+Public Key Encoding: Instead of compressed 33-byte key, use 32 bytes.<br />
+</p>
+
+<p>
+Interestingly, the aim of the BIP is to have the Schnorr spec completely specified. In the past, different ECDSA implementations caused issues.<br />
+</p>
+
+<p>
+<a href="https://suredbits.com/introduction-to-schnorr-signatures/">SuredBits' intro to Schnorr</a><br />
+</p>
+
+<p>
+"tweaking" involves hiding/obfuscation<br />
+</p>
+
+<p>
+<a href="https://www.math.uni-frankfurt.de/~dmst/research/papers/schnorr.blind_sigs_attack.2001.pdf">security of blind discrete log signatures</a><br />
+<a href="https://www.iacr.org/archive/crypto2002/24420288/24420288.pdf">generalized bday problem</a><br />
+</p>
+
+<p>
+<a href="https://medium.com/blockstream/reducing-bitcoin-transaction-sizes-with-x-only-pubkeys-f86476af05d7">x-only pubkeys</a><br />
+<a href="https://eprint.iacr.org/2019/023.pdf">lattice attacks against weak ECDSA</a><br />
+</p>
+
+<p>
+A schnorr signature is defined as the following:<br />
+S = R + H(x(R)|P|m) * P<br />
+where R is the Nonce point (k*G)<br />
+</p>
+
+<p>
+To save 32 bytes, only the x value of R is provided by the signer.<br />
+The verifier can computer the y-value.<br />
+</p>
+
+<p>
+One of the y-coordinates is even while the other is odd.<br />
+</p>
+
+<p>
+Proposal constraints k such that y-value of R is quadratic residue module SECP256K1_FIELD_SIZE.<br />
+Quadaratic residue is having a square root modulo the field size.<br />
+</p>
+
+<p>
+If a randomly generated nonce k does not yield a valid nonce point R, then the signer can negate k to obtain a valid nonce.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6f0eb00" class="outline-4">
+<h4 id="org6f0eb00"><span class="section-number-4">2.5.3</span> BIP341</h4>
+<div class="outline-text-4" id="text-2-5-3">
+<p>
+<a href="https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki">Link to BIP341</a><br />
+</p>
+
+<p>
+Proposes new SegWit v1 output type with spending rules based on Taproot, Schnorr, and merkle branches.<br />
+</p>
+
+<p>
+BIP claims no new security assumptions are added.<br />
+</p>
+
+<p>
+The aims of the output type is to improve privacy, efficiency, and flexibility of Bitcoin script. This is especially useful in minimizing how much information is shown on the blockchain regarding the spendability conditions. Additionally, a few bug fixes are included.<br />
+</p>
+
+
+<p>
+The BIP is very selective in the technologies that are included. Many are swept for later review in order to reduce complexity of review as well as prevent immature technology from weighind down ready technology.<br />
+</p>
+
+<p>
+From the BIP document, the following technologies compose the proposal:<br />
+</p>
+<ul class="org-ul">
+<li>Merkle Branches: Reveal the actual executed part of the script.<br /></li>
+<li>Taproot: Merge pay-to-pubkey and pay-to-scripthash policies making outputs spendable by either indistiguishable.<br />
+As long as key-based spending path is used for spending, it is not revealed whether a script path was permitted as well.<br />
+An assumption is made that most outputs can be spent by all parties agreeing. Schnorr permits key aggregation<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.<br /></li>
+</ul>
+
+<p>
+Key aggregation allows a public key to be constructed from multiple participant keys. Indistinguishable from single-party.<br />
+</p>
+<ul class="org-ul">
+<li>Batch validation is permited with schnorr signatures.<br /></li>
+<li>Every merkle tree has an associated version allowing for new script versions to be introduced via soft fork. Unused 'annex' in the witness can also be used.<br /></li>
+<li>New Signature Hashing Algorithm includes amount and ScriptPubKey in message. And uses tagged hashes.<br /></li>
+<li>The public key is directly included in the output.<br /></li>
+</ul>
+
+<p>
+BIP can be informally summarized in the following way:<br />
+</p>
+<pre class="example">
+a new witness version is added (version 1), whose programs consist of 32-byte encodings of points Q. Q is computed as P + hash(P||m)G for a public key P, and the root m of a Merkle tree whose leaves consist of a version number and a script. These outputs can be spent directly by providing a signature for Q, or indirectly by revealing P, the script and leaf version, inputs that satisfy the script, and a Merkle path that proves Q committed to that leaf. All hashes in this construction (the hash for computing Q from P, the hashes inside the Merkle tree's inner nodes, and the signature hashes used) are tagged to guarantee domain separation.
+</pre>
+
+
+<p>
+A taproot output is a native SegWit output with version number 1 and a 32-byte witness program.<br />
+</p>
+
+<p>
+Every taproot output corresponds to a combination of a single public key condition (internal key), and zero or more general conditions encoded in scripts in a tree.<br />
+</p>
+
+<p>
+General guidelines for construction and spending Taproot outputs:<br />
+</p>
+<ul class="org-ul">
+<li>Better to split scripts with conditionls (OP_IF) into multiple scripts in the tree&#x2026;each corresponding to one execution path.<br /></li>
+<li>When a single condition requires signautres from multiple keys, key aggregation MuSig can be used.<br /></li>
+<li>Most likely key to be used should be the internal key. If no such condition exists, worthwhile adding one that consists of an aggregation of all keys. This is an "everyone agrees" branch. Else just pick an internal key using a point wi unknown discrete logarithm. See BIP for example.<br /></li>
+<li>If no script conditions needed, an output key should commit to an unspendable script path instead. See BIP for how to achieve this.<br /></li>
+<li>Remaining scripts should be organized into leaves. Huffman tree.<br /></li>
+<li>Binary tree leaves are (leaf_version, script) tuples.<br /></li>
+</ul>
+
+<p>
+Q=P+H(P,m)*G<br />
+where P is public key and m is merkle root of a MAST.<br />
+</p>
+
+<p>
+<a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html">switchable scripting</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd5c36e9" class="outline-4">
+<h4 id="orgd5c36e9"><span class="section-number-4">2.5.4</span> BIP342</h4>
+<div class="outline-text-4" id="text-2-5-4">
+<p>
+<a href="https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki">Link to BIP342</a><br />
+</p>
+
+<p>
+Proposes semantics of the scripting system described in BIP341.<br />
+</p>
+
+<p>
+Includes improvements to schnorr signatures, batch validation, and signature hash.<br />
+</p>
+
+<p>
+OP_CHECKSIG and OP_CHECKSIGVERIFY are modified to verify schnorr signatures.<br />
+OP_CODESEPARATOR simplified.<br />
+</p>
+
+<p>
+OP_CHECKMULITSIG and OP_CHECKMULTISIGVERIFY are disabled. OP_CHECKSIGADD is introduced to make multisigs batch-verifiable.<br />
+</p>
+
+<p>
+A potential malleability vector is eleminated by requiring MINIMALIF. Using a non-standard represetentation of true for OP_IF is now considered invalid as a violation of consensus rules.<br />
+</p>
+
+<p>
+OP_SUCCESS opcodes allows introducing new opcodes cleanly than through OP_NOP.<br />
+</p>
+
+<p>
+Tapscript can be upgraded through soft forks by defining unknown key types. For example, adding a new hash_types or signature algorithms.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga88de22" class="outline-4">
+<h4 id="orga88de22"><span class="section-number-4">2.5.5</span> MuSig</h4>
+<div class="outline-text-4" id="text-2-5-5">
+<p>
+Schnorr multi-signature scheme.<br />
+</p>
+
+<p>
+Blockstream announcing <a href="https://blockstream.com/2019/02/18/en-musig-a-new-multisignature-standard/">MuSig.</a><br />
+</p>
+
+<p>
+<a href="https://eprint.iacr.org/2018/068.pdf">actual whitepaper</a><br />
+<a href="https://suredbits.com/schnorr-applications-musig/">SuredBits' blog on musig</a><br />
+</p>
+
+<p>
+<a href="https://medium.com/blockstream/insecure-shortcuts-in-musig-2ad0d38a97da">Insecure Shortcuts in MuSig</a><br />
+<a href="https://medium.com/blockstream/musig-dn-schnorr-multisignatures-with-verifiably-deterministic-nonces-27424b5df9d6">MuSig-DN: Deterministic Nonces</a><br />
+</p>
+
+<p>
+<a href="https://bitcoin.stackexchange.com/questions/91534/musig-signature-interactivity">MuSig Interactivity</a><br />
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org37f54cb"></a>MuSig2<br />
+<div class="outline-text-5" id="text-2-5-5-1">
+<p>
+Exchanging nonce commitments is the subject of the <a href="https://medium.com/blockstream/musig-dn-schnorr-multisignatures-with-verifiably-deterministic-nonces-27424b5df9d6">MuSig-DN paper</a>.<br />
+</p>
+
+<p>
+Nonce commitment exchange can be removed by generating the nonce deterministically from the signers' public keys and message.<br />
+Providing a non-interactive zk proof that the nonce was generated deterministically along with the nonce.<br />
+</p>
+
+<p>
+The MuSig2 scheme has a two round signing protocol w/o the need for a sk proof.<br />
+Also, the first round of the nonce exchange is done at key setup time.<br />
+</p>
+
+<p>
+Therefore, there are two variants: interactive setup and non-interactive setup.<br />
+</p>
+
+<p>
+<a href="https://bitcoinops.org/en/newsletters/2020/10/21/">BitcionOps explains MuSig2</a><br />
+</p>
+
+<p>
+<a href="https://eprint.iacr.org/2020/1261">MuSig2</a><br />
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgfe6c09a" class="outline-4">
+<h4 id="orgfe6c09a"><span class="section-number-4">2.5.6</span> SIGHASH_ANYPREVOUT</h4>
+<div class="outline-text-4" id="text-2-5-6">
+<p>
+<a href="https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-anyprevout.mediawiki">proposed bip</a><br />
+</p>
+
+<p>
+a new type of public key for tapscript (bip-tapscript) transactions. It allows signatures for these public keys to not commit to the exact output being spent. This enables dynamic binding of transactions to different UTXOs, provided they have compatible scripts.<br />
+</p>
+
+<p>
+Allows dynamic rebinding of a signed transaction to another previous output of the same value<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org00e23b8" class="outline-3">
+<h3 id="org00e23b8"><span class="section-number-3">2.6</span> Mining</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+<i>All things Bitcoin mining.</i><br />
+</p>
+</div>
+
+<div id="outline-container-org2ce2f7a" class="outline-4">
+<h4 id="org2ce2f7a"><span class="section-number-4">2.6.1</span> Introduction</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<p>
+<a href="https://stephanlivera.com/episode/128/">Excellent podcast on mining</a><br />
+</p>
+
+<p>
+cgminer is open source miner for ASIC/FPGA miner. Lots of companies forked off this original miner.<br />
+<a href="https://github.com/ckolivas/">https://github.com/ckolivas/</a><br />
+</p>
+
+<p>
+<a href="https://bitcointalk.org/index.php?topic=2135429.msg21352028">channel payouts in mining</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge030702" class="outline-4">
+<h4 id="orge030702"><span class="section-number-4">2.6.2</span> GetBlockTemplate</h4>
+<div class="outline-text-4" id="text-2-6-2">
+<p>
+Getblocktemplate: bitcoin core &lt;-&gt; pool server<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org3f1a24d" class="outline-4">
+<h4 id="org3f1a24d"><span class="section-number-4">2.6.3</span> Stratum</h4>
+<div class="outline-text-4" id="text-2-6-3">
+<p>
+Stratum: pool server &lt;-&gt; asic controller<br />
+<a href="https://slushpool.com/help/topic/stratum-protocol/">Stratum Protocol documentation</a><br />
+The design of the Stratum protocol requires pool operators to build and distribute block templates to their clients.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd7e411e" class="outline-4">
+<h4 id="orgd7e411e"><span class="section-number-4">2.6.4</span> StratumV2</h4>
+<div class="outline-text-4" id="text-2-6-4">
+<p>
+<a href="https://insights.deribit.com/market-research/stratum-v2-migration-and-decentralization/">StratumV2 Migration</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-orga8793b4" class="outline-4">
+<h4 id="orga8793b4"><span class="section-number-4">2.6.5</span> Betterhash</h4>
+<div class="outline-text-4" id="text-2-6-5">
+<ul class="org-ul">
+<li>Work protocol: bitcoin<br /></li>
+<li>core &lt;-&gt; mining proxy<br /></li>
+<li>Work protocol: mining proxy/bitcoin core &lt;-&gt; asic controller<br /></li>
+<li>Pool protocol: pool server &lt;-&gt; mining proxy<br /></li>
+</ul>
+<p>
+<a href="https://github.com/TheBlueMatt/bips/blob/betterhash/bip-XXXX.mediawiki">link to bip</a><br />
+<a href="https://medium.com/hackernoon/betterhash-decentralizing-bitcoin-mining-with-new-hashing-protocols-291de178e3e0">betterhash overview</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-org22ec864" class="outline-4">
+<h4 id="org22ec864"><span class="section-number-4">2.6.6</span> Compact Blocks</h4>
+<div class="outline-text-4" id="text-2-6-6">
+<p>
+<a href="https://bitcoincore.org/en/2016/06/07/compact-blocks-faq/">faq for compact blocks</a><br />
+Compact block relay, BIP152, is a method of reducing the amount of bandwidth used to propagate new blocks to full nodes.<br />
+</p>
+
+<p>
+Using simple techniques it is possible to reduce the amount of bandwidth necessary to propagate new blocks to full nodes when they already share much of the same mempool contents. Peers send compact block “sketches” to receiving peers.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org76420df" class="outline-3">
+<h3 id="org76420df"><span class="section-number-3">2.7</span> P2P</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+<i>P2P layer of Bitcoin.</i><br />
+For the Bitcoin network to remain in consensus, the network of nodes must not be partitioned. So for an individual node to remain in consensus with the network, it must have at least one connection to that network of peers that share its consensus rules.<br />
+</p>
+
+<p>
+<a href="https://gist.github.com/sdaftuar/c2a3320c751efb078a7c1fd834036cb0">partition resistance</a><br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc160cf4" class="outline-2">
+<h2 id="orgc160cf4"><span class="section-number-2">3</span> Wallet Engineering</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<i>Wallet Design concerns all things related to wallet functionality. This mostly is application level logic.</i><br />
+</p>
+
+<p>
+Modern bitcoin wallets are known as HD wallets or hierarchical deterministic. An HD wallet has a seed and can derive many child keys from a single key. In the early development of bitcoin, wallets would generate a new key for each receive address and then save the key to a file. This unfortunately made backups difficult and error prone. Instead, HD wallets can be backed up using a seed. The familiar 12 or 24 word mnemonic seed phrases are an artifact part of BIP39.<br />
+</p>
+</div>
+
+<div id="outline-container-orge8418f1" class="outline-3">
+<h3 id="orge8418f1"><span class="section-number-3">3.1</span> BIP-32</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Wallets derive a number of child keys from a parent key. To prevent relying on only the key, both private and public keys are extended with an extra 32 bytes of entropy. This entropy is called the chain code.<br />
+</p>
+
+<p>
+There are 2^31 child keys and 2^31 hardened child keys. The distinction is very important.<br />
+</p>
+
+<ul class="org-ul">
+<li>private parent key -&gt; private child key = computes a child extended private key from the parent extended private key<br /></li>
+<li>public parent key -&gt; public child key = computes a child extended public key from the parent extended public key. It is only defined for non-hardened child keys.<br /></li>
+<li>private parent key -&gt; public child key = computes the extended public key corresponding to an extended private key (the "neutered" version, as it removes the ability to sign transactions).<br /></li>
+<li>public parent key -&gt; private child key = not possible<br /></li>
+</ul>
+
+<p>
+<a href="https://bitcoin.stackexchange.com/questions/62533/key-derivation-in-hd-wallets-using-the-extended-private-key-vs-hardened-derivati">Deep Dive on Extended Keys</a><br />
+</p>
+
+<p>
+A derivation path is the descriptor for identifying the path along the BIP32 tree.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org29107ec" class="outline-3">
+<h3 id="org29107ec"><span class="section-number-3">3.2</span> BIP-39</h3>
+</div>
+<div id="outline-container-orgcc143cc" class="outline-3">
+<h3 id="orgcc143cc"><span class="section-number-3">3.3</span> Wallet Standards</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Due to the flexibility of BIP32 trees, standards were created for wallet operators. Standards for the BIP32 tree allows for saner backups and easier portability of seeds between wallet services.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org40383bf" class="outline-3">
+<h3 id="org40383bf"><span class="section-number-3">3.4</span> BIP-43</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+The first of these standards is <a href="https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki">BIP-43</a> which defines the first level of the BIP32 tree as the purpose field.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgc7a3030" class="outline-3">
+<h3 id="orgc7a3030"><span class="section-number-3">3.5</span> BIP-44</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+<a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP-44</a> expands on BIP-43 by specifying the coin and account levels of the BIP32 tree. In addition, the derivation path can describe whether the wallet should derive a change (or internal) address or receive (or external) address.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgb9e367c" class="outline-3">
+<h3 id="orgb9e367c"><span class="section-number-3">3.6</span> BIP-45</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+<a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">BIP-45</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-orga1748e0" class="outline-3">
+<h3 id="orga1748e0"><span class="section-number-3">3.7</span> BIP-47</h3>
+</div>
+<div id="outline-container-org21cd765" class="outline-3">
+<h3 id="org21cd765"><span class="section-number-3">3.8</span> SegWit</h3>
+<div class="outline-text-3" id="text-3-8">
+<p>
+Since SegWit, couple of changes to wallets were needed:<br />
+<a href="https://bitcoincore.org/en/segwit_wallet_dev/">SegWit wallet dev guide</a><br />
+</p>
+
+<p>
+One of the immediate problems that SegWit solves is mitigating transaction malleability.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd2d419d" class="outline-3">
+<h3 id="orgd2d419d"><span class="section-number-3">3.9</span> Covenants</h3>
+<div class="outline-text-3" id="text-3-9">
+<p>
+A covenant is a bitcoin script that restricts the type of transaction that can spend a coin.<br />
+</p>
+
+<p>
+<a href="https://medium.com/blockstream/cat-and-schnorr-tricks-i-faf1b59bd298">OP_CAT and Schnorr - Part 1</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-org729165b" class="outline-3">
+<h3 id="org729165b"><span class="section-number-3">3.10</span> Vaults</h3>
+<div class="outline-text-3" id="text-3-10">
+<p>
+<a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html">Vaults without Covenants</a><br />
+<a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017231.html">more by bishop</a><br />
+</p>
+
+<p>
+<a href="https://blockstream.com/2019/02/04/en-standardizing-bitcoin-proof-of-reserves/">proof of reserves - blockstream</a><br />
+</p>
+
+<p>
+BIP-127 proposes a standard way to do proof of reserves using a PSBT extension.<br />
+<a href="https://github.com/bitcoin/bips/blob/master/bip-0127.mediawiki">link to bip</a><br />
+</p>
+
+<p>
+There's rust implementation of a Proof-of-Reserves Client. <a href="https://github.com/ElementsProject/reserves">link to reserves</a><br />
+</p>
+
+<p>
+<a href="https://arxiv.org/pdf/2005.11776.pdf">custody protocols using bitcoin vaults</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org09d228a" class="outline-3">
+<h3 id="org09d228a"><span class="section-number-3">3.11</span> Batching</h3>
+<div class="outline-text-3" id="text-3-11">
+<p>
+Payment batching, more <a href="https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md">here</a>, is including multiple payments inside a single transaction.<br />
+</p>
+
+<p>
+Variables to consider are # of inputs and # of outputs. Better to have a single input and many outputs.<br />
+It is also nice to have a lower fee for the entire transaction.<br />
+</p>
+
+<p>
+Goal of batching is to lower vbytes per payment. Marginal improvmenent  after 1 input and 5 outputs.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgdc0309e" class="outline-3">
+<h3 id="orgdc0309e"><span class="section-number-3">3.12</span> Coin Selection</h3>
+<div class="outline-text-3" id="text-3-12">
+<p>
+<a href="https://medium.com/@lopp/the-challenges-of-optimizing-unspent-output-selection-a3e5d05d13ef">Challenges of coin selection by lopp</a><br />
+<a href="https://iohk.io/en/blog/posts/2018/07/03/self-organisation-in-coin-selection/">iohk on coinsel</a><br />
+<a href="https://bitcoin.stackexchange.com/questions/1077/what-is-the-coin-selection-algorithm">what is coinsel?</a><br />
+<a href="https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/coin-selection/">murch transcript at scaling bitcoin</a><br />
+<a href="http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/coin-selection/">edge++ transcript</a><br />
+</p>
+
+<p>
+The naive approach would be to simply look for the smallest output that is larger than the amount you want to spend and use it, otherwise start adding the next largest outputs until you have enough outputs to meet the spend target. However, this leads to fracturing of outputs until the wallet becomes littered with unspendable “dust.”<br />
+</p>
+
+<p>
+“Our idea is to have the user the option (either global or per account or<br />
+per transaction) to choose between "maximize privacy" or "minimize fees"<br />
+(or even maybe "minimize UTXO"<br />
+</p>
+
+<p>
+”Dust” refers to transaction outputs that are less valuable than three times the mininum transaction fee and are therefore expensive to spend.<br />
+</p>
+
+<p>
+A transaction output is labeled as dust when its value is similar to the cost of spending it. Precisely, Bitcoin Core sets the dust limit to a value where spending an 2.3. Transactions 7 output would exceed 1/3 of its value. This calculation is based on the minimum relay transaction fee, a node setting that causes transactions that don’t at least include this lower bound of fee to be dropped from the memory pool, and not relayed to other nodes. With the default for the minimum relay transaction fee set to 1 000 satoshi per kilobyte, and the sizes of a P2PKH input being 148 bytes, and an output being 34 bytes, this computes to all outputs smaller or equal to 546 satoshis being considered dust by Bitcoin Core [Erha15].<br />
+</p>
+
+<p>
+<a href="https://blog.bitgo.com/utxo-management-for-enterprise-wallets-5357dad08dd1">utxo mgmt for enterprise wallets</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org850f934" class="outline-3">
+<h3 id="org850f934"><span class="section-number-3">3.13</span> Bitcoin Core Wallet</h3>
+<div class="outline-text-3" id="text-3-13">
+<p>
+Bitcoin Core's wallet is always evolving. Some changes to the Bitcoin Core wallet:<br />
+<a href="https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Wallet-Class-Structure-Changes">Wallet Class Structure Changes</a><br />
+<a href="https://gist.github.com/sipa/125cfa1615946d0c3f3eec2ad7f250a2">Sipa describing wallet changes</a><br />
+<a href="http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-05-wallet-architecture/">Wallet Architecture transcripts</a><br />
+</p>
+
+<p>
+<a href="https://achow101.com/2020/10/0.21-wallets">What's Coming to Bitcoin Core Wallet in 2021</a><br />
+<a href="https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes.md#experimental-descriptor-wallets">Descriptor Wallets MD</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-orge32866e" class="outline-3">
+<h3 id="orge32866e"><span class="section-number-3">3.14</span> Descriptors</h3>
+<div class="outline-text-3" id="text-3-14">
+<p>
+<a href="https://github.com/bitcoin/bitcoin/issues/17190">Bitcoin Issue 17190</a><br />
+<a href="https://github.com/spesmilo/electrum/issues/5715">Electrum on Descriptors</a><br />
+<a href="https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md">Descriptors Overview</a><br />
+<a href="http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-08-script-descriptors/">coredev talk</a><br />
+</p>
+
+<p>
+Implementations&#x2026;<br />
+<a href="https://github.com/bitcoin-core/HWI/blob/95c9387215fd534bb7a7e3e1885d92cc22457847/hwilib/descriptor.py">HWI</a><br />
+<a href="https://github.com/bitcoin/bitcoin/pull/16528">Bitcoin #16528</a><br />
+<a href="https://github.com/bitcoin/bitcoin/blob/08ed87e8875d72a1d8b157b67bbd431253d7db24/src/script/descriptor.cpp">Bitcoin Core</a><br />
+<a href="https://github.com/bitcoin/bitcoin/blob/befdef8aee899dcf7e40aa5ea4bc1b0256381cdc/src/util/spanparsing.cpp">Bitcoin Core parsing</a><br />
+<a href="https://github.com/bitcoin/bitcoin/pull/15764">Bitcoin #15764</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgffcec8d" class="outline-3">
+<h3 id="orgffcec8d"><span class="section-number-3">3.15</span> Script</h3>
+<div class="outline-text-3" id="text-3-15">
+<p>
+(<a href="https://en.bitcoin.it/wiki/Contract">https://en.bitcoin.it/wiki/Contract</a>)<br />
+Each transaction input has a sequence number. In a normal transaction that just moves value around, the sequence numbers are all UINT_MAX and the lock time is zero. If the lock time has not yet been reached, but all the sequence numbers are UINT_MAX, the transaction is also considered final.<br />
+</p>
+
+<p>
+Sequence numbers can be used to issue new versions of a transaction without invalidating other inputs signatures, e.g., in the case where each input on a transaction comes from a different party, each input may start with a sequence number of zero, and those numbers can be incremented independently.<br />
+</p>
+
+<p>
+Signature checking is flexible because the form of transaction that is signed can be controlled through the use of SIGHASH flags, which are stuck on the end of a signature. In this way, contracts can be constructed in which each party signs only a part of it, allowing other parts to be changed without their involvement. The SIGHASH flags have two parts, a mode and the ANYONECANPAY modifier:<br />
+</p>
+
+<ol class="org-ol">
+<li>SIGHASH_ALL: This is the default. It indicates that everything about the transaction is signed, except for the input scripts. Signing the input scripts as well would obviously make it impossible to construct a transaction, so they are always blanked out. Note, though, that other properties of the input, like the connected output and sequence numbers, are signed; it's only the scripts that are not. Intuitively, it means "I agree to put my money in, if everyone puts their money in and the outputs are this".<br /></li>
+<li>SIGHASH_NONE: The outputs are not signed and can be anything. Use this to indicate "I agree to put my money in, as long as everyone puts their money in, but I don't care what's done with the output". This mode allows others to update the transaction by changing their inputs sequence numbers.<br /></li>
+<li>SIGHASH_SINGLE: Like SIGHASH_NONE, the inputs are signed, but the sequence numbers are blanked, so others can create new versions of the transaction. However, the only output that is signed is the one at the same position as the input. Use this to indicate "I agree, as long as my output is what I want; I don't care about the others".<br /></li>
+</ol>
+
+<p>
+There are two general patterns for safely creating contracts:<br />
+</p>
+<ol class="org-ol">
+<li>Transactions are passed around outside of the P2P network, in partially-complete or invalid forms.<br /></li>
+<li>Two transactions are used: one (the contract) is created and signed but not broadcast right away. Instead, the other transaction (the payment) is broadcast after the contract is agreed to lock in the money, and then the contract is broadcast.<br /></li>
+</ol>
+<p>
+This is to ensure that people always know what they are agreeing to.<br />
+Together, these features let us build interesting new financial tools on top of the block chain.<br />
+</p>
+
+<p>
+It may even be that people find themselves working for the programs because they need the money, rather than programs working for the people.<br />
+</p>
+
+<p>
+old oracle services&#x2026;<br />
+<a href="https://docs.oraclize.it/#home">https://docs.oraclize.it/#home</a><br />
+<a href="http://orisi.org/">http://orisi.org/</a><br />
+<a href="http://earlytemple.com/">http://earlytemple.com/</a><br />
+<a href="https://en.bitcoin.it/wiki/Contract#Example_4:_Using_external_state">https://en.bitcoin.it/wiki/Contract#Example_4:_Using_external_state</a><br />
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgd08a3be"></a>Scriptless Scripts<br />
+<div class="outline-text-5" id="text-3-15-0-1">
+<p>
+<a href="https://suredbits.com/schnorr-applications-scriptless-scripts/">SuredBits' blog on scriptless scripts</a><br />
+</p>
+
+<p>
+<a href="https://download.wpsoftware.net/bitcoin/wizardry/mw-slides/2018-05-18-l2/slides.pdf">Poelstra ppt</a><br />
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org553d320" class="outline-3">
+<h3 id="org553d320"><span class="section-number-3">3.16</span> Fee Estimation</h3>
+<div class="outline-text-3" id="text-3-16">
+<p>
+<a href="https://blog.bitgo.com/the-challenges-of-bitcoin-transaction-fee-estimation-e47a64a61c72">lopp on fee estimation</a><br />
+</p>
+
+<p>
+Fee estimation is the process of estimating a particular fee rate to use for a transaction in order to incentivize block inclusion at a particular block target.<br />
+</p>
+
+<p>
+Supply (blocks) and demand (txns) are unpredicable.<br />
+</p>
+
+<p>
+<a href="https://bitcointechtalk.com/an-introduction-to-bitcoin-core-fee-estimation-27920880ad0">John Newbery's intro to Bitcoin Core Fee Estimation</a><br />
+<a href="https://bitcointechtalk.com/whats-new-in-bitcoin-core-v0-15-part-2-41b6d0493136">pt2</a><br />
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org8fdc6bb"></a>Outline of Newbery's post<br />
+<div class="outline-text-5" id="text-3-16-0-1">
+<p>
+At broadcast, the transaction is not going to get into the next block. But rather likely the next block in 10 minutes. Block production follows Poisson distribution.<br />
+</p>
+
+<p>
+As a result, the fee rate should be competitive not only of the current mempool but the likely mempool in ten minutes.<br />
+</p>
+
+<p>
+Looking only at mempool does not consider lucky block runs.<br />
+</p>
+</div>
+</li>
+
+<li><a id="org4a72a0c"></a>Bitcoin Core's Fee Estimation<br />
+<div class="outline-text-5" id="text-3-16-0-2">
+<p>
+<a href="https://gist.github.com/morcos/d3637f015bc4e607e1fd10d8351e9f41">High level desc of Bitcoin Core's fee estimation algorithm</a><br />
+<a href="https://github.com/bitcoin/bitcoin/blob/master/src/policy/fees.h">code</a><br />
+Bitcoin core groups transaction fee rates into buckets. Each buck is a range of fee rates. A track of block targets from 1 block to 1008 blocks is kept.<br />
+</p>
+
+<p>
+Also, the following is recorded:<br />
+(A) number of transactions that entered the mempool in each fee rate bucket.<br />
+(B) for each bucket-target pair, the number of transactions that were included in a block within the target number of blocks.<br />
+</p>
+
+<p>
+For any target-bucket pair, Bitcoin Core can find the probability that a transaction with the fee rate can be included. This is B/A.<br />
+</p>
+
+<p>
+<a href="https://blog.iany.me/2020/08/bitcoin-core-fee-estimate-algorithm/">Additional overview</a><br />
+</p>
+</div>
+</li>
+<li><a id="org247b7f4"></a>Mempool File Format<br />
+<div class="outline-text-5" id="text-3-16-0-3">
+<p>
+Mempool File Format can be useful for fee estimation..<br />
+<a href="https://bc-2.jp/bb2019-mempool-analysis-simulation.pdf">talk by kalle</a><br />
+Time series of a txn lifecyle until block inclusion in a small file format.<br />
+</p>
+
+<p>
+<a href="https://github.com/kallewoof/mff">https://github.com/kallewoof/mff</a><br />
+</p>
+</div>
+</li>
+<li><a id="org2576244"></a>Light Clients<br />
+<div class="outline-text-5" id="text-3-16-0-4">
+<p>
+<a href="https://bitcoindevkit.org/blog/2021/01/fee-estimation-for-light-clients-part-1/">Using AI for Fee Estimation</a><br />
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org7961648" class="outline-3">
+<h3 id="org7961648"><span class="section-number-3">3.17</span> Backup and Recovery</h3>
+<div class="outline-text-3" id="text-3-17">
+</div>
+<div id="outline-container-orgd86d27d" class="outline-4">
+<h4 id="orgd86d27d"><span class="section-number-4">3.17.1</span> BIP39</h4>
+<div class="outline-text-4" id="text-3-17-1">
+<p>
+US NIST recommends a salt length of 128 bits. Passphrase entropy in bits is log2(# of combinations).<br />
+</p>
+
+<p>
+BIP39 Wordlist is 2048 word dictionary. So log2(2048^s) = 22 bits of entropy.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd8167e8" class="outline-4">
+<h4 id="orgd8167e8"><span class="section-number-4">3.17.2</span> Shamir's Secret Sharing</h4>
+<div class="outline-text-4" id="text-3-17-2">
+<p>
+<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>Shamir's Secret Sharing (SSS) is an algorithm to divide a secret into parts that can be recovered by combining a minimum number of parts.<br />
+</p>
+
+<p>
+Each part is called a share. The threshold is the number of shares that is needed to recover the original secret. There can be more shares than the threshold.<br />
+</p>
+
+<p>
+There are several criticisms of SSS.<br />
+</p>
+<ol class="org-ol">
+<li><a href="https://en.bitcoin.it/wiki/Shamir_Secret_Snakeoil">Shamir Secret Snakeoil</a><br /></li>
+<li><a href="https://blog.keys.casa/shamirs-secret-sharing-security-shortcomings/">Shamir's Secret Sharing Shortcomings</a><br /></li>
+</ol>
+
+<p>
+<a href="https://bitcoin.stackexchange.com/questions/102007/is-sharding-a-good-alternative-to-multisig">Sharding vs Multisig?</a><br />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb48e639" class="outline-2">
+<h2 id="orgb48e639"><span class="section-number-2">4</span> Lightning Network</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<i>Lightning Network and related off-chain protocols.</i><br />
+<a href="https://github.com/lnbook/lnbook">Master Lightning Book</a><br />
+<a href="http://dev.lightning.community/overview/">ln overview</a><br />
+<a href="https://github.com/t-bast/lightning-docs/blob/master/lightning-txs.md">ln zero to hero</a><br />
+<a href="https://github.com/t-bast/lightning-docs">t-bast's notes</a><br />
+</p>
+
+<p>
+Lightning Network is a scaling solution to keep most transactions off-chain while leveraging the security of the bitcoin chain as an arbitration layer. There are several concepts to review before jumping into the domain. We will start small by covering lightning primitives, then apply these primitives to describe the Lightning Network.<br />
+</p>
+
+
+<p>
+Payments channels is a construct between two parties that commit funds and pay each other by updating a balance redeemable by either party. Moving funds between each part is near instant. Channels have a total capacity that is established by the on-chain funding transaction. Additionally, each party in the channel has their own balance. For example, a channel between Alice and Bob can have a 1 BTC capacity, but 30% of the bitcoin is owned by Bob. For Alice, this means that her local_balance is 0.7 BTC while the remote_balance (Bob's balance) is 0.3 BTC.<br />
+</p>
+
+<p>
+To create the payment channel construction, a funding transaction is created on-chain. Any updates to the channel involves updating the commitment transaction.<br />
+</p>
+
+<p>
+Hash Time-Locked Contracts (HTLCs) allow transactions to be sent between parties who do not have a direct channels by routing it through multiple hops, so anyone connected to the Lightning Network is part of a single, interconnected global financial system.<br />
+</p>
+
+<p>
+Payment channels are the main workhorse of the Lightning Network. They allow multiple transactions to be aggregated into just a few on-chain transactions. In the vast majority of cases, someone only needs to broadcast the first and last transaction in the channel.<br />
+</p>
+<ul class="org-ul">
+<li>The Funding Transaction creates the channel. During this stage, funds are sent into a multisig address controlled by both Alice and Bob, the counterparties to the channel. This address can be funded as a single-payer channel or by both Alice and Bob.<br /></li>
+<li>The Closing Transaction closes the channel. When broadcast, the multisig address spends the funds back to Alice and Bob according to their agreed-upon channel amount.<br /></li>
+</ul>
+
+<p>
+channel updates<br />
+</p>
+<ul class="org-ul">
+<li>In between the opening and closing transactions broadcast to the blockchain, Alice and Bob can create a near infinite number of intermediate closing transactions that gives different amounts to the two parties.<br /></li>
+<li>For example, if the initial state of the channel credits both Alice and Bob with 5BTC out of the 10BTC total contained in the multisig address, Alice can make a 1BTC payment to Bob by updating the closing transaction to pay 4BTC/6BTC, where Alice is credited with 4BTC and Bob with 6BTC. Alice will give the signed transaction to Bob, which is equivalent to payment, because Bob can broadcast it at any time to claim his portion of the funds. <br />
+<ul class="org-ul">
+<li>To prevent an attack where Alice voids her payment by broadcasting the initial state of 5BTC/5BTC, there needs to be a way to revoke prior closing transactions. Payment revocation roughly works like the following.<br /></li>
+<li>Alice must wait 3 days after broadcasting the closing transaction before she can redeem her funds. During this time, Bob is given a chance to reveal a secret that will allow him to sweep Alice’s funds immediately. Alice can thus revoke her claim to the money in some state by giving Bob the secret to the closing transaction. This allows Bob to take all of Alice’s money, but only if Alice attest to this old state by broadcasting the corresponding closing transaction to the blockchain.<br /></li>
+</ul></li>
+</ul>
+
+<p>
+Payment channels &amp; revocable transactions<br />
+<a href="https://paychan.github.io/bitcoin-payment-channels-taxonomy/">great graphical overview</a><br />
+</p>
+
+<p>
+txn:<br />
+Bob’s signature and a relative timelock (Bob’s spend branch); or<br />
+Alice’s signature and a secret revocation hash provided by Bob (Alice’s revocation branch).<br />
+</p>
+
+
+<p>
+usually have multiple utxos. Once bob reveals his secret, alice can collect her spend TXO and rTXO.<br />
+</p>
+
+<p>
+revocable transaction script_pub_key:<br />
+OP_IF # Bob's spend branch - after the revocation timeout duration, Bob can spend with just his signature<br />
+  &lt;TXO revocation timeout duration&gt; OP_CHECKSEQUENCEVERIFY OP_DROP<br />
+  &lt;Bob's public key&gt;<br />
+OP_ELSE # Revocation branch - once the revocation pre-image is revealed, Alice can spend immediately with her signature<br />
+  OP_HASH160 &lt;h(rev)&gt; OP_EQUALVERIFY OP_DROP<br />
+  &lt;Alice's public key&gt;<br />
+OP_ENDIF<br />
+OP_CHECKSIG<br />
+</p>
+
+<p>
+recovcation keys used base points and blinding key. similar to bip32, keys derived using base key.<br />
+</p>
+
+<p>
+<a href="https://rusty.ozlabs.org/?p=450">revocable transactions</a><br />
+<a href="https://rusty.ozlabs.org/?p=462">HTLCs</a><br />
+</p>
+
+<p>
+<a href="https://docs.google.com/presentation/d/1TyF0W3cZbkz4SyZG9qY7Is2pytC1GwSvs9KRKmYblFk/edit#slide=id.p">enterprise lightning presentation</a><br />
+</p>
+</div>
+<div id="outline-container-org408169f" class="outline-3">
+<h3 id="org408169f"><span class="section-number-3">4.1</span> BOLTs</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+<a href="https://www.youtube.com/watch?v=Ysj2yobFMF4">great overview of BOLT by Jim Posen</a><br />
+<a href="https://www.youtube.com/watch?v=toarjBSPFqI">how onion routing works with HTLCs</a><br />
+</p>
+
+<p>
+<a href="https://commons.wikimedia.org/wiki/File:Introduction_to_the_Lightning_Network_Protocol_and_the_Basics_of_Lightning_Technology_(BOLT_aka_Lightning-rfc).pdf">presentation by Rene</a><br />
+</p>
+
+<p>
+BOLT is the Basics of Lightning Technology.<br />
+</p>
+
+<p>
+The BOLT repo found <a href="https://github.com/lightningnetwork/lightning-rfc">here</a> describes the specification for the Lightning Network.<br />
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org467ef60"></a>BOLT #0<br />
+<div class="outline-text-5" id="text-4-1-0-1">
+<p>
+Provides a basic glossary defining terminology that is used throughout the rest of the specification.<br />
+</p>
+</div>
+</li>
+<li><a id="org85bea40"></a>BOLT #1<br />
+<div class="outline-text-5" id="text-4-1-0-2">
+<p>
+Describes the base message protocol including the TLV format and the setup messages.<br />
+</p>
+
+<p>
+TLV is Type-Length-Value.<br />
+</p>
+
+<p>
+Funny enough, the unicode code point for lightning is 0x2607. In decimal, 9735 which is also the default TCP port.<br />
+</p>
+</div>
+</li>
+<li><a id="orgc40e915"></a>BOLT #2<br />
+<div class="outline-text-5" id="text-4-1-0-3">
+<p>
+Contains peer channel protocol lifecycle.<br />
+</p>
+
+<p>
+A channel_id is used to identify a channel. channel_id = XOR(funding_txid, funding_output_index)<br />
+</p>
+
+<p>
+Before a channel is created, a temporary_channel_id is used which acts a nonce. This nonce is local and can be duplicate across the rest of the protocol.<br />
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org9699357"></a>Channel Establishment<br />
+<div class="outline-text-6" id="text-4-1-0-3-1">
+<p>
+<del>-------</del>                              <del>-------</del><br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2013;(1)&#x2014;  open_channel  &#x2013;&#x2014;&gt;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&lt;-(2)&#x2013;  accept_channel  -----</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">A</td>
+<td class="org-left">&#x2013;(3)&#x2013;  funding_created  &#x2014;&gt;</td>
+<td class="org-left">B</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&lt;-(4)&#x2013;  funding_signed  -----</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2013;(5)&#x2014; funding_locked  -&#x2014;&gt;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&lt;-(6)&#x2014; funding_locked  -----</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+<p>
+<del>-------</del>                              <del>-------</del><br />
+</p>
+<ul class="org-ul">
+<li>where node A is 'funder' and node B is 'fundee'<br /></li>
+</ul>
+
+<p>
+An outpoint is provided to B at step 3.<br />
+</p>
+</div>
+</li>
+
+
+<li><a id="orge4377dd"></a>Channel Close<br />
+<div class="outline-text-6" id="text-4-1-0-3-2">
+<p>
+<del>-------</del>                              <del>-------</del><br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2013;(1)&#x2013;&#x2014;  shutdown  --&#x2013;&#x2014;&gt;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&lt;-(2)&#x2013;&#x2014;  shutdown  --------</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&lt;complete all pending HTLCs&gt;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">A</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">B</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2013;(3)&#x2013; closing_signed  F1&#x2014;&gt;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&lt;-(4)&#x2013; closing_signed  F2----</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2013;(?)&#x2013; closing_signed  Fn&#x2014;&gt;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&lt;-(?)&#x2013; closing_signed  Fn----</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+<p>
+<del>-------</del>                              <del>-------</del> <br />
+</p>
+</div>
+</li>
+
+<li><a id="org59a96d2"></a>Normal Operation<br />
+<div class="outline-text-6" id="text-4-1-0-3-3">
+<p>
+Once both nodes have exchanged funding_locked, the channel is used to make payments with HTLCs.<br />
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org7ca9e43"></a>BOLT #3<br />
+<div class="outline-text-5" id="text-4-1-0-4">
+<p>
+Describes transaction and script formats.<br />
+</p>
+</div>
+</li>
+<li><a id="org3e969cc"></a>BOLT #4<br /></li>
+<li><a id="orgb335b4f"></a>BOLT #5<br />
+<div class="outline-text-5" id="text-4-1-0-6">
+<p>
+Channels can end with a mutual close, unilateral close, or a revoked transaction close.<br />
+</p>
+
+<p>
+In a mutual close, local and remote nodes agree to close. They generate a closing transaction.<br />
+</p>
+
+<p>
+In a unilateral close, one side publishes its latest commitment transaction.<br />
+</p>
+
+<p>
+In a revoked transaction close, one party is cheating and publishes an oudated commitment transaction.<br />
+</p>
+
+<p>
+A commitment transaction has up to six types of outputs:<br />
+</p>
+<ol class="org-ol">
+<li>local node's main output: Zero or one output, to pay to the local node's delayed_pubkey.<br /></li>
+<li>remote node's main output: Zero or one output, to pay to the remote node's delayed_pubkey.<br /></li>
+<li>local node's anchor output: one output paying to the local node's funding_pubkey.<br /></li>
+<li>remote node's anchor output: one output paying to the remote node's funding_pubkey.<br /></li>
+<li>local node's offered HTLCs: Zero or more pending payments (HTLCs), to pay the remote node in return for a payment preimage.<br /></li>
+<li>remote node's offered HTLCs: Zero or more pending payments (HTLCs), to pay the local node in return for a payment preimage.<br /></li>
+</ol>
+
+<p>
+If the local node publishes its commitment transaction, it will have to wait to claim its own funds, whereas the remote node will have immediate access to its own funds.<br />
+</p>
+</div>
+</li>
+<li><a id="org9253f51"></a>BOLT #7<br />
+<div class="outline-text-5" id="text-4-1-0-7">
+<p>
+P2P<br />
+</p>
+</div>
+</li>
+<li><a id="org31ca7b4"></a>BOLT #8<br /></li>
+<li><a id="orgd85901a"></a>BOLT #9<br /></li>
+<li><a id="org2a0eabd"></a>BOLT #10<br /></li>
+<li><a id="org4eb87c8"></a>BOLT #11<br />
+<div class="outline-text-5" id="text-4-1-0-11">
+<p>
+Invoice spec.<br />
+</p>
+</div>
+</li>
+<li><a id="orgd359596"></a>WIP: BOLT #12<br />
+<div class="outline-text-5" id="text-4-1-0-12">
+<p>
+BOLT 12 describes a new invoice format and flow called Offers.<br />
+</p>
+
+<p>
+The Draft of the PR can be found <a href="https://github.com/lightningnetwork/lightning-rfc/pull/798">here</a>.<br />
+</p>
+
+<p>
+The flow described is the following:<br />
+</p>
+<ol class="org-ol">
+<li>Receiver publishes an offer.<br /></li>
+<li>Payer requests a new unique invoice over LN using the offer.<br /></li>
+<li>Receiver responds with a unique invoice.<br /></li>
+<li>Payer pays the invoice.<br /></li>
+</ol>
+
+<p>
+There are a number of improvements over BOLT11.<br />
+</p>
+
+<p>
+Payment proof is designed to allow the payer to prove that they were the unique payer.<br />
+</p>
+
+<p>
+Merkle tree is used to be able to prove only specific fields of the invoice, not the enture invoice!<br />
+</p>
+
+<p>
+Some offers are periodic, meaning that payments are expected on a recurring period. This allows for new applications that require subscription-based payments.<br />
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org4969de3" class="outline-3">
+<h3 id="org4969de3"><span class="section-number-3">4.2</span> Implementations</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+There are several implementations following the BOLT specification.<br />
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org43e2004"></a>LND<br />
+<div class="outline-text-5" id="text-4-2-0-1">
+<p>
+<a href="http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2018-04-20-laolu-osuntokun-exploring-lnd0.4/">Exploring LND 0.4</a><br />
+<a href="http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2019-05-02-conner-fromknecht-lnd-0.6-beta/">LND 0.6-Beta</a><br />
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org1db63f8" class="outline-3">
+<h3 id="org1db63f8"><span class="section-number-3">4.3</span> anecdotal example</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Suppose Alice has a channel with Bob, who has a channel with Carol, who has a channel with Dave: A&lt;-&gt;B&lt;-&gt;C&lt;-&gt;D. How can Alice pay Dave?<br />
+Alice first notifies Dave that she wants to send him some money.<br />
+In order for Dave to accept this payment, he must generate a random number R. He keeps R secret, but hashes it and gives the hash H to Alice.<br />
+</p>
+
+<p>
+Alice tells Bob: “I will pay you if you can produce the preimage of H within 3 days.” In particular, she signs a transaction where for the first three days after it is broadcast, only Bob can redeem it with knowledge of R, and afterwards it is redeemable only by Alice. This transaction is called a Hash Time-Locked Contract (HTLC) and allows Alice to make a conditional promise to Bob while ensuring that her funds will not be accidentally burned if Bob never learns what R is. She gives this signed transaction to Bob, but neither of them broadcast it, because they are expecting to clear it out later.<br />
+Bob, knowing that he can pull funds from Alice if he knows R, now has no issue telling Carol: “I will pay you if you can produce the preimage of H within 2 days.”<br />
+Carol does the same, making an HTLC that will pay Dave if Dave can produce R within 1 day. However, Dave does in fact know R. Because Dave is able to pull the desired amount from Carol, Dave can consider the payment from Alice completed. Now, he has no problem telling R to Carol and Bob so that they are able to collect their funds as well.<br />
+</p>
+
+<p>
+Alice knows that Bob can pull funds from her since he has R, so she tells Bob: “I’ll pay you, regardless of R, and in doing so we’ll terminate the HTLC so we can forget about R.” Bob does the same with Carol, and Carol with Dave.<br />
+</p>
+
+<p>
+Now, what if Dave is uncooperative and refuses to give R to Bob and Carol? Note that Dave must broadcast the transaction from Carol within 1 day, and in doing so must reveal R in order to redeem the funds. Bob and Carol can simply look at the blockchain to determine what R is and settle off-chain as well.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org221c965" class="outline-3">
+<h3 id="org221c965"><span class="section-number-3">4.4</span> Lightning Conf 2019 Berlin</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+<a href="https://www.electrum.org/talks/lightning/presentation.html#slide1">electrum slides on lightning</a><br />
+Circular routes: send to self.<br />
+Suggestions<br />
+</p>
+<ul class="org-ul">
+<li>do not accept random peers<br /></li>
+<li>disallow invoices to blacklisted pubkeys<br /></li>
+</ul>
+
+<p>
+Command line tools<br />
+</p>
+<ul class="org-ul">
+<li>LNDmanage by @bitromortac<br /></li>
+<li>Balance of Satoshis by @alexbosworth<br /></li>
+<li>Rebalance-LND by @C-Otto<br /></li>
+</ul>
+
+<p>
+Make Me an Offer (Bolt 12) introduced.<br />
+</p>
+
+<p>
+LSAT<br />
+</p>
+<ul class="org-ul">
+<li>Macaroon - cryptographic bearer credential<br /></li>
+<li>Delegation possible<br /></li>
+<li>Chained HMAC construction<br />
+<ul class="org-ul">
+<li>Secret root used to derive all others<br /></li>
+</ul></li>
+<li>Fine grained permission<br /></li>
+</ul>
+
+<p>
+Hedging the Chain<br />
+</p>
+<ul class="org-ul">
+<li>Bitcoin fee market<br /></li>
+<li>“Every biz using the blockchain is inherently short blockchain fees”<br /></li>
+<li>Derivatives traditionally used as a hedge<br /></li>
+<li>Corn farmers inherently long corn<br /></li>
+<li>They short corn futures as a hedge<br /></li>
+</ul>
+
+<p>
+Liquidity<br />
+</p>
+<ul class="org-ul">
+<li>No pairwise trades<br /></li>
+<li>different sources of liquidity is not the same<br /></li>
+<li>Set outbound liquidity to the same fee<br /></li>
+<li>Varied inbound liquidity<br /></li>
+<li>Make liquidity a pairwise market<br /></li>
+<li>External settlement mechanisms<br /></li>
+<li>Circular rebalancing<br /></li>
+</ul>
+
+<p>
+Attacks<br />
+</p>
+<ul class="org-ul">
+<li>Set min chan size …too many channels causes performance issues<br /></li>
+<li>Create a bunch of hold invoices and drain balance<br /></li>
+<li>Stealing free fees, someone sets up intermediate node between invoice and collects fees.<br /></li>
+</ul>
+
+
+<p>
+<a href="http://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2019/htlcs-considered-harmful/">htlcs are harmful</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgad314a4" class="outline-3">
+<h3 id="orgad314a4"><span class="section-number-3">4.5</span> Discrete Log Contracts</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+<a href="https://medium.com/@gertjaap/discreet-log-contracts-invisible-smart-contracts-on-the-bitcoin-blockchain-cc8afbdbf0db">intro</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd7382c8" class="outline-3">
+<h3 id="orgd7382c8"><span class="section-number-3">4.6</span> Security</h3>
+<div class="outline-text-3" id="text-4-6">
+<p>
+<a href="https://medium.com/@devrandom/securing-lightning-nodes-39410747734b">securing lightning nodes by devrandom</a><br />
+<a href="https://gitlab.com/lightning-signer">link to the lightning-signer project on GitLab</a><br />
+<a href="https://suredbits.com/lightning-101-for-exchanges-security-part-3-private-key-management/">key mgmt</a><br />
+</p>
+
+<p>
+<a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002735.html">blackmail attack</a><br />
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgbc1a936"></a>LSAT<br />
+<div class="outline-text-5" id="text-4-6-0-1">
+<p>
+Lightning Service Authentication Token<br />
+<a href="https://docs.google.com/presentation/d/1QSm8tQs35-ZGf7a7a2pvFlSduH3mzvMgQaf-06Jjaow">lsat talk</a><br />
+</p>
+
+<p>
+using macaroon based bearer API credential with lightning network payment<br />
+</p>
+</div>
+</li>
+
+<li><a id="org4a6237d"></a>Key management<br />
+<div class="outline-text-5" id="text-4-6-0-2">
+<p>
+<i>Overview of each key in the channel lifecycle.</i><br />
+</p>
+
+<p>
+<a href="https://docs.google.com/presentation/d/1_-FF0U2AXuhBxEzW9J_IrYxvRi1SS2MYwJl0QeIcqbI">talk on key mgmt</a><br />
+need onchain hot wallet to open channels (only need once)<br />
+</p>
+
+<p>
+1 of 2 keys must be hot for the funding transaction.<br />
+If counterparty gets key, funds are lossed. If 3rd party gets it, they must collude.<br />
+</p>
+
+<p>
+Commitment secret: must be hot.<br />
+Used to generate "local_pubkey" and "remote_pubkey"<br />
+Used to derive subsequent secrets and public keys.<br />
+If leaked, peer can steal all money in commitment txn.<br />
+</p>
+
+<p>
+Revocation basepoint secret: can be cold.<br />
+Used to claim peer funds if they try to cheat.<br />
+Can be cold if accessible before "to_self_delay"<br />
+</p>
+
+<p>
+If your counterparty gets access to this key, they can claim their funds in their to_local output immediately by circumventing the locktime<br />
+</p>
+
+<p>
+Payment basepoint secret: claim money from the "to_remote" output on peer commitment txn.<br />
+can be cold<br />
+if peer gets access to this key, all funds can be taken in the "to_remote".<br />
+</p>
+
+<p>
+Delayed Payment Basepoint Secret: claim money on "to_local" output of commitment txn. can be cold.<br />
+</p>
+
+<p>
+HTLC Basepoint Secret: secret needed to sign for HTLCs. must be hot.<br />
+</p>
+
+
+<p>
+hosted channels<br />
+<a href="https://gist.github.com/btcontract/d4122a79911eef2620f16b3dfe2850a8">gist on hosted channels</a><br />
+interesting idea but need to look more into security assumptions..<br />
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgb0494ca" class="outline-3">
+<h3 id="orgb0494ca"><span class="section-number-3">4.7</span> Privacy</h3>
+<div class="outline-text-3" id="text-4-7">
+<p>
+<a href="https://arxiv.org/abs/2003.12470">An Empirical Analysis of Privacy in the Lightning Network</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-org16fee05" class="outline-3">
+<h3 id="org16fee05"><span class="section-number-3">4.8</span> Routing</h3>
+<div class="outline-text-3" id="text-4-8">
+<p>
+Routing involves routing a lightning payment through either a public or private channel.<br />
+</p>
+
+<p>
+Routing is generally constructed for a specified payment amount.<br />
+Other considerations, however, includes value of open channels, decision to make new channels, re-balancing decisions, multi-path payments or multi-part payments (MMP, formerly AMP).<br />
+</p>
+
+<p>
+<a href="https://medium.com/coinmonks/amount-independent-payment-routing-in-lightning-networks-6409201ff5ed">amount independent routing</a><br />
+</p>
+
+<p>
+One of problem in routing is payment privacy. Two proposals to increase the privacy of paymnet senders and recipients are rendevous routing and route blinding.<br />
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgd464743"></a>Rendezvous Routing<br />
+<div class="outline-text-5" id="text-4-8-0-1">
+<p>
+Rendevous routing is a <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001498.html">proposal</a> aimed to protect the privacy of payments on the lightning network. In the initial proposal, an argument is made that private channels should not be revealed to payers. The solution is to have the payee choose one or more routes from certain third-party nodes on the public network to himself, and pass sphinx-encryped blogs for those routes to the payer. Then, the payer complets the route by finding routes from himself to the selected third-party nodes.<br />
+</p>
+
+<p>
+<a href="https://github.com/lightningnetwork/lightning-rfc/wiki/Rendez-vous-mechanism-on-top-of-Sphinx">Rendezvous mechanism on top of sphinx</a><br />
+</p>
+</div>
+</li>
+
+<li><a id="org9a10caf"></a>Route Blinding<br />
+<div class="outline-text-5" id="text-4-8-0-2">
+<p>
+Route Blinding is currently a <a href="https://github.com/lightningnetwork/lightning-rfc/blob/route-blinding/proposals/route-blinding.md">proposal</a> that aims to provide recipient anonymity by blinding an arbitrary amount of hops at the end of an onion path. Like rendezvous routing, this proposal is aimed and hiding the final portion of the route from the sender. The recipient chooses an "introduction point" and a route to himself from that point. The recipient blinds each node and channel for that route with ECDH. This blinded route and a hop-binding secret are included in the invoice.<br />
+</p>
+</div>
+</li>
+
+<li><a id="org06cb2ad"></a>Upfront Payments<br />
+<div class="outline-text-5" id="text-4-8-0-3">
+<p>
+Jamming attacks are possible where an attack can delay a payment resolution and therefore lock bitcoin along a route for a period of time. This attack is described <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html">here</a>.<br />
+</p>
+
+<p>
+Fidelity Bonds are a solution to<br />
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org334aba0" class="outline-3">
+<h3 id="org334aba0"><span class="section-number-3">4.9</span> Trampoline Payments</h3>
+<div class="outline-text-3" id="text-4-9">
+<p>
+Lightning network currently relies on source routing where sender calculates the route. Sender needs to maintain graph state.<br />
+</p>
+
+<p>
+Trampoline payments is a new suggested way of outsourcing that aims at having lite clients outsourcing the route computation to trampoline nodes, nodes of higher Memory, bandwidth and computation power.<br />
+</p>
+
+<p>
+<a href="https://bitcointechweekly.com/front/outsourcing-route-computation-with-trampoline-payments/">design decisions on trampoline routing</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1992664" class="outline-3">
+<h3 id="org1992664"><span class="section-number-3">4.10</span> HTLCs</h3>
+<div class="outline-text-3" id="text-4-10">
+<p>
+HTLCs..Hashed Time Lock Contracts.<br />
+</p>
+
+<p>
+The initiator of a Lightning channel pays the closing fee. Lots of HTLCs = large fee. See <a href="https://twitter.com/joostjgr/status/1310584596174643200">thread</a>.<br />
+</p>
+
+<p>
+<a href="https://twitter.com/joostjgr/status/1311608861955158019">Thread on free HTLC forwarding</a><br />
+</p>
+
+<p>
+An interesting idea to handling the edge cases around HTLCs is to have a firewall. An <a href="https://github.com/lightningequipment/circuitbreaker">example</a>.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org14e6e7e" class="outline-3">
+<h3 id="org14e6e7e"><span class="section-number-3">4.11</span> PTLCs</h3>
+<div class="outline-text-3" id="text-4-11">
+<p>
+Payment Points<br />
+<a href="https://suredbits.com/payment-points-and-barrier-escrows/">excellent SuredBits blog on PTLCs</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org801363b" class="outline-3">
+<h3 id="org801363b"><span class="section-number-3">4.12</span> Static/Send/Spontaneous/Push Payments</h3>
+<div class="outline-text-3" id="text-4-12">
+<p>
+Wow, lots of names for an overlapping concept.<br />
+</p>
+
+<p>
+<a href="https://github.com/lightningnetwork/lightning-rfc/pull/798">Offers</a><br />
+<a href="https://github.com/lightningnetwork/lightning-rfc/pull/798">Static Payments</a><br />
+<a href="https://github.com/lightningnetwork/lightning-rfc/issues/644">Push Invoices</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-org878b9df" class="outline-3">
+<h3 id="org878b9df"><span class="section-number-3">4.13</span> Future</h3>
+<div class="outline-text-3" id="text-4-13">
+<p>
+<a href="https://blog.theabacus.io/lightning-network-2-0-b878b9bb356e">challenges and opportunites for ln 2</a><br />
+</p>
+
+<p>
+<a href="https://medium.com/@antoine.riard/why-we-may-fail-lightning-ee3692de1a55">Why We Fail Lightning</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-org022caee" class="outline-3">
+<h3 id="org022caee"><span class="section-number-3">4.14</span> revocation_secret_derivation</h3>
+<div class="outline-text-3" id="text-4-14">
+<p>
+TODO<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org108d574" class="outline-3">
+<h3 id="org108d574"><span class="section-number-3">4.15</span> Operations</h3>
+<div class="outline-text-3" id="text-4-15">
+<p>
+The challenges of operating a lightning node deserves its own section. The lightning domain is distinct from on-chain bitcoin due to its own security assumptions, state changes, and end-user experience.<br />
+</p>
+
+<p>
+The most immediate concern is backup maintance. With on-chain bitcoin, one can is familiar with BIP39 mnemonic seed phrases as the ultimate backup for bitcoin. In lightning, the backup file is responsible for channels. Do <b>not</b> take backups of channel state itself. Inaccurate or revoked channel state is can lead to a justice transaction and punishment (loss of all funds in the channel). As a result, backups are tricky in lightning.<br />
+</p>
+
+<p>
+Static channel backups (SCBs) are the best backups for lightning node operators. The backups are called static because they are only obtained once - when the channel is created. Afterwards, the backup is valid until the channel is closed. A SCB allows a node operator to recover funds that are fully settled in a channel. Fully settled funds are bitcoin in commitment outputs, but not HLTCS.<br />
+</p>
+
+<p>
+<a href="https://github.com/lightningnetwork/lnd/blob/master/docs/recovery.md">LND Recovery Documentation</a><br />
+<a href="https://github.com/lightningnetwork/lnd/pull/2313">LND PR#2313</a><br />
+<a href="https://gist.github.com/alexbosworth/2c5e185aedbdac45a03655b709e255a3">Automating channel backups for LND</a><br />
+<a href="https://api.lightning.community/#subscribechannelbackups">Subscribe to channel backups for LND</a><br />
+</p>
+
+<p>
+In addition to backups, channel management is a large area of focus. A node operator wants to be connected to reliable and honest peers. Factors to consider are uptime, balance, and cost of rebalancing. It is convenient to create a list of decent nodes and maintain a relationship with them. For inbound liquidity, swaps can be used or swap services like Lightning Labs Loop. Loop can be used to refill channels. Managing incoming channel requests can be important in order to prevent undesirable peers. For example, setting a threshold for channel capacity can prevent dust limit problems in the future. It is better to have fewer channels that are well capitalized than many channels with poor capcity.<br />
+</p>
+
+<p>
+Watchtowers can be used to monitor private nodes.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org70050be" class="outline-3">
+<h3 id="org70050be"><span class="section-number-3">4.16</span> Limitations</h3>
+</div>
+</div>
+
+<div id="outline-container-org0ff9d97" class="outline-2">
+<h2 id="org0ff9d97"><span class="section-number-2">5</span> Privacy</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<i>Privacy and techniques used in chain-analysis.</i><br />
+<a href="https://en.bitcoin.it/wiki/Privacy">privacy wiki</a><br />
+</p>
+
+<p>
+<a href="https://www.youtube.com/watch?v=peT_9XF2L04">snowball presentation at ldn bitdevs</a><br />
+</p>
+
+<p>
+common input hueristic: “different public keys used as inputs to a transaction as being controlled by the same user”<br />
+<a href="https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf">original paper on blockchain analysis</a><br />
+</p>
+
+<p>
+<a href="https://github.com/6102bitcoin/CoinJoin-Research">coin join wiki</a><br />
+</p>
+
+<p>
+<a href="https://bitcoin.stackexchange.com/questions/101868/is-there-something-about-bitcoin-that-prevents-us-from-implementing-the-same-pri">Bitcoin vs "privacy coins"</a><br />
+</p>
+</div>
+<div id="outline-container-org526ee69" class="outline-3">
+<h3 id="org526ee69"><span class="section-number-3">5.1</span> CoinJoins</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+"So a world where "basically everyone uses CoinJoin" is cool for privacy, but could end up pretty bad for scalability, because these transactions are in addition to the normal payments."  - waxwing<br />
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org7c4b5e9"></a>PayJoin<br />
+<div class="outline-text-5" id="text-5-1-0-1">
+<p>
+<a href="https://joinmarket.me/blog/blog/payjoin/">payjoin by waxwing</a><br />
+PayJoin is coinjoin + payment<br />
+</p>
+
+<p>
+"Let Bob do a CoinJoin with his customer Alice - he'll provide at least one utxo as input, and that/those utxos will be consumed, meaning that in net, he will have no more utxos after the transaction than before, and an obfuscation of ownership of the inputs will have happened without it looking different from an ordinary payment."<br />
+</p>
+
+<p>
+"the main point is with PayJoin - we break the heuristic without flagging to the external observer that the breakage has occurred." &#x2026; unlike coinjoins<br />
+</p>
+
+<p>
+"snowball effect" &#x2026; payjoin/p2ep reduces utxo set and receiver's utxo gets bigger after each payment txn.<br />
+</p>
+
+<p>
+who pays for the fee?<br />
+"every payment to the merchant creates a utxo, and every one of those must be paid for in fees when consumed in some transaction. "<br />
+</p>
+
+<p>
+real world implementation is <a href="https://samouraiwallet.com/stowaway">samourai wallet</a><br />
+</p>
+
+<p>
+<a href="https://gist.github.com/AdamISZ/4551b947789d3216bacfcb7af25e029e">join market</a><br />
+</p>
+</div>
+</li>
+
+<li><a id="org8b2d6a1"></a>Pay To EndPoint (P2EP)<br />
+<div class="outline-text-5" id="text-5-1-0-2">
+<p>
+<a href="https://blockstream.com/2018/08/08/en-improving-privacy-using-pay-to-endpoint/">p2ep blockstream</a><br />
+"The basic premise of P2EP is that both Sender and Receiver contribute inputs to a transaction via interactions coordinated by an endpoint the Receiver presents using a BIP 21 compliant URI."<br />
+</p>
+
+<p>
+Steps:<br />
+</p>
+<ol class="org-ol">
+<li>Receiver generates a BIP 21 formatted URI with an additional parameter that specifies their P2EP endpoint.<br /></li>
+<li>The Sender initiates interaction with the Receiver by confirming that the endpoint provided is available. If not, the transaction is broadcast normally, paying to the Receiver’s BIP 21 regular Bitcoin address. If the Receiver’s endpoint is available, the Sender provides a signed transaction to the Receiver as proof of UTXO ownership.<br /></li>
+<li>The Receiver then sends a number of transactions to the Sender for them to sign. Out of these transactions, only one includes a UTXO that is actually the owned by the Receiver, the rest can be selected from the pool of spendable UTXOs.<br /></li>
+<li>Receiver obtains a signed transaction that corresponds to their UTXO they can sign and broadcast the transaction, which will now contain inputs from both the Sender and the Receiver.<br /></li>
+</ol>
+
+<p>
+Example:<br />
+If Alice wants to pay Bob 1 BTC:<br />
+</p>
+<ol class="org-ol">
+<li>Alice inputs 3 BTC to a transaction.<br /></li>
+<li>Bob inputs 5 BTC to the same transaction.<br /></li>
+<li>Alice receives 2 BTC (as her change).<br /></li>
+<li>Bob receives 6 BTC (as his change, plus the 1 BTC payment from Alice).<br /></li>
+</ol>
+
+<p>
+Disadvantages:<br />
+Receiver and Sender must be online. Interactive.<br />
+More Cons/Pros listed in blogpost.<br />
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org258904e" class="outline-3">
+<h3 id="org258904e"><span class="section-number-3">5.2</span> BIP-79</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+<a href="https://github.com/bitcoin/bips/blob/master/bip-0079.mediawiki">link to bip</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga13183d" class="outline-3">
+<h3 id="orga13183d"><span class="section-number-3">5.3</span> CoinSwaps</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+<a href="https://bitcointalk.org/index.php?topic=321228.0">maxwell on coinswaps</a><br />
+<a href="https://joinmarket.me/blog/blog/coinswaps/">waxwing on coinswaps</a><br />
+</p>
+
+<p>
+"We can use a cryptographic commitment scheme to create atomicity that binds two, independent Bitcoin transactions"<br />
+</p>
+
+<p>
+Make a random x, hash it. Make a p2sh output that is spendable with proving hash(x) is hash in scriptpubkey and pubkey owns output.<br />
+</p>
+
+<p>
+Other party can see x and then solve for their p2sh with their pubkey.<br />
+</p>
+
+<p>
+<a href="https://github.com/AdamISZ/CoinSwapCS/issues/25#issuecomment-311281096">great explainer on cross-chain swaps</a><br />
+</p>
+
+<p>
+problem here is that x is revealed and a connection exists between both parties.<br />
+</p>
+
+<p>
+HTLCs with presigned transactions can help avoid revealing x.<br />
+<a href="https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts">htlcs wiki</a><br />
+</p>
+
+<p>
+"An advantage of Coinswap over Coinjoin is a potentially bigger anonymity set (a lot more could be said)"<br />
+</p>
+
+<p>
+<a href="https://github.com/AdamISZ/CoinSwapCS/blob/master/docs/coinswap_new.pdf">visual guide</a><br />
+</p>
+
+<p>
+<a href="https://github.com/AdamISZ/CoinSwapCS">implementation</a><br />
+</p>
+
+<p>
+<a href="https://gist.github.com/chris-belcher/9144bd57a91c194e332fb5ca371d0964#design-for-a-coinswap-implementation-for-massively-improving-bitcoin-privacy-and-fungibility">new coinswap implementation</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org65ba5fb" class="outline-3">
+<h3 id="org65ba5fb"><span class="section-number-3">5.4</span> TumbleBit</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+<a href="https://joinmarket.me/blog/blog/tumblebit-for-the-tumble-curious/">waxwing on tumblebit</a><br />
+<a href="https://eprint.iacr.org/2016/575">original paper</a><br />
+</p>
+
+<p>
+"A blind signature is allows a central authority to sign data which is hidden from them"<br />
+</p>
+
+<p>
+"Chaumian cash" is a central mint authorised to blind-sign transfers of this cash<br />
+</p>
+
+<p>
+" At a very high level, it's using commitments - I promise to have X data, by passing over a hashed or encrypted version, but I'm not yet giving it to you - and interactivity - two-way messaging, in particular allowing commitments to occur in both directions."<br />
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Blind_signature">blind signatures</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org101be05" class="outline-3">
+<h3 id="org101be05"><span class="section-number-3">5.5</span> SNICKER</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+<a href="https://gist.github.com/AdamISZ/2c13fb5819bd469ca318156e2cf25d79">link to bip</a><br />
+</p>
+
+<p>
+SNICKER (Simple Non-Interactive Coinjoin with Keys for Encryption Reused)<br />
+</p>
+
+<p>
+allowing the creation of a two party coinjoin without any synchronisation or interaction between the participants.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9d27b2d" class="outline-3">
+<h3 id="org9d27b2d"><span class="section-number-3">5.6</span> PaySwap</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+<a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017595.html">dev mailing list</a><br />
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org411db1f" class="outline-3">
+<h3 id="org411db1f"><span class="section-number-3">5.7</span> More Cryptography</h3>
+<div class="outline-text-3" id="text-5-7">
+</div>
+<ol class="org-ol">
+<li><a id="org334cecb"></a>Adaptor Signatures<br />
+<div class="outline-text-5" id="text-5-7-0-1">
+<p>
+ <a href="https://github.com/ElementsProject/scriptless-scripts/blob/master/md/atomic-swap.md">explainer using atomic swaps</a><br />
+"An "adaptor signature" is a not a full, valid signature on a message with your key, but functions as a kind of "promise" that a signature you agree to publish will reveal a secret, or equivalently, allows creation of a valid signature on your key for anyone possessing that secret."<br />
+</p>
+</div>
+</li>
+<li><a id="org45a7bec"></a>Schnorr<br />
+<div class="outline-text-5" id="text-5-7-0-2">
+<p>
+<a href="https://joinmarket.me/blog/blog/liars-cheats-scammers-and-the-schnorr-signature/">waxwing on schnorr sigs</a><br />
+<a href="https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/">scriptless scripts and schnorr</a><br />
+</p>
+
+<p>
+<a href="https://joinmarket.me/blog/blog/multiparty-s6/">multiparty schnorr coinshuffle</a><br />
+</p>
+</div>
+</li>
+<li><a id="org506b4f5"></a>Ring Signatures<br />
+<div class="outline-text-5" id="text-5-7-0-3">
+<p>
+<a href="https://joinmarket.me/blog/blog/ring-sig">waxwing on ring sigs</a><br />
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+
+<div id="outline-container-org8daf05a" class="outline-3">
+<h3 id="org8daf05a"><span class="section-number-3">5.8</span> Chain Analysis</h3>
+<div class="outline-text-3" id="text-5-8">
+<p>
+Peel chains are strings of transactions commonly used for money laundering, in which entities send funds through several wallets in quick succession, usually breaking off small amounts to cash out at each step and sending the majority on to the next wallet.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org939b0e3" class="outline-2">
+<h2 id="org939b0e3"><span class="section-number-2">6</span> Security</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+<i>Security related information.</i><br />
+<a href="https://www.youtube.com/watch?v=UDbl-2gk7n0">everything is broken</a><br />
+</p>
+
+<p>
+<a href="https://blog.bitmex.com/build-systems-security-bitcoin-is-improving/">bitcoin is improving</a><br />
+</p>
+
+<p>
+<a href="https://link.springer.com/chapter/10.1007/978-3-030-00470-5_29">identifying key leakage in bitcoin</a><br />
+</p>
+</div>
+<div id="outline-container-org837629f" class="outline-3">
+<h3 id="org837629f"><span class="section-number-3">6.1</span> Hardware Wallets</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+<a href="https://thecharlatan.github.io/List-Of-Hardware-Wallet-Hacks/">list of hardware wallet hacks</a><br />
+</p>
+
+<p>
+<a href="https://shiftcrypto.ch/blog/remote-multisig-theft-attack-on-the-coldcard-hardware-wallet/">Remote MultiSig Theft Attack on Coldcard</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgc59fe46" class="outline-3">
+<h3 id="orgc59fe46"><span class="section-number-3">6.2</span> Mining</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Selfish mining attack is when a miner withholds a valid and worked block, and begin mining the next block. The miner has an edge over the network if they withhold the block and attempt to work on the next block.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc951ae8" class="outline-2">
+<h2 id="orgc951ae8"><span class="section-number-2">7</span> Bitcoin Core</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+<i>Notes on Bitcoin Core architecture and development.</i><br />
+</p>
+</div>
+<div id="outline-container-orgc6f10c9" class="outline-3">
+<h3 id="orgc6f10c9"><span class="section-number-3">7.1</span> Debugging</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+<a href="https://gist.github.com/fjahr/2cd23ad743a2ddfd4eed957274beca0f">debug wiki</a><br />
+</p>
+
+<p>
+LogPrintf("")<br />
+cat debug.log | grep @@@<br />
+</p>
+
+<p>
+lldb src/bitcoind<br />
+</p>
+
+<p>
+unit tests in src/test/ using BOOST lib test framework.<br />
+</p>
+
+<p>
+Run just one test file: src/test/test_bitcoin &#x2013;log_level=all &#x2013;run_test=getarg_tests<br />
+Run just one test: src/test/test_bitcoin &#x2013;log_level=all &#x2013;run_test=*/the_one_test<br />
+</p>
+
+<p>
+Logging from unit tests&#x2026;<br />
+BOOST_TEST_MESSAGE("@@@");<br />
+</p>
+
+<p>
+functional tests in test/functional using python<br />
+&#x2013;loglevel=debug<br />
+self.log.debug("bar")<br />
+</p>
+
+<p>
+Use &#x2013;tracerpc to see the log outputs from the RPCs of the different nodes running in the functional test in std::out.<br />
+</p>
+
+<p>
+<a href="https://github.com/bitcoin/bitcoin/blob/master/test/README.md">on tests</a><br />
+<a href="https://github.com/bitcoin/bitcoin/blob/master/src/test/README.md">on unit tests</a><br />
+<a href="https://github.com/bitcoin/bitcoin/blob/master/test/functional/README.md">on functional tests</a><br />
+</p>
+
+<p>
+<a href="https://github.com/fanquake/core-review">core review tools</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org77c929a" class="outline-3">
+<h3 id="org77c929a"><span class="section-number-3">7.2</span> Architecture</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+<a href="https://jameso.be/dev++2018/#1">overview of arch</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7ecad06" class="outline-3">
+<h3 id="org7ecad06"><span class="section-number-3">7.3</span> Wallet</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+<a href="https://residency.chaincode.com/presentations/bitcoin/Wallet_Development.pdf">wallet dev presentation by John Newbery</a><br />
+CPubKey - a public key, used to verify signatures. A point on the secp256k1 curve.<br />
+CKey - an encapsulated private key. Used to sign data.<br />
+CKeyID - a key identifier, which is the RIPEMD160(SHA256(pubkey))<br />
+CTxDestination - a txout script template with a specific destination. Stored as a varint variable<br />
+</p>
+<ul class="org-ul">
+<li>CNoDestination: no destination set<br /></li>
+<li>CKeyID: P2PKH<br /></li>
+<li>CScriptID: P2SH<br /></li>
+<li>WitnessV0ScriptHash<br /></li>
+<li>WitnessV0KeyHash<br /></li>
+<li>WitnessUnknown<br /></li>
+</ul>
+
+<p>
+Wallet component is intialized through the WalletInitInterface.<br />
+For builds with wallet, the interface is overrridden in src/wallet/init.cpp<br />
+</p>
+
+<p>
+For &#x2013;disable-wallet, there is DummyWalletInit<br />
+</p>
+
+<p>
+initiation interface methods are called during node initialization<br />
+</p>
+
+<p>
+During loading&#x2026; WalletInit::Construct() adds a client interface to the wallet.<br />
+Node then tells wallet to load/start/stop/etc through the ChainClient interface in src/interfaces/wallet.cpp<br />
+Most methods in that interface call through to functions in src/wallet/load.cpp<br />
+</p>
+
+<p>
+Node &lt;&gt; Wallet Interface<br />
+Node holds a WAlletImpl interface to call functions on the wallet.<br />
+Wallet holds a ChainImpl interface to call functions on the node.<br />
+Notifications handler<br />
+Node notifies the wallet about new transactions and blocks through the CValidationInterface<br />
+</p>
+
+<p>
+Identifying Transactions<br />
+When a transaction is added to the mempool or block is "connected", the wallet is notified through CValidationInterface.<br />
+SyncTransaction() &#x2026; calls AddToWalletIfInvolvingMe()<br />
+IsMine() : takes the scriptPubKey, interprets it as a Destination type, and then checks whether we have the key(s) to watch/spend.<br />
+</p>
+
+<p>
+Generate Keys<br />
+Originally a collection of unrelated private keys.<br />
+Keypools introduced in 2010 by Satoshi. Cache 100 private keys. When a new key is needed, draw it from keypool and refresh.<br />
+HD wallets introduced to Bitcoin Core in 2016. Keypool essentially became an address lock-ahead pool. It is used to implement a 'gap limit'.<br />
+</p>
+
+<p>
+Constructing Transactions<br />
+sendtoaddress<br />
+sendtomany<br />
+{create,fund,sign,send}rawtransaction<br />
+The address is decoded into a CDestination.<br />
+Other parameters can be added for finer control (RBF, fees, etc).<br />
+Wallet creates the transaction in CreateTransaction().<br />
+</p>
+
+<p>
+Coin Selection<br />
+By default, coin selection is automatic.<br />
+Logic starts in CWallet:SelectCoins().<br />
+By preference, we choose coins with more confirmations.<br />
+Manual coin selection (coin control) is possible in CCoinControl.<br />
+</p>
+
+<p>
+Signing Inputs<br />
+Last step in CreateTransaction()<br />
+CWallet is an implementation of SigningProvider interface.<br />
+Signing logic for the SigningProvider is all in src/script/sign.cpp.<br />
+</p>
+
+<p>
+Sending Transactions<br />
+Wallet saves and broadcats the wallet in CommitTransaction()<br />
+submitToMemoryPool(), relayTransaction()<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9b31997" class="outline-2">
+<h2 id="org9b31997"><span class="section-number-2">8</span> History</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+<i>Bitcoin history and misc. trivia items.</i><br />
+</p>
+
+<p>
+<a href="https://queue.acm.org/detail.cfm?id=3136559">Bitcoin's Academic Pedigree</a><br />
+</p>
+
+<p>
+<a href="https://b10c.me/blog/004-the-incomplete-history-of-bitcoin-development/">b10c's Incomplete History of Bitcoin Development</a><br />
+</p>
+
+<p>
+<a href="https://bitcoinmagazine.com/articles/long-road-segwit-how-bitcoins-biggest-protocol-upgrade-became-reality">History of segwit activation</a><br />
+</p>
+
+<p>
+<a href="https://bitcoinmagazine.com/articles/the-battle-for-p2sh-the-untold-story-of-the-first-bitcoin-war">History of P2SH</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-org21ba549" class="outline-2">
+<h2 id="org21ba549"><span class="section-number-2">9</span> Other</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+<i>Notes that do not fit neatly in the other categories.</i><br />
+</p>
+
+<p>
+Merkelized Abstract Syntax Trees are a general concept: when bitcoin developers talk about it, they’re talking about reworking bitcoin scripts into a series of “OR” branches, and instead of the output committing to the whole script, you commit to the head of the tree.  To spend it, you only need to provide the branch of the script you’re using, and the hashes of the other branches.  This can improve privacy, and also shrink the total size of large scripts, particularly if there’s a short, common case, and a long, complex rare case.  Note that each key is 33 bytes and each signature about 72 bytes, and each merkle branch only 32 bytes.<br />
+</p>
+
+<p>
+Sidechains are based on cross-chain consensus validation through SPV and reorganization proofs (an idea that dates back to my P2PTradeX protocol), while drivechains are based on miners being consensus proxies.<br />
+</p>
+
+<p>
+The idea behind JoinMarket is to help create a special kind of bitcoin transaction called a CoinJoin transaction. It's aim is to improve the confidentiality and privacy of bitcoin transactions, as well as improve the capacity of the blockchain therefore reduce costs. The concept has enormous potential, but had not seen much usage despite the multiple projects that implement it. This is probably because the incentive structure was not right.<br />
+A CoinJoin transaction requires other people to take part. The right resources (coins) have to be in the right place, at the right time, in the right quantity. This isn't a software or tech problem, its an economic problem. JoinMarket works by creating a new kind of market that would allocate these resources in the best way.<br />
+</p>
+
+<p>
+Merged mining is the act of using work done on another block chain (the Parent) on one or more Auxiliary block chains and to accept it as valid on its own chain, using Auxiliary Proof-of-Work (AuxPoW), which is the relationship between two block chains for one to trust the other's work as their own. The Parent block chain does not need to be aware of the AuxPoW logic as blocks submitted to it are still valid blocks. <br />
+</p>
+</div>
+
+<div id="outline-container-orge48be77" class="outline-3">
+<h3 id="orge48be77"><span class="section-number-3">9.1</span> Future directions of bitcoin</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+<a href="http://diyhpl.us/wiki/transcripts/2018-01-24-rusty-russell-future-bitcoin-tech-directions/">transcript</a><br />
+Schnorr Signature Scheme<br />
+</p>
+<ul class="org-ul">
+<li>Has security proof, EDCSA does not.<br /></li>
+<li>Has linear property, sum of sigs is sum of keys.<br /></li>
+</ul>
+
+<p>
+SIGHASH_NOINPUT - sign scripts, not txid<br />
+</p>
+
+<p>
+Taproot<br />
+basic idea-&gt; tweak pubkey Q = P+H(P,S)G<br />
+      Q in output<br />
+      key spend sign(Q)<br />
+      script spend: P,S, inputs<br />
+</p>
+
+<p>
+Graftroot<br />
+      if a key exists to represent everyone<br />
+      use delegation instead of merkle tree<br />
+      inherently interactive key setup<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7df5bff" class="outline-3">
+<h3 id="org7df5bff"><span class="section-number-3">9.2</span> Utreexo</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+<a href="http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-08-utxo-accumulators-and-utreexo/">accumulators</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9ce17ca" class="outline-3">
+<h3 id="org9ce17ca"><span class="section-number-3">9.3</span> Graftroof</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+The idea of graftroot is that in every contract there is a superset of people that can spend the money.<br />
+In graftroot, if all the participants agree, then they can just spend. So they can do pubkey aggregation on P<br />
+</p>
+
+<p>
+Taproot: P = c + H(c || script) G<br />
+</p>
+
+<p>
+Graftroot: sigp(script)<br />
+</p>
+
+<p>
+<a href="http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-03-06-taproot-graftroot-etc/">graftroot vs taproot</a><br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org06c88a4" class="outline-3">
+<h3 id="org06c88a4"><span class="section-number-3">9.4</span> AssumeUTXO</h3>
+<div class="outline-text-3" id="text-9-4">
+<p>
+You get a serialized UTXO set snapshot obtained by a peer. This all hinges on a content-based hash of the UTXO set. The peer gets headers chain, ensures base of snapshot in chain, load snapshot. They want to verify the base of the snapshot or the blockhash is in the header chain. We load the snapshot which deserializes a bunch of coins and loads it into memory. Then we fake a blockchain; we have a chainstate but no blocks on disk, so it's almost like a big pruned chain. We then validate that the hash of the UTXO set matches what we expected through some hardcoded assumeutxo. This is a compiled parameter value, it can't be specified at runtime by the user which is very important. At that point, we sync the tip and that will be a similar delta to what assumevalid would be now, maybe more frequent because that would be nice. Crucially, we start background verification using a separate chainstate where we do regular initial block download, bnackfill that up to the base of the snapshot, and we compare that to the hash of the start of the snapshot and we verify that.<br />
+<a href="http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-assumeutxo/">talk on assumeutxo</a><br />
+</p>
+
+<p>
+<a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html">bitcoin-dev email</a><br />
+</p>
+
+<p>
+The initializing node syncs the headers chain from the network, then obtains and loads one of these UTXO snapshots (i.e. a serialized version of the UTXO set bundled with the block header indicating its "base" and some other metadata).<br />
+</p>
+
+<p>
+hardcoded hashs exist in software ..hash(utxoset). similar to assumevalid.<br />
+</p>
+
+<p>
+snapshots can obtained in same manner as block download. Doesn't matter about source cuz of content hash.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org73509e3" class="outline-3">
+<h3 id="org73509e3"><span class="section-number-3">9.5</span> CoinWitness</h3>
+<div class="outline-text-3" id="text-9-5">
+<p>
+Applications of ZK Snarks&#x2026; ". Instead of embedding the rules that govern an output inside the blockchain, you'd instead embed a proof that the rules were followed. Instead of everyone checking that a transaction was permitted to be spent, they'd instead check that you checked." - Maxwell<br />
+</p>
+
+<p>
+<a href="https://bitcointalk.org/index.php?topic=277389.0">coin witness</a><br />
+</p>
+
+<p>
+"You write down a small program which verifies the faithfulness of one of these transcripts for your chosen verifiable off-chain system. The program requires that the last transaction in the transcript is special in that it pays to a Bitcoin scrippubkey/p2sh. The same address must also be provided as a public input to the program. We call this program a "witness" because it will witness the transcript and accept if and only if the transcript is valid.<br />
+</p>
+
+<p>
+You then use the SCIP proof system to convert the program into a verifying key.  When someone wants to create a Bitcoin in an off-chain system, they pay that coin to the hash of that verifying key. People then transact in the off-chain system as they wish. To be confident that the system works faithfully they could repeat the computationally-expensive verifying key generation process to confirm that it corresponds to the transaction rules they are expecting.<br />
+</p>
+
+<p>
+When a user of one of these coins wants to exit the system (to compact its history, to move to another system, to spend plain Bitcoins, or for any other reason), they form a final transaction paying to a Bitcoin address, and run the witness on their transcript under SCIP and produce a proof. They create a Bitcoin transaction redeeming the coin providing the proof in their script (but not the transcript, thats kept private), and the Bitcoin network validates the proof and the transaction output. The public learns nothing about the intermediate transactions, improving fungibility, but unlike other ideas which improve fungibility this idea has the potential to both improve Bitcoin's scalability and securely integrate new and innovative alternative transaction methods and expand Bitcoin's zero-trust nature to more types of transactions."<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdfe44d1" class="outline-3">
+<h3 id="orgdfe44d1"><span class="section-number-3">9.6</span> Covenants</h3>
+<div class="outline-text-3" id="text-9-6">
+<p>
+A covenant in its most general sense and historical sense, is a solemn promise to engage in or refrain from a specified action.<br />
+<a href="https://bitcointalk.org/index.php?topic=278122.0">maxwell on covenants</a><br />
+</p>
+
+<p>
+<a href="https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/covenants/">scaling bitcoin</a><br />
+"Covenants can be recursively enforced down the chain for as long as you need to reinforce them. "<br />
+</p>
+
+<p>
+"Covenants can be used to break fungibility."<br />
+<a href="https://fc16.ifca.ai/bitcoin/papers/MES16.pdf">whitepaper</a><br />
+</p>
+
+<p>
+<a href="https://arxiv.org/abs/2006.16714">Bitcoin Covenants: Three Ways to Control the Future</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-org976016b" class="outline-3">
+<h3 id="org976016b"><span class="section-number-3">9.7</span> Zero Knowledge Contigent Payment</h3>
+<div class="outline-text-3" id="text-9-7">
+<p>
+<a href="https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/">zero knowledge payment</a><br />
+ZKCP<br />
+</p>
+
+<p>
+swapping information for value<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org4ce8ebe" class="outline-3">
+<h3 id="org4ce8ebe"><span class="section-number-3">9.8</span> Discreet Log Contracts</h3>
+<div class="outline-text-3" id="text-9-8">
+<p>
+<a href="https://adiabat.github.io/dlc.pdf">Whitepaper</a><br />
+<a href="https://github.com/discreetlogcontracts/dlcspecs">DLC Spec</a><br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3dc087c" class="outline-2">
+<h2 id="org3dc087c"><span class="section-number-2">10</span> Statistics</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<i>Analysis of the Bitcoin Blockchain.</i><br />
+</p>
+
+<p>
+At this momement, the size of the Bitcoin Blockchain is 300 GB. Dating back to 2009, there is a trove of interesting data on how users have used and continue to use Bitcoin's chain as a settlement layer. Monitoring the chain is useful exercise to detect trends, understand second-order affects from technical changes, and satisfy the data-curious.<br />
+</p>
+
+<p>
+<a href="https://txstats.com/dashboard/db/home-dashboard">TxStats - Latest stats on Bitcoin transaction types</a><br />
+</p>
+
+<p>
+<a href="https://jochen-hoenicke.de/queue/">Johoe's Bitcoin Mempool Statistics</a><br />
+</p>
+
+<p>
+<a href="https://dashboard.bitcoinops.org/d/TDhboADmk/bitcoin-optech-dashboards">Bitcoin Optech Dashboards</a><br />
+</p>
+
+<p>
+<a href="https://dsn.tm.kit.edu/bitcoin/">Bitcoin Monitoring - P2P</a><br />
+</p>
+
+<p>
+<a href="https://utxo-stats.com/">UTXO Stats</a><br />
+</p>
+
+<p>
+<a href="https://mempool.observer/">Mempool Observer</a><br />
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://luke.dashjr.org/programs/bitcoin/files/charts/software.html">https://luke.dashjr.org/programs/bitcoin/files/charts/software.html</a> <br />
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://eprint.iacr.org/2018/068">https://eprint.iacr.org/2018/068</a> <br />
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing#Mathematical_definition">https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing#Mathematical_definition</a> <br />
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Philip Glazman</p>
+<p class="date">Created: 2021-03-01 Mon 21:39</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
