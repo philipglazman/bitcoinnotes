@@ -17,7 +17,11 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 #+END_ABSTRACT
 #+TOC: headlines
 
-* Introduction
+* [[#introduction][Introduction]]
+  :PROPERTIES:
+  :ORDERED:  t
+  :CUSTOM_ID: introduction
+  :END:
   I am hoping these notes serve a useful purpose to the reader in getting started with Bitcoin or refreshing old knowledge. The best way to use this document is to search for topics by heading and sub-heading and follow hyperlinks to the original resources.
 
   The audience of this document is expected to have a technical background, but this soft requirement should not let the reader become reluctant in learning about Bitcoin at a deep level.
@@ -58,7 +62,11 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 
   Of course, a link to the [[file:bitcoin.pdf][whitepaper]].
 
-* Protocol
+* [[#protocol][Protocol]]
+  :PROPERTIES:
+  :ORDERED:  t
+  :CUSTOM_ID: protocol
+  :END:
   /An overview of the Bitcoin protocol and the building blocks of Bitcoin./
   [[https://en.bitcoin.it/wiki/Protocol_documentation][Protocol Documentation]]
 
@@ -281,11 +289,14 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 
     [[https://gist.github.com/sdaftuar/c2a3320c751efb078a7c1fd834036cb0][partition resistance]]
    
-* Wallet Engineering
+* [[#wallet-engineering][Wallet Engineering]]
+  :PROPERTIES:
+  :ORDERED:  t
+  :CUSTOM_ID: wallet-engineering
+  :END:
    /Wallet Design concerns all things related to wallet functionality. This mostly is application level logic./
    
    Modern bitcoin wallets are known as HD wallets or hierarchical deterministic. An HD wallet has a seed and can derive many child keys from a single key. In the early development of bitcoin, wallets would generate a new key for each receive address and then save the key to a file. This unfortunately made backups difficult and error prone. Instead, HD wallets can be backed up using a seed. The familiar 12 or 24 word mnemonic seed phrases are an artifact part of BIP39. 
-
 ** BIP-32
    Wallets derive a number of child keys from a parent key. To prevent relying on only the key, both private and public keys are extended with an extra 32 bytes of entropy. This entropy is called the chain code.
     
@@ -318,7 +329,9 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 ** Covenants
    A covenant is a bitcoin script that restricts the type of transaction that can spend a coin.
 
+   [[https://bitcointalk.org/index.php?topic=278122.0][Greg Maxwell's Bitcoin Talk thread on covenants]]
    [[https://medium.com/blockstream/cat-and-schnorr-tricks-i-faf1b59bd298][OP_CAT and Schnorr - Part 1]]
+   [[https://www.wpsoftware.net/andrew/blog/cat-and-schnorr-tricks-ii.html][OP_CAT and Schnorr - Part 2]]
 ** Vaults
    [[https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html][Vaults without Covenants]]
    [[https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017231.html][more by bishop]]
@@ -459,8 +472,13 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
     2. [[https://blog.keys.casa/shamirs-secret-sharing-security-shortcomings/][Shamir's Secret Sharing Shortcomings]]
 
     [[https://bitcoin.stackexchange.com/questions/102007/is-sharding-a-good-alternative-to-multisig][Sharding vs Multisig?]]
-* Lightning Network
-   /Lightning Network and related off-chain protocols./
+* [[#lightning-network][Lightning Network]]
+  :PROPERTIES:
+  :ORDERED:  t
+  :CUSTOM_ID: lightning-network
+  :END:
+  /Lightning Network and related off-chain protocols./
+
    [[https://github.com/lnbook/lnbook][Master Lightning Book]]
    [[http://dev.lightning.community/overview/][ln overview]]
    [[https://github.com/t-bast/lightning-docs/blob/master/lightning-txs.md][ln zero to hero]]
@@ -802,7 +820,11 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
     
 ** Limitations
     
-* Privacy
+* [[#privacy][Privacy]]
+  :PROPERTIES:
+  :ORDERED:  t
+  :CUSTOM_ID: privacy
+  :END:
    /Privacy and techniques used in chain-analysis./
    [[https://en.bitcoin.it/wiki/Privacy][privacy wiki]]
 
@@ -923,7 +945,11 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 ** Chain Analysis
      Peel chains are strings of transactions commonly used for money laundering, in which entities send funds through several wallets in quick succession, usually breaking off small amounts to cash out at each step and sending the majority on to the next wallet.
 
-* Security
+* [[#security][Security]]
+  :PROPERTIES:
+  :ORDERED:  t
+  :CUSTOM_ID: security
+  :END:
    /Security related information./
    [[https://www.youtube.com/watch?v=UDbl-2gk7n0][everything is broken]]
 
@@ -934,9 +960,14 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
     [[https://thecharlatan.github.io/List-Of-Hardware-Wallet-Hacks/][list of hardware wallet hacks]]
 
     [[https://shiftcrypto.ch/blog/remote-multisig-theft-attack-on-the-coldcard-hardware-wallet/][Remote MultiSig Theft Attack on Coldcard]]
+    [[https://medium.com/blockstream/anti-exfil-stopping-key-exfiltration-589f02facc2e][Key Exfiltration]]
 ** Mining
    Selfish mining attack is when a miner withholds a valid and worked block, and begin mining the next block. The miner has an edge over the network if they withhold the block and attempt to work on the next block.
-* Bitcoin Core 
+* [[#bitcoin-core][Bitcoin Core]]
+  :PROPERTIES:
+  :ORDERED:  t
+  :CUSTOM_ID: bitcoin-core
+  :END:
    /Notes on Bitcoin Core architecture and development./
 ** Debugging
     [[https://gist.github.com/fjahr/2cd23ad743a2ddfd4eed957274beca0f][debug wiki]]
@@ -1032,7 +1063,11 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
     Wallet saves and broadcats the wallet in CommitTransaction()
     submitToMemoryPool(), relayTransaction()
 
-* History
+* [[#history][History]]
+  :PROPERTIES:
+  :ORDERED:  t
+  :CUSTOM_ID: history
+  :END:
    /Bitcoin history and misc. trivia items./
 
    [[https://queue.acm.org/detail.cfm?id=3136559][Bitcoin's Academic Pedigree]]
@@ -1042,7 +1077,11 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
    [[https://bitcoinmagazine.com/articles/long-road-segwit-how-bitcoins-biggest-protocol-upgrade-became-reality][History of segwit activation]]
 
    [[https://bitcoinmagazine.com/articles/the-battle-for-p2sh-the-untold-story-of-the-first-bitcoin-war][History of P2SH]]
-* Other
+* [[#other][Other]]
+  :PROPERTIES:
+  :ORDERED:  t
+  :CUSTOM_ID: other
+  :END:
    /Notes that do not fit neatly in the other categories./
 
    Merkelized Abstract Syntax Trees are a general concept: when bitcoin developers talk about it, they’re talking about reworking bitcoin scripts into a series of “OR” branches, and instead of the output committing to the whole script, you commit to the head of the tree.  To spend it, you only need to provide the branch of the script you’re using, and the hashes of the other branches.  This can improve privacy, and also shrink the total size of large scripts, particularly if there’s a short, common case, and a long, complex rare case.  Note that each key is 33 bytes and each signature about 72 bytes, and each merkle branch only 32 bytes.
@@ -1128,7 +1167,11 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
 ** Discreet Log Contracts
    [[https://adiabat.github.io/dlc.pdf][Whitepaper]]
    [[https://github.com/discreetlogcontracts/dlcspecs][DLC Spec]]
-* Statistics
+* [[#statistics][Statistics]]
+  :PROPERTIES:
+  :ORDERED:  t
+  :CUSTOM_ID: statistics
+  :END:
   /Analysis of the Bitcoin Blockchain./
 
   At this momement, the size of the Bitcoin Blockchain is 300 GB. Dating back to 2009, there is a trove of interesting data on how users have used and continue to use Bitcoin's chain as a settlement layer. Monitoring the chain is useful exercise to detect trends, understand second-order affects from technical changes, and satisfy the data-curious.

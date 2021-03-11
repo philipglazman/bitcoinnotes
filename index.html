@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-01-21 Thu 08:27 -->
+<!-- 2021-03-11 Thu 09:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Bitcoin Notes</title>
@@ -268,130 +268,137 @@ If you find any mistakes, <a href="https://twitter.com/philipglazman">Twitter DM
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org663aeff">1. Introduction</a></li>
-<li><a href="#org2552c78">2. Protocol</a>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#protocol">2. Protocol</a>
 <ul>
-<li><a href="#orge1e7e5b">2.1. Primitives</a>
+<li><a href="#org9f397b1">2.1. Primitives</a>
 <ul>
-<li><a href="#org2de5e8e">2.1.1. Hashes</a></li>
-<li><a href="#org8bafc20">2.1.2. Merkle Trees</a></li>
-<li><a href="#org22805e2">2.1.3. Signatures</a></li>
-<li><a href="#org5525350">2.1.4. Addresses</a></li>
-<li><a href="#org8253201">2.1.5. Transactions</a></li>
-<li><a href="#orgba5478b">2.1.6. Blocks</a></li>
+<li><a href="#orgc5bdb44">2.1.1. Hashes</a></li>
+<li><a href="#orgdeb2018">2.1.2. Merkle Trees</a></li>
+<li><a href="#orga58e132">2.1.3. Signatures</a></li>
+<li><a href="#org0138063">2.1.4. Addresses</a></li>
+<li><a href="#orgbcb3540">2.1.5. Transactions</a></li>
+<li><a href="#org5db6275">2.1.6. Blocks</a></li>
 </ul>
 </li>
-<li><a href="#orgeb75891">2.2. Consensus</a></li>
-<li><a href="#org8e3abce">2.3. Script</a></li>
-<li><a href="#org21654ae">2.4. Segregated Witness</a></li>
-<li><a href="#org906e845">2.5. Taproot/Schnorr</a>
+<li><a href="#org82412cb">2.2. Consensus</a></li>
+<li><a href="#org8bf5354">2.3. Script</a></li>
+<li><a href="#orgf699153">2.4. Segregated Witness</a></li>
+<li><a href="#org5e04f06">2.5. Taproot/Schnorr</a>
 <ul>
-<li><a href="#orgd134946">2.5.1. Introduction</a></li>
-<li><a href="#orgd471030">2.5.2. BIP340</a></li>
-<li><a href="#org3a1fe42">2.5.3. BIP341</a></li>
-<li><a href="#orgc7f42a6">2.5.4. BIP342</a></li>
-<li><a href="#orgcaa3a88">2.5.5. MuSig</a></li>
-<li><a href="#org43da573">2.5.6. SIGHASH_ANYPREVOUT</a></li>
+<li><a href="#orgdddf57b">2.5.1. Introduction</a></li>
+<li><a href="#orgc8e724d">2.5.2. BIP340</a></li>
+<li><a href="#orgb75704a">2.5.3. BIP341</a></li>
+<li><a href="#org0600a1c">2.5.4. BIP342</a></li>
+<li><a href="#orgca141b8">2.5.5. MuSig</a></li>
+<li><a href="#org99a50ee">2.5.6. SIGHASH_ANYPREVOUT</a></li>
 </ul>
 </li>
-<li><a href="#orgab82626">2.6. Mining</a>
+<li><a href="#org144e6ad">2.6. Mining</a>
 <ul>
-<li><a href="#org2c32e34">2.6.1. Introduction</a></li>
-<li><a href="#orgcfd3876">2.6.2. GetBlockTemplate</a></li>
-<li><a href="#orgc980c62">2.6.3. Stratum</a></li>
-<li><a href="#org4d9ca37">2.6.4. StratumV2</a></li>
-<li><a href="#org187f4cf">2.6.5. Betterhash</a></li>
-<li><a href="#org44e7000">2.6.6. Compact Blocks</a></li>
+<li><a href="#orgcb70757">2.6.1. Introduction</a></li>
+<li><a href="#orgd84d103">2.6.2. GetBlockTemplate</a></li>
+<li><a href="#org86fab5d">2.6.3. Stratum</a></li>
+<li><a href="#org2d10cb7">2.6.4. StratumV2</a></li>
+<li><a href="#orgcf49bd2">2.6.5. Betterhash</a></li>
+<li><a href="#org9d7a5e9">2.6.6. Compact Blocks</a></li>
 </ul>
 </li>
-<li><a href="#org45afd5d">2.7. P2P</a></li>
+<li><a href="#org363968c">2.7. P2P</a></li>
 </ul>
 </li>
-<li><a href="#org92a6cf8">3. Wallet Engineering</a>
+<li><a href="#wallet-engineering">3. Wallet Engineering</a>
 <ul>
-<li><a href="#org3d06e40">3.1. BIP-32</a></li>
-<li><a href="#orgd8ced24">3.2. BIP-39</a></li>
-<li><a href="#orge705082">3.3. Wallet Standards</a></li>
-<li><a href="#orgcf8201e">3.4. BIP-43</a></li>
-<li><a href="#org978a533">3.5. BIP-44</a></li>
-<li><a href="#org8f0aa1e">3.6. BIP-45</a></li>
-<li><a href="#org4b62164">3.7. BIP-47</a></li>
-<li><a href="#org8bce590">3.8. SegWit</a></li>
-<li><a href="#orgb98225c">3.9. Vaults</a></li>
-<li><a href="#org46fbd2d">3.10. Batching</a></li>
-<li><a href="#orgfd2241c">3.11. Coin Selection</a></li>
-<li><a href="#org63cfd0c">3.12. Bitcoin Core Wallet</a></li>
-<li><a href="#org768d101">3.13. Descriptors</a></li>
-<li><a href="#orgf569c54">3.14. Script</a></li>
-<li><a href="#org3a309aa">3.15. Fee Estimation</a></li>
-</ul>
-</li>
-<li><a href="#org5cfa526">4. Lightning Network</a>
+<li><a href="#orgf3a7fcf">3.1. BIP-32</a></li>
+<li><a href="#org66788b8">3.2. BIP-39</a></li>
+<li><a href="#orge37be1b">3.3. Wallet Standards</a></li>
+<li><a href="#orgf56af36">3.4. BIP-43</a></li>
+<li><a href="#org86f14a8">3.5. BIP-44</a></li>
+<li><a href="#orgc085078">3.6. BIP-45</a></li>
+<li><a href="#orgfe02244">3.7. BIP-47</a></li>
+<li><a href="#orgca8c717">3.8. SegWit</a></li>
+<li><a href="#org6b2d1e4">3.9. Covenants</a></li>
+<li><a href="#org2e01469">3.10. Vaults</a></li>
+<li><a href="#orgd03c97a">3.11. Batching</a></li>
+<li><a href="#org07047e1">3.12. Coin Selection</a></li>
+<li><a href="#orga52e055">3.13. Bitcoin Core Wallet</a></li>
+<li><a href="#orgf8b3108">3.14. Descriptors</a></li>
+<li><a href="#org10e83b0">3.15. Script</a></li>
+<li><a href="#org7c797b3">3.16. Fee Estimation</a></li>
+<li><a href="#org8246f2b">3.17. Backup and Recovery</a>
 <ul>
-<li><a href="#org4112502">4.1. BOLTs</a></li>
-<li><a href="#org689d67d">4.2. Implementations</a></li>
-<li><a href="#org27f1310">4.3. anecdotal example</a></li>
-<li><a href="#orgc4401e2">4.4. Lightning Conf 2019 Berlin</a></li>
-<li><a href="#orgd6483a0">4.5. Discrete Log Contracts</a></li>
-<li><a href="#orgc36ace2">4.6. Security</a></li>
-<li><a href="#orgc5d6e98">4.7. Routing</a></li>
-<li><a href="#org732628d">4.8. Trampoline Payments</a></li>
-<li><a href="#org1ac63b4">4.9. HTLCs</a></li>
-<li><a href="#org3f57703">4.10. PTLCs</a></li>
-<li><a href="#org6b5476f">4.11. Static/Send/Spontaneous/Push Payments</a></li>
-<li><a href="#org741ec4a">4.12. Future</a></li>
-<li><a href="#org2e2fd38">4.13. revocation_secret_derivation</a></li>
-<li><a href="#orgc8b9438">4.14. Operations</a></li>
-<li><a href="#org614e0bb">4.15. Limitations</a></li>
+<li><a href="#org055894c">3.17.1. BIP39</a></li>
+<li><a href="#org7874ed9">3.17.2. Shamir's Secret Sharing</a></li>
 </ul>
 </li>
-<li><a href="#org675d21f">5. Privacy</a>
+</ul>
+</li>
+<li><a href="#lightning-network">4. Lightning Network</a>
 <ul>
-<li><a href="#org0963528">5.1. CoinJoins</a></li>
-<li><a href="#orgc06fa13">5.2. BIP-79</a></li>
-<li><a href="#org6d90abe">5.3. CoinSwaps</a></li>
-<li><a href="#orgd19cedf">5.4. TumbleBit</a></li>
-<li><a href="#orgd3ba547">5.5. SNICKER</a></li>
-<li><a href="#org0ac2b32">5.6. PaySwap</a></li>
-<li><a href="#orgd888cf5">5.7. More Cryptography</a></li>
-<li><a href="#org4241055">5.8. Chain Analysis</a></li>
+<li><a href="#org53943ad">4.1. BOLTs</a></li>
+<li><a href="#orgd085924">4.2. Implementations</a></li>
+<li><a href="#org8e03240">4.3. anecdotal example</a></li>
+<li><a href="#org78131c2">4.4. Lightning Conf 2019 Berlin</a></li>
+<li><a href="#org8846f78">4.5. Discrete Log Contracts</a></li>
+<li><a href="#org6ccaa8e">4.6. Security</a></li>
+<li><a href="#org363a085">4.7. Privacy</a></li>
+<li><a href="#orgfa95abd">4.8. Routing</a></li>
+<li><a href="#orge74e43c">4.9. Trampoline Payments</a></li>
+<li><a href="#org273e79b">4.10. HTLCs</a></li>
+<li><a href="#org8b6cbfd">4.11. PTLCs</a></li>
+<li><a href="#orga5bdcbe">4.12. Static/Send/Spontaneous/Push Payments</a></li>
+<li><a href="#orgf298fa2">4.13. Future</a></li>
+<li><a href="#org9fcee56">4.14. revocation_secret_derivation</a></li>
+<li><a href="#org8f94023">4.15. Operations</a></li>
+<li><a href="#orgd82e83b">4.16. Limitations</a></li>
 </ul>
 </li>
-<li><a href="#org7d7e705">6. Security</a>
+<li><a href="#privacy">5. Privacy</a>
 <ul>
-<li><a href="#org2373e59">6.1. Hardware Wallets</a></li>
-<li><a href="#org8777b33">6.2. Mining</a></li>
+<li><a href="#org87ca13b">5.1. CoinJoins</a></li>
+<li><a href="#orga1171c3">5.2. BIP-79</a></li>
+<li><a href="#org9f6ec02">5.3. CoinSwaps</a></li>
+<li><a href="#org6ed03e6">5.4. TumbleBit</a></li>
+<li><a href="#orge8e87a0">5.5. SNICKER</a></li>
+<li><a href="#org61b866b">5.6. PaySwap</a></li>
+<li><a href="#orga650f94">5.7. More Cryptography</a></li>
+<li><a href="#org711094b">5.8. Chain Analysis</a></li>
 </ul>
 </li>
-<li><a href="#orgdff6bc5">7. Bitcoin Core</a>
+<li><a href="#security">6. Security</a>
 <ul>
-<li><a href="#org3ca7afa">7.1. Debugging</a></li>
-<li><a href="#orgd0d3279">7.2. Architecture</a></li>
-<li><a href="#org986f779">7.3. Bitcoin PR Review</a></li>
-<li><a href="#org1518682">7.4. Wallet</a></li>
+<li><a href="#orgacdfb68">6.1. Hardware Wallets</a></li>
+<li><a href="#orgc8a2eb7">6.2. Mining</a></li>
 </ul>
 </li>
-<li><a href="#orgaefe024">8. History</a></li>
-<li><a href="#org5c222e8">9. Other</a>
+<li><a href="#bitcoin-core">7. Bitcoin Core</a>
 <ul>
-<li><a href="#orgdb229c3">9.1. Future directions of bitcoin</a></li>
-<li><a href="#org3529ee7">9.2. Utreexo</a></li>
-<li><a href="#orge412fb4">9.3. Graftroof</a></li>
-<li><a href="#org764fb6d">9.4. AssumeUTXO</a></li>
-<li><a href="#org3f8a50e">9.5. CoinWitness</a></li>
-<li><a href="#orge7a21fd">9.6. Covenants</a></li>
-<li><a href="#org9415b4b">9.7. Zero Knowledge Contigent Payment</a></li>
-<li><a href="#org0c8a023">9.8. Discreet Log Contracts</a></li>
+<li><a href="#org234cd0b">7.1. Debugging</a></li>
+<li><a href="#org5a7732c">7.2. Architecture</a></li>
+<li><a href="#org8392010">7.3. Wallet</a></li>
 </ul>
 </li>
-<li><a href="#org155b8b9">10. Statistics</a></li>
+<li><a href="#history">8. History</a></li>
+<li><a href="#other">9. Other</a>
+<ul>
+<li><a href="#orgc17579c">9.1. Future directions of bitcoin</a></li>
+<li><a href="#org18cca40">9.2. Utreexo</a></li>
+<li><a href="#orgdc223fb">9.3. Graftroof</a></li>
+<li><a href="#org435239d">9.4. AssumeUTXO</a></li>
+<li><a href="#org984ba5f">9.5. CoinWitness</a></li>
+<li><a href="#orgfa37597">9.6. Covenants</a></li>
+<li><a href="#org63ea899">9.7. Zero Knowledge Contigent Payment</a></li>
+<li><a href="#org005e99d">9.8. Discreet Log Contracts</a></li>
+</ul>
+</li>
+<li><a href="#statistics">10. Statistics</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org663aeff" class="outline-2">
-<h2 id="org663aeff"><span class="section-number-2">1</span> Introduction</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org5dd8f5b" class="outline-2">
+<h2 id="introduction"><span class="section-number-2">1</span> <a href="#introduction">Introduction</a></h2>
+<div class="outline-text-2" id="text-introduction">
 <p>
 I am hoping these notes serve a useful purpose to the reader in getting started with Bitcoin or refreshing old knowledge. The best way to use this document is to search for topics by heading and sub-heading and follow hyperlinks to the original resources.<br />
 </p>
@@ -474,9 +481,9 @@ Of course, a link to the <a href="bitcoin.pdf">whitepaper</a>.<br />
 </div>
 </div>
 
-<div id="outline-container-org2552c78" class="outline-2">
-<h2 id="org2552c78"><span class="section-number-2">2</span> Protocol</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org2e94be1" class="outline-2">
+<h2 id="protocol"><span class="section-number-2">2</span> <a href="#protocol">Protocol</a></h2>
+<div class="outline-text-2" id="text-protocol">
 <p>
 <i>An overview of the Bitcoin protocol and the building blocks of Bitcoin.</i><br />
 <a href="https://en.bitcoin.it/wiki/Protocol_documentation">Protocol Documentation</a><br />
@@ -491,12 +498,12 @@ The reference client, Bitcoin Core, was originally written by Satoshi, but has s
 </p>
 </div>
 
-<div id="outline-container-orge1e7e5b" class="outline-3">
-<h3 id="orge1e7e5b"><span class="section-number-3">2.1</span> Primitives</h3>
+<div id="outline-container-org9f397b1" class="outline-3">
+<h3 id="org9f397b1"><span class="section-number-3">2.1</span> Primitives</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org2de5e8e" class="outline-4">
-<h4 id="org2de5e8e"><span class="section-number-4">2.1.1</span> Hashes</h4>
+<div id="outline-container-orgc5bdb44" class="outline-4">
+<h4 id="orgc5bdb44"><span class="section-number-4">2.1.1</span> Hashes</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 Hashes are one-way functions that accept an input and return a fixed-length value. For the hash function to have integrity, the value returned must be unique. As a result, a strong hash function will make it unlikely that two different inptus have the same output. This is called a hash collision.<br />
@@ -507,8 +514,8 @@ In Bitcoin, SHA-256 and RIPEMD-160 are used. It is common to see double hashing 
 </p>
 </div>
 </div>
-<div id="outline-container-org8bafc20" class="outline-4">
-<h4 id="org8bafc20"><span class="section-number-4">2.1.2</span> Merkle Trees</h4>
+<div id="outline-container-orgdeb2018" class="outline-4">
+<h4 id="orgdeb2018"><span class="section-number-4">2.1.2</span> Merkle Trees</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 A merkle tree is a binary tree of hashes. It is a container that hashes items and concatenates the hashes in such a way that a final merkle root of the tree is a hash. This merkle root represents the the hashes and concatenation of all the items in the tree.<br />
@@ -519,8 +526,8 @@ In Bitcoin, merkle trees are used in a variety of ways. Most notably, a block wi
 </p>
 </div>
 </div>
-<div id="outline-container-org22805e2" class="outline-4">
-<h4 id="org22805e2"><span class="section-number-4">2.1.3</span> Signatures</h4>
+<div id="outline-container-orga58e132" class="outline-4">
+<h4 id="orga58e132"><span class="section-number-4">2.1.3</span> Signatures</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <p>
 Digital signatures are used by a verifier to prove that a signature belongs to a public key. Signatures can only be created using a private key corresponding to the public key.<br />
@@ -531,23 +538,23 @@ Bitcoin uses ECDSA, or Ellipitic Curve Digital Signature Algorithm, to sign for 
 </p>
 </div>
 </div>
-<div id="outline-container-org5525350" class="outline-4">
-<h4 id="org5525350"><span class="section-number-4">2.1.4</span> Addresses</h4>
+<div id="outline-container-org0138063" class="outline-4">
+<h4 id="org0138063"><span class="section-number-4">2.1.4</span> Addresses</h4>
 <div class="outline-text-4" id="text-2-1-4">
 <p>
 Bitcoin addresses are a human readable format to represent a Bitcoin script. Addresses can be shared to others to receive payment. They should be treated as single-use tokens.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org8253201" class="outline-4">
-<h4 id="org8253201"><span class="section-number-4">2.1.5</span> Transactions</h4>
+<div id="outline-container-orgbcb3540" class="outline-4">
+<h4 id="orgbcb3540"><span class="section-number-4">2.1.5</span> Transactions</h4>
 </div>
-<div id="outline-container-orgba5478b" class="outline-4">
-<h4 id="orgba5478b"><span class="section-number-4">2.1.6</span> Blocks</h4>
+<div id="outline-container-org5db6275" class="outline-4">
+<h4 id="org5db6275"><span class="section-number-4">2.1.6</span> Blocks</h4>
 </div>
 </div>
-<div id="outline-container-orgeb75891" class="outline-3">
-<h3 id="orgeb75891"><span class="section-number-3">2.2</span> Consensus</h3>
+<div id="outline-container-org82412cb" class="outline-3">
+<h3 id="org82412cb"><span class="section-number-3">2.2</span> Consensus</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 The consensus of Bitcoin is a large topic and part of extensive research.<br />
@@ -562,22 +569,22 @@ There is also social consensus, the ideas and narratives that people choose to a
 </p>
 </div>
 </div>
-<div id="outline-container-org8e3abce" class="outline-3">
-<h3 id="org8e3abce"><span class="section-number-3">2.3</span> Script</h3>
+<div id="outline-container-org8bf5354" class="outline-3">
+<h3 id="org8bf5354"><span class="section-number-3">2.3</span> Script</h3>
 </div>
-<div id="outline-container-org21654ae" class="outline-3">
-<h3 id="org21654ae"><span class="section-number-3">2.4</span> Segregated Witness</h3>
+<div id="outline-container-orgf699153" class="outline-3">
+<h3 id="orgf699153"><span class="section-number-3">2.4</span> Segregated Witness</h3>
 </div>
-<div id="outline-container-org906e845" class="outline-3">
-<h3 id="org906e845"><span class="section-number-3">2.5</span> Taproot/Schnorr</h3>
+<div id="outline-container-org5e04f06" class="outline-3">
+<h3 id="org5e04f06"><span class="section-number-3">2.5</span> Taproot/Schnorr</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 <i>Notes on BIP340-342. All things concerning Schnorr, Taproot, and Tapscript.</i><br />
 </p>
 </div>
 
-<div id="outline-container-orgd134946" class="outline-4">
-<h4 id="orgd134946"><span class="section-number-4">2.5.1</span> Introduction</h4>
+<div id="outline-container-orgdddf57b" class="outline-4">
+<h4 id="orgdddf57b"><span class="section-number-4">2.5.1</span> Introduction</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <p>
 <a href="https://prezi.com/view/AlXd19INd3isgt3SvW8g/">Slides from Sipa talk at SF Bitcoin Devs.</a><br />
@@ -600,8 +607,8 @@ Notation to be used throughout (from BIP):<br />
 </div>
 </div>
 
-<div id="outline-container-orgd471030" class="outline-4">
-<h4 id="orgd471030"><span class="section-number-4">2.5.2</span> BIP340</h4>
+<div id="outline-container-orgc8e724d" class="outline-4">
+<h4 id="orgc8e724d"><span class="section-number-4">2.5.2</span> BIP340</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <p>
 <a href="https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki">Link to BIP340</a><br />
@@ -676,8 +683,8 @@ If a randomly generated nonce k does not yield a valid nonce point R, then the s
 </div>
 </div>
 
-<div id="outline-container-org3a1fe42" class="outline-4">
-<h4 id="org3a1fe42"><span class="section-number-4">2.5.3</span> BIP341</h4>
+<div id="outline-container-orgb75704a" class="outline-4">
+<h4 id="orgb75704a"><span class="section-number-4">2.5.3</span> BIP341</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <p>
 <a href="https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki">Link to BIP341</a><br />
@@ -758,8 +765,8 @@ where P is public key and m is merkle root of a MAST.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgc7f42a6" class="outline-4">
-<h4 id="orgc7f42a6"><span class="section-number-4">2.5.4</span> BIP342</h4>
+<div id="outline-container-org0600a1c" class="outline-4">
+<h4 id="org0600a1c"><span class="section-number-4">2.5.4</span> BIP342</h4>
 <div class="outline-text-4" id="text-2-5-4">
 <p>
 <a href="https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki">Link to BIP342</a><br />
@@ -796,8 +803,8 @@ Tapscript can be upgraded through soft forks by defining unknown key types. For 
 </div>
 </div>
 
-<div id="outline-container-orgcaa3a88" class="outline-4">
-<h4 id="orgcaa3a88"><span class="section-number-4">2.5.5</span> MuSig</h4>
+<div id="outline-container-orgca141b8" class="outline-4">
+<h4 id="orgca141b8"><span class="section-number-4">2.5.5</span> MuSig</h4>
 <div class="outline-text-4" id="text-2-5-5">
 <p>
 Schnorr multi-signature scheme.<br />
@@ -823,7 +830,7 @@ Blockstream announcing <a href="https://blockstream.com/2019/02/18/en-musig-a-ne
 </div>
 
 <ol class="org-ol">
-<li><a id="org81d5012"></a>MuSig2<br />
+<li><a id="orgb9cf733"></a>MuSig2<br />
 <div class="outline-text-5" id="text-2-5-5-1">
 <p>
 Exchanging nonce commitments is the subject of the <a href="https://medium.com/blockstream/musig-dn-schnorr-multisignatures-with-verifiably-deterministic-nonces-27424b5df9d6">MuSig-DN paper</a>.<br />
@@ -854,8 +861,8 @@ Therefore, there are two variants: interactive setup and non-interactive setup.<
 </li>
 </ol>
 </div>
-<div id="outline-container-org43da573" class="outline-4">
-<h4 id="org43da573"><span class="section-number-4">2.5.6</span> SIGHASH_ANYPREVOUT</h4>
+<div id="outline-container-org99a50ee" class="outline-4">
+<h4 id="org99a50ee"><span class="section-number-4">2.5.6</span> SIGHASH_ANYPREVOUT</h4>
 <div class="outline-text-4" id="text-2-5-6">
 <p>
 <a href="https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-anyprevout.mediawiki">proposed bip</a><br />
@@ -872,16 +879,16 @@ Allows dynamic rebinding of a signed transaction to another previous output of t
 </div>
 </div>
 
-<div id="outline-container-orgab82626" class="outline-3">
-<h3 id="orgab82626"><span class="section-number-3">2.6</span> Mining</h3>
+<div id="outline-container-org144e6ad" class="outline-3">
+<h3 id="org144e6ad"><span class="section-number-3">2.6</span> Mining</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 <i>All things Bitcoin mining.</i><br />
 </p>
 </div>
 
-<div id="outline-container-org2c32e34" class="outline-4">
-<h4 id="org2c32e34"><span class="section-number-4">2.6.1</span> Introduction</h4>
+<div id="outline-container-orgcb70757" class="outline-4">
+<h4 id="orgcb70757"><span class="section-number-4">2.6.1</span> Introduction</h4>
 <div class="outline-text-4" id="text-2-6-1">
 <p>
 <a href="https://stephanlivera.com/episode/128/">Excellent podcast on mining</a><br />
@@ -898,16 +905,16 @@ cgminer is open source miner for ASIC/FPGA miner. Lots of companies forked off t
 </div>
 </div>
 
-<div id="outline-container-orgcfd3876" class="outline-4">
-<h4 id="orgcfd3876"><span class="section-number-4">2.6.2</span> GetBlockTemplate</h4>
+<div id="outline-container-orgd84d103" class="outline-4">
+<h4 id="orgd84d103"><span class="section-number-4">2.6.2</span> GetBlockTemplate</h4>
 <div class="outline-text-4" id="text-2-6-2">
 <p>
 Getblocktemplate: bitcoin core &lt;-&gt; pool server<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgc980c62" class="outline-4">
-<h4 id="orgc980c62"><span class="section-number-4">2.6.3</span> Stratum</h4>
+<div id="outline-container-org86fab5d" class="outline-4">
+<h4 id="org86fab5d"><span class="section-number-4">2.6.3</span> Stratum</h4>
 <div class="outline-text-4" id="text-2-6-3">
 <p>
 Stratum: pool server &lt;-&gt; asic controller<br />
@@ -916,11 +923,16 @@ The design of the Stratum protocol requires pool operators to build and distribu
 </p>
 </div>
 </div>
-<div id="outline-container-org4d9ca37" class="outline-4">
-<h4 id="org4d9ca37"><span class="section-number-4">2.6.4</span> StratumV2</h4>
+<div id="outline-container-org2d10cb7" class="outline-4">
+<h4 id="org2d10cb7"><span class="section-number-4">2.6.4</span> StratumV2</h4>
+<div class="outline-text-4" id="text-2-6-4">
+<p>
+<a href="https://insights.deribit.com/market-research/stratum-v2-migration-and-decentralization/">StratumV2 Migration</a><br />
+</p>
 </div>
-<div id="outline-container-org187f4cf" class="outline-4">
-<h4 id="org187f4cf"><span class="section-number-4">2.6.5</span> Betterhash</h4>
+</div>
+<div id="outline-container-orgcf49bd2" class="outline-4">
+<h4 id="orgcf49bd2"><span class="section-number-4">2.6.5</span> Betterhash</h4>
 <div class="outline-text-4" id="text-2-6-5">
 <ul class="org-ul">
 <li>Work protocol: bitcoin<br /></li>
@@ -934,8 +946,8 @@ The design of the Stratum protocol requires pool operators to build and distribu
 </p>
 </div>
 </div>
-<div id="outline-container-org44e7000" class="outline-4">
-<h4 id="org44e7000"><span class="section-number-4">2.6.6</span> Compact Blocks</h4>
+<div id="outline-container-org9d7a5e9" class="outline-4">
+<h4 id="org9d7a5e9"><span class="section-number-4">2.6.6</span> Compact Blocks</h4>
 <div class="outline-text-4" id="text-2-6-6">
 <p>
 <a href="https://bitcoincore.org/en/2016/06/07/compact-blocks-faq/">faq for compact blocks</a><br />
@@ -949,8 +961,8 @@ Using simple techniques it is possible to reduce the amount of bandwidth necessa
 </div>
 </div>
 
-<div id="outline-container-org45afd5d" class="outline-3">
-<h3 id="org45afd5d"><span class="section-number-3">2.7</span> P2P</h3>
+<div id="outline-container-org363968c" class="outline-3">
+<h3 id="org363968c"><span class="section-number-3">2.7</span> P2P</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 <i>P2P layer of Bitcoin.</i><br />
@@ -964,9 +976,9 @@ For the Bitcoin network to remain in consensus, the network of nodes must not be
 </div>
 </div>
 
-<div id="outline-container-org92a6cf8" class="outline-2">
-<h2 id="org92a6cf8"><span class="section-number-2">3</span> Wallet Engineering</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgd55cda7" class="outline-2">
+<h2 id="wallet-engineering"><span class="section-number-2">3</span> <a href="#wallet-engineering">Wallet Engineering</a></h2>
+<div class="outline-text-2" id="text-wallet-engineering">
 <p>
 <i>Wallet Design concerns all things related to wallet functionality. This mostly is application level logic.</i><br />
 </p>
@@ -975,9 +987,8 @@ For the Bitcoin network to remain in consensus, the network of nodes must not be
 Modern bitcoin wallets are known as HD wallets or hierarchical deterministic. An HD wallet has a seed and can derive many child keys from a single key. In the early development of bitcoin, wallets would generate a new key for each receive address and then save the key to a file. This unfortunately made backups difficult and error prone. Instead, HD wallets can be backed up using a seed. The familiar 12 or 24 word mnemonic seed phrases are an artifact part of BIP39.<br />
 </p>
 </div>
-
-<div id="outline-container-org3d06e40" class="outline-3">
-<h3 id="org3d06e40"><span class="section-number-3">3.1</span> BIP-32</h3>
+<div id="outline-container-orgf3a7fcf" class="outline-3">
+<h3 id="orgf3a7fcf"><span class="section-number-3">3.1</span> BIP-32</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Wallets derive a number of child keys from a parent key. To prevent relying on only the key, both private and public keys are extended with an extra 32 bytes of entropy. This entropy is called the chain code.<br />
@@ -1003,46 +1014,46 @@ A derivation path is the descriptor for identifying the path along the BIP32 tre
 </p>
 </div>
 </div>
-<div id="outline-container-orgd8ced24" class="outline-3">
-<h3 id="orgd8ced24"><span class="section-number-3">3.2</span> BIP-39</h3>
+<div id="outline-container-org66788b8" class="outline-3">
+<h3 id="org66788b8"><span class="section-number-3">3.2</span> BIP-39</h3>
 </div>
-<div id="outline-container-orge705082" class="outline-3">
-<h3 id="orge705082"><span class="section-number-3">3.3</span> Wallet Standards</h3>
+<div id="outline-container-orge37be1b" class="outline-3">
+<h3 id="orge37be1b"><span class="section-number-3">3.3</span> Wallet Standards</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 Due to the flexibility of BIP32 trees, standards were created for wallet operators. Standards for the BIP32 tree allows for saner backups and easier portability of seeds between wallet services.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgcf8201e" class="outline-3">
-<h3 id="orgcf8201e"><span class="section-number-3">3.4</span> BIP-43</h3>
+<div id="outline-container-orgf56af36" class="outline-3">
+<h3 id="orgf56af36"><span class="section-number-3">3.4</span> BIP-43</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 The first of these standards is <a href="https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki">BIP-43</a> which defines the first level of the BIP32 tree as the purpose field.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org978a533" class="outline-3">
-<h3 id="org978a533"><span class="section-number-3">3.5</span> BIP-44</h3>
+<div id="outline-container-org86f14a8" class="outline-3">
+<h3 id="org86f14a8"><span class="section-number-3">3.5</span> BIP-44</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP-44</a> expands on BIP-43 by specifying the coin and account levels of the BIP32 tree. In addition, the derivation path can describe whether the wallet should derive a change (or internal) address or receive (or external) address.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org8f0aa1e" class="outline-3">
-<h3 id="org8f0aa1e"><span class="section-number-3">3.6</span> BIP-45</h3>
+<div id="outline-container-orgc085078" class="outline-3">
+<h3 id="orgc085078"><span class="section-number-3">3.6</span> BIP-45</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 <a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">BIP-45</a><br />
 </p>
 </div>
 </div>
-<div id="outline-container-org4b62164" class="outline-3">
-<h3 id="org4b62164"><span class="section-number-3">3.7</span> BIP-47</h3>
+<div id="outline-container-orgfe02244" class="outline-3">
+<h3 id="orgfe02244"><span class="section-number-3">3.7</span> BIP-47</h3>
 </div>
-<div id="outline-container-org8bce590" class="outline-3">
-<h3 id="org8bce590"><span class="section-number-3">3.8</span> SegWit</h3>
+<div id="outline-container-orgca8c717" class="outline-3">
+<h3 id="orgca8c717"><span class="section-number-3">3.8</span> SegWit</h3>
 <div class="outline-text-3" id="text-3-8">
 <p>
 Since SegWit, couple of changes to wallets were needed:<br />
@@ -1054,11 +1065,25 @@ One of the immediate problems that SegWit solves is mitigating transaction malle
 </p>
 </div>
 </div>
-<div id="outline-container-orgb98225c" class="outline-3">
-<h3 id="orgb98225c"><span class="section-number-3">3.9</span> Vaults</h3>
+<div id="outline-container-org6b2d1e4" class="outline-3">
+<h3 id="org6b2d1e4"><span class="section-number-3">3.9</span> Covenants</h3>
 <div class="outline-text-3" id="text-3-9">
 <p>
-<a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html">vaults w/o covenants</a><br />
+A covenant is a bitcoin script that restricts the type of transaction that can spend a coin.<br />
+</p>
+
+<p>
+<a href="https://bitcointalk.org/index.php?topic=278122.0">Greg Maxwell's Bitcoin Talk thread on covenants</a><br />
+<a href="https://medium.com/blockstream/cat-and-schnorr-tricks-i-faf1b59bd298">OP_CAT and Schnorr - Part 1</a><br />
+<a href="https://www.wpsoftware.net/andrew/blog/cat-and-schnorr-tricks-ii.html">OP_CAT and Schnorr - Part 2</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-org2e01469" class="outline-3">
+<h3 id="org2e01469"><span class="section-number-3">3.10</span> Vaults</h3>
+<div class="outline-text-3" id="text-3-10">
+<p>
+<a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html">Vaults without Covenants</a><br />
 <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017231.html">more by bishop</a><br />
 </p>
 
@@ -1081,9 +1106,9 @@ There's rust implementation of a Proof-of-Reserves Client. <a href="https://gith
 </div>
 </div>
 
-<div id="outline-container-org46fbd2d" class="outline-3">
-<h3 id="org46fbd2d"><span class="section-number-3">3.10</span> Batching</h3>
-<div class="outline-text-3" id="text-3-10">
+<div id="outline-container-orgd03c97a" class="outline-3">
+<h3 id="orgd03c97a"><span class="section-number-3">3.11</span> Batching</h3>
+<div class="outline-text-3" id="text-3-11">
 <p>
 Payment batching, more <a href="https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md">here</a>, is including multiple payments inside a single transaction.<br />
 </p>
@@ -1098,9 +1123,9 @@ Goal of batching is to lower vbytes per payment. Marginal improvmenent  after 1 
 </p>
 </div>
 </div>
-<div id="outline-container-orgfd2241c" class="outline-3">
-<h3 id="orgfd2241c"><span class="section-number-3">3.11</span> Coin Selection</h3>
-<div class="outline-text-3" id="text-3-11">
+<div id="outline-container-org07047e1" class="outline-3">
+<h3 id="org07047e1"><span class="section-number-3">3.12</span> Coin Selection</h3>
+<div class="outline-text-3" id="text-3-12">
 <p>
 <a href="https://medium.com/@lopp/the-challenges-of-optimizing-unspent-output-selection-a3e5d05d13ef">Challenges of coin selection by lopp</a><br />
 <a href="https://iohk.io/en/blog/posts/2018/07/03/self-organisation-in-coin-selection/">iohk on coinsel</a><br />
@@ -1133,20 +1158,25 @@ A transaction output is labeled as dust when its value is similar to the cost of
 </div>
 </div>
 
-<div id="outline-container-org63cfd0c" class="outline-3">
-<h3 id="org63cfd0c"><span class="section-number-3">3.12</span> Bitcoin Core Wallet</h3>
-<div class="outline-text-3" id="text-3-12">
+<div id="outline-container-orga52e055" class="outline-3">
+<h3 id="orga52e055"><span class="section-number-3">3.13</span> Bitcoin Core Wallet</h3>
+<div class="outline-text-3" id="text-3-13">
 <p>
 Bitcoin Core's wallet is always evolving. Some changes to the Bitcoin Core wallet:<br />
 <a href="https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Wallet-Class-Structure-Changes">Wallet Class Structure Changes</a><br />
 <a href="https://gist.github.com/sipa/125cfa1615946d0c3f3eec2ad7f250a2">Sipa describing wallet changes</a><br />
 <a href="http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-05-wallet-architecture/">Wallet Architecture transcripts</a><br />
 </p>
+
+<p>
+<a href="https://achow101.com/2020/10/0.21-wallets">What's Coming to Bitcoin Core Wallet in 2021</a><br />
+<a href="https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes.md#experimental-descriptor-wallets">Descriptor Wallets MD</a><br />
+</p>
 </div>
 </div>
-<div id="outline-container-org768d101" class="outline-3">
-<h3 id="org768d101"><span class="section-number-3">3.13</span> Descriptors</h3>
-<div class="outline-text-3" id="text-3-13">
+<div id="outline-container-orgf8b3108" class="outline-3">
+<h3 id="orgf8b3108"><span class="section-number-3">3.14</span> Descriptors</h3>
+<div class="outline-text-3" id="text-3-14">
 <p>
 <a href="https://github.com/bitcoin/bitcoin/issues/17190">Bitcoin Issue 17190</a><br />
 <a href="https://github.com/spesmilo/electrum/issues/5715">Electrum on Descriptors</a><br />
@@ -1165,9 +1195,9 @@ Implementations&#x2026;<br />
 </div>
 </div>
 
-<div id="outline-container-orgf569c54" class="outline-3">
-<h3 id="orgf569c54"><span class="section-number-3">3.14</span> Script</h3>
-<div class="outline-text-3" id="text-3-14">
+<div id="outline-container-org10e83b0" class="outline-3">
+<h3 id="org10e83b0"><span class="section-number-3">3.15</span> Script</h3>
+<div class="outline-text-3" id="text-3-15">
 <p>
 (<a href="https://en.bitcoin.it/wiki/Contract">https://en.bitcoin.it/wiki/Contract</a>)<br />
 Each transaction input has a sequence number. In a normal transaction that just moves value around, the sequence numbers are all UINT_MAX and the lock time is zero. If the lock time has not yet been reached, but all the sequence numbers are UINT_MAX, the transaction is also considered final.<br />
@@ -1212,8 +1242,8 @@ old oracle services&#x2026;<br />
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="orga2460e6"></a>Scriptless Scripts<br />
-<div class="outline-text-5" id="text-3-14-0-1">
+<li><a id="org74a29cd"></a>Scriptless Scripts<br />
+<div class="outline-text-5" id="text-3-15-0-1">
 <p>
 <a href="https://suredbits.com/schnorr-applications-scriptless-scripts/">SuredBits' blog on scriptless scripts</a><br />
 </p>
@@ -1225,9 +1255,9 @@ old oracle services&#x2026;<br />
 </li>
 </ol>
 </div>
-<div id="outline-container-org3a309aa" class="outline-3">
-<h3 id="org3a309aa"><span class="section-number-3">3.15</span> Fee Estimation</h3>
-<div class="outline-text-3" id="text-3-15">
+<div id="outline-container-org7c797b3" class="outline-3">
+<h3 id="org7c797b3"><span class="section-number-3">3.16</span> Fee Estimation</h3>
+<div class="outline-text-3" id="text-3-16">
 <p>
 <a href="https://blog.bitgo.com/the-challenges-of-bitcoin-transaction-fee-estimation-e47a64a61c72">lopp on fee estimation</a><br />
 </p>
@@ -1246,8 +1276,8 @@ Supply (blocks) and demand (txns) are unpredicable.<br />
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org0a7160a"></a>Outline of Newbery's post<br />
-<div class="outline-text-5" id="text-3-15-0-1">
+<li><a id="orgd4dcb5a"></a>Outline of Newbery's post<br />
+<div class="outline-text-5" id="text-3-16-0-1">
 <p>
 At broadcast, the transaction is not going to get into the next block. But rather likely the next block in 10 minutes. Block production follows Poisson distribution.<br />
 </p>
@@ -1262,8 +1292,8 @@ Looking only at mempool does not consider lucky block runs.<br />
 </div>
 </li>
 
-<li><a id="org00efd99"></a>Bitcoin Core's Fee Estimation<br />
-<div class="outline-text-5" id="text-3-15-0-2">
+<li><a id="org516cda7"></a>Bitcoin Core's Fee Estimation<br />
+<div class="outline-text-5" id="text-3-16-0-2">
 <p>
 <a href="https://gist.github.com/morcos/d3637f015bc4e607e1fd10d8351e9f41">High level desc of Bitcoin Core's fee estimation algorithm</a><br />
 <a href="https://github.com/bitcoin/bitcoin/blob/master/src/policy/fees.h">code</a><br />
@@ -1285,8 +1315,8 @@ For any target-bucket pair, Bitcoin Core can find the probability that a transac
 </p>
 </div>
 </li>
-<li><a id="orgfef18da"></a>Mempool File Format<br />
-<div class="outline-text-5" id="text-3-15-0-3">
+<li><a id="orgd9809b9"></a>Mempool File Format<br />
+<div class="outline-text-5" id="text-3-16-0-3">
 <p>
 Mempool File Format can be useful for fee estimation..<br />
 <a href="https://bc-2.jp/bb2019-mempool-analysis-simulation.pdf">talk by kalle</a><br />
@@ -1298,14 +1328,65 @@ Time series of a txn lifecyle until block inclusion in a small file format.<br /
 </p>
 </div>
 </li>
+<li><a id="orgadddd57"></a>Light Clients<br />
+<div class="outline-text-5" id="text-3-16-0-4">
+<p>
+<a href="https://bitcoindevkit.org/blog/2021/01/fee-estimation-for-light-clients-part-1/">Using AI for Fee Estimation</a><br />
+</p>
+</div>
+</li>
 </ol>
 </div>
+<div id="outline-container-org8246f2b" class="outline-3">
+<h3 id="org8246f2b"><span class="section-number-3">3.17</span> Backup and Recovery</h3>
+<div class="outline-text-3" id="text-3-17">
 </div>
-<div id="outline-container-org5cfa526" class="outline-2">
-<h2 id="org5cfa526"><span class="section-number-2">4</span> Lightning Network</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org055894c" class="outline-4">
+<h4 id="org055894c"><span class="section-number-4">3.17.1</span> BIP39</h4>
+<div class="outline-text-4" id="text-3-17-1">
+<p>
+US NIST recommends a salt length of 128 bits. Passphrase entropy in bits is log2(# of combinations).<br />
+</p>
+
+<p>
+BIP39 Wordlist is 2048 word dictionary. So log2(2048^s) = 22 bits of entropy.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org7874ed9" class="outline-4">
+<h4 id="org7874ed9"><span class="section-number-4">3.17.2</span> Shamir's Secret Sharing</h4>
+<div class="outline-text-4" id="text-3-17-2">
+<p>
+<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>Shamir's Secret Sharing (SSS) is an algorithm to divide a secret into parts that can be recovered by combining a minimum number of parts.<br />
+</p>
+
+<p>
+Each part is called a share. The threshold is the number of shares that is needed to recover the original secret. There can be more shares than the threshold.<br />
+</p>
+
+<p>
+There are several criticisms of SSS.<br />
+</p>
+<ol class="org-ol">
+<li><a href="https://en.bitcoin.it/wiki/Shamir_Secret_Snakeoil">Shamir Secret Snakeoil</a><br /></li>
+<li><a href="https://blog.keys.casa/shamirs-secret-sharing-security-shortcomings/">Shamir's Secret Sharing Shortcomings</a><br /></li>
+</ol>
+
+<p>
+<a href="https://bitcoin.stackexchange.com/questions/102007/is-sharding-a-good-alternative-to-multisig">Sharding vs Multisig?</a><br />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc4bf7f9" class="outline-2">
+<h2 id="lightning-network"><span class="section-number-2">4</span> <a href="#lightning-network">Lightning Network</a></h2>
+<div class="outline-text-2" id="text-lightning-network">
 <p>
 <i>Lightning Network and related off-chain protocols.</i><br />
+</p>
+
+<p>
 <a href="https://github.com/lnbook/lnbook">Master Lightning Book</a><br />
 <a href="http://dev.lightning.community/overview/">ln overview</a><br />
 <a href="https://github.com/t-bast/lightning-docs/blob/master/lightning-txs.md">ln zero to hero</a><br />
@@ -1390,8 +1471,8 @@ recovcation keys used base points and blinding key. similar to bip32, keys deriv
 <a href="https://docs.google.com/presentation/d/1TyF0W3cZbkz4SyZG9qY7Is2pytC1GwSvs9KRKmYblFk/edit#slide=id.p">enterprise lightning presentation</a><br />
 </p>
 </div>
-<div id="outline-container-org4112502" class="outline-3">
-<h3 id="org4112502"><span class="section-number-3">4.1</span> BOLTs</h3>
+<div id="outline-container-org53943ad" class="outline-3">
+<h3 id="org53943ad"><span class="section-number-3">4.1</span> BOLTs</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 <a href="https://www.youtube.com/watch?v=Ysj2yobFMF4">great overview of BOLT by Jim Posen</a><br />
@@ -1412,14 +1493,14 @@ The BOLT repo found <a href="https://github.com/lightningnetwork/lightning-rfc">
 </div>
 
 <ol class="org-ol">
-<li><a id="org2006328"></a>BOLT #0<br />
+<li><a id="org634483f"></a>BOLT #0<br />
 <div class="outline-text-5" id="text-4-1-0-1">
 <p>
 Provides a basic glossary defining terminology that is used throughout the rest of the specification.<br />
 </p>
 </div>
 </li>
-<li><a id="org702349b"></a>BOLT #1<br />
+<li><a id="orgf32ea6c"></a>BOLT #1<br />
 <div class="outline-text-5" id="text-4-1-0-2">
 <p>
 Describes the base message protocol including the TLV format and the setup messages.<br />
@@ -1434,7 +1515,7 @@ Funny enough, the unicode code point for lightning is 0x2607. In decimal, 9735 w
 </p>
 </div>
 </li>
-<li><a id="org4fcf3a9"></a>BOLT #2<br />
+<li><a id="org967dad7"></a>BOLT #2<br />
 <div class="outline-text-5" id="text-4-1-0-3">
 <p>
 Contains peer channel protocol lifecycle.<br />
@@ -1450,7 +1531,7 @@ Before a channel is created, a temporary_channel_id is used which acts a nonce. 
 </div>
 
 <ol class="org-ol">
-<li><a id="org5f791e0"></a>Channel Establishment<br />
+<li><a id="orgca0164a"></a>Channel Establishment<br />
 <div class="outline-text-6" id="text-4-1-0-3-1">
 <p>
 <del>-------</del>                              <del>-------</del><br />
@@ -1529,7 +1610,7 @@ An outpoint is provided to B at step 3.<br />
 </li>
 
 
-<li><a id="org2718d5b"></a>Channel Close<br />
+<li><a id="orgfa8d361"></a>Channel Close<br />
 <div class="outline-text-6" id="text-4-1-0-3-2">
 <p>
 <del>-------</del>                              <del>-------</del><br />
@@ -1618,7 +1699,7 @@ An outpoint is provided to B at step 3.<br />
 </div>
 </li>
 
-<li><a id="orgb0135aa"></a>Normal Operation<br />
+<li><a id="org2df9121"></a>Normal Operation<br />
 <div class="outline-text-6" id="text-4-1-0-3-3">
 <p>
 Once both nodes have exchanged funding_locked, the channel is used to make payments with HTLCs.<br />
@@ -1627,15 +1708,15 @@ Once both nodes have exchanged funding_locked, the channel is used to make payme
 </li>
 </ol>
 </li>
-<li><a id="orgd46f0d5"></a>BOLT #3<br />
+<li><a id="orgae7ee39"></a>BOLT #3<br />
 <div class="outline-text-5" id="text-4-1-0-4">
 <p>
 Describes transaction and script formats.<br />
 </p>
 </div>
 </li>
-<li><a id="org282caa9"></a>BOLT #4<br /></li>
-<li><a id="orga2bd7ca"></a>BOLT #5<br />
+<li><a id="org95142a1"></a>BOLT #4<br /></li>
+<li><a id="org2216c85"></a>BOLT #5<br />
 <div class="outline-text-5" id="text-4-1-0-6">
 <p>
 Channels can end with a mutual close, unilateral close, or a revoked transaction close.<br />
@@ -1670,24 +1751,24 @@ If the local node publishes its commitment transaction, it will have to wait to 
 </p>
 </div>
 </li>
-<li><a id="org19b3ebb"></a>BOLT #7<br />
+<li><a id="org7e001ae"></a>BOLT #7<br />
 <div class="outline-text-5" id="text-4-1-0-7">
 <p>
 P2P<br />
 </p>
 </div>
 </li>
-<li><a id="org93d611b"></a>BOLT #8<br /></li>
-<li><a id="org88ad580"></a>BOLT #9<br /></li>
-<li><a id="org4b4345b"></a>BOLT #10<br /></li>
-<li><a id="orgf2ac941"></a>BOLT #11<br />
+<li><a id="orgffda17a"></a>BOLT #8<br /></li>
+<li><a id="orgf68cc01"></a>BOLT #9<br /></li>
+<li><a id="orgc7ae2e3"></a>BOLT #10<br /></li>
+<li><a id="org48849b0"></a>BOLT #11<br />
 <div class="outline-text-5" id="text-4-1-0-11">
 <p>
 Invoice spec.<br />
 </p>
 </div>
 </li>
-<li><a id="orga722b33"></a>WIP: BOLT #12<br />
+<li><a id="orgcbf8e22"></a>WIP: BOLT #12<br />
 <div class="outline-text-5" id="text-4-1-0-12">
 <p>
 BOLT 12 describes a new invoice format and flow called Offers.<br />
@@ -1726,15 +1807,15 @@ Some offers are periodic, meaning that payments are expected on a recurring peri
 </li>
 </ol>
 </div>
-<div id="outline-container-org689d67d" class="outline-3">
-<h3 id="org689d67d"><span class="section-number-3">4.2</span> Implementations</h3>
+<div id="outline-container-orgd085924" class="outline-3">
+<h3 id="orgd085924"><span class="section-number-3">4.2</span> Implementations</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 There are several implementations following the BOLT specification.<br />
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="orga4459e6"></a>LND<br />
+<li><a id="org84f264a"></a>LND<br />
 <div class="outline-text-5" id="text-4-2-0-1">
 <p>
 <a href="http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2018-04-20-laolu-osuntokun-exploring-lnd0.4/">Exploring LND 0.4</a><br />
@@ -1744,8 +1825,8 @@ There are several implementations following the BOLT specification.<br />
 </li>
 </ol>
 </div>
-<div id="outline-container-org27f1310" class="outline-3">
-<h3 id="org27f1310"><span class="section-number-3">4.3</span> anecdotal example</h3>
+<div id="outline-container-org8e03240" class="outline-3">
+<h3 id="org8e03240"><span class="section-number-3">4.3</span> anecdotal example</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 Suppose Alice has a channel with Bob, who has a channel with Carol, who has a channel with Dave: A&lt;-&gt;B&lt;-&gt;C&lt;-&gt;D. How can Alice pay Dave?<br />
@@ -1769,8 +1850,8 @@ Now, what if Dave is uncooperative and refuses to give R to Bob and Carol? Not
 </div>
 </div>
 
-<div id="outline-container-orgc4401e2" class="outline-3">
-<h3 id="orgc4401e2"><span class="section-number-3">4.4</span> Lightning Conf 2019 Berlin</h3>
+<div id="outline-container-org78131c2" class="outline-3">
+<h3 id="org78131c2"><span class="section-number-3">4.4</span> Lightning Conf 2019 Berlin</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 <a href="https://www.electrum.org/talks/lightning/presentation.html#slide1">electrum slides on lightning</a><br />
@@ -1848,8 +1929,8 @@ Attacks<br />
 </div>
 </div>
 
-<div id="outline-container-orgd6483a0" class="outline-3">
-<h3 id="orgd6483a0"><span class="section-number-3">4.5</span> Discrete Log Contracts</h3>
+<div id="outline-container-org8846f78" class="outline-3">
+<h3 id="org8846f78"><span class="section-number-3">4.5</span> Discrete Log Contracts</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 <a href="https://medium.com/@gertjaap/discreet-log-contracts-invisible-smart-contracts-on-the-bitcoin-blockchain-cc8afbdbf0db">intro</a><br />
@@ -1857,8 +1938,8 @@ Attacks<br />
 </div>
 </div>
 
-<div id="outline-container-orgc36ace2" class="outline-3">
-<h3 id="orgc36ace2"><span class="section-number-3">4.6</span> Security</h3>
+<div id="outline-container-org6ccaa8e" class="outline-3">
+<h3 id="org6ccaa8e"><span class="section-number-3">4.6</span> Security</h3>
 <div class="outline-text-3" id="text-4-6">
 <p>
 <a href="https://medium.com/@devrandom/securing-lightning-nodes-39410747734b">securing lightning nodes by devrandom</a><br />
@@ -1871,7 +1952,7 @@ Attacks<br />
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org5f1898d"></a>LSAT<br />
+<li><a id="org0279107"></a>LSAT<br />
 <div class="outline-text-5" id="text-4-6-0-1">
 <p>
 Lightning Service Authentication Token<br />
@@ -1884,7 +1965,7 @@ using macaroon based bearer API credential with lightning network payment<br />
 </div>
 </li>
 
-<li><a id="org6e1c281"></a>Key management<br />
+<li><a id="org4215d28"></a>Key management<br />
 <div class="outline-text-5" id="text-4-6-0-2">
 <p>
 <i>Overview of each key in the channel lifecycle.</i><br />
@@ -1942,9 +2023,17 @@ interesting idea but need to look more into security assumptions..<br />
 </ol>
 </div>
 
-<div id="outline-container-orgc5d6e98" class="outline-3">
-<h3 id="orgc5d6e98"><span class="section-number-3">4.7</span> Routing</h3>
+<div id="outline-container-org363a085" class="outline-3">
+<h3 id="org363a085"><span class="section-number-3">4.7</span> Privacy</h3>
 <div class="outline-text-3" id="text-4-7">
+<p>
+<a href="https://arxiv.org/abs/2003.12470">An Empirical Analysis of Privacy in the Lightning Network</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgfa95abd" class="outline-3">
+<h3 id="orgfa95abd"><span class="section-number-3">4.8</span> Routing</h3>
+<div class="outline-text-3" id="text-4-8">
 <p>
 Routing involves routing a lightning payment through either a public or private channel.<br />
 </p>
@@ -1964,8 +2053,8 @@ One of problem in routing is payment privacy. Two proposals to increase the priv
 </div>
 
 <ol class="org-ol">
-<li><a id="org597a7aa"></a>Rendezvous Routing<br />
-<div class="outline-text-5" id="text-4-7-0-1">
+<li><a id="org9e53c32"></a>Rendezvous Routing<br />
+<div class="outline-text-5" id="text-4-8-0-1">
 <p>
 Rendevous routing is a <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001498.html">proposal</a> aimed to protect the privacy of payments on the lightning network. In the initial proposal, an argument is made that private channels should not be revealed to payers. The solution is to have the payee choose one or more routes from certain third-party nodes on the public network to himself, and pass sphinx-encryped blogs for those routes to the payer. Then, the payer complets the route by finding routes from himself to the selected third-party nodes.<br />
 </p>
@@ -1976,16 +2065,16 @@ Rendevous routing is a <a href="https://lists.linuxfoundation.org/pipermail/ligh
 </div>
 </li>
 
-<li><a id="org53bdc56"></a>Route Blinding<br />
-<div class="outline-text-5" id="text-4-7-0-2">
+<li><a id="orgc0bc11c"></a>Route Blinding<br />
+<div class="outline-text-5" id="text-4-8-0-2">
 <p>
 Route Blinding is currently a <a href="https://github.com/lightningnetwork/lightning-rfc/blob/route-blinding/proposals/route-blinding.md">proposal</a> that aims to provide recipient anonymity by blinding an arbitrary amount of hops at the end of an onion path. Like rendezvous routing, this proposal is aimed and hiding the final portion of the route from the sender. The recipient chooses an "introduction point" and a route to himself from that point. The recipient blinds each node and channel for that route with ECDH. This blinded route and a hop-binding secret are included in the invoice.<br />
 </p>
 </div>
 </li>
 
-<li><a id="org5a9e380"></a>Upfront Payments<br />
-<div class="outline-text-5" id="text-4-7-0-3">
+<li><a id="org0e2274e"></a>Upfront Payments<br />
+<div class="outline-text-5" id="text-4-8-0-3">
 <p>
 Jamming attacks are possible where an attack can delay a payment resolution and therefore lock bitcoin along a route for a period of time. This attack is described <a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html">here</a>.<br />
 </p>
@@ -1997,9 +2086,9 @@ Fidelity Bonds are a solution to<br />
 </li>
 </ol>
 </div>
-<div id="outline-container-org732628d" class="outline-3">
-<h3 id="org732628d"><span class="section-number-3">4.8</span> Trampoline Payments</h3>
-<div class="outline-text-3" id="text-4-8">
+<div id="outline-container-orge74e43c" class="outline-3">
+<h3 id="orge74e43c"><span class="section-number-3">4.9</span> Trampoline Payments</h3>
+<div class="outline-text-3" id="text-4-9">
 <p>
 Lightning network currently relies on source routing where sender calculates the route. Sender needs to maintain graph state.<br />
 </p>
@@ -2014,9 +2103,9 @@ Trampoline payments is a new suggested way of outsourcing that aims at having li
 </div>
 </div>
 
-<div id="outline-container-org1ac63b4" class="outline-3">
-<h3 id="org1ac63b4"><span class="section-number-3">4.9</span> HTLCs</h3>
-<div class="outline-text-3" id="text-4-9">
+<div id="outline-container-org273e79b" class="outline-3">
+<h3 id="org273e79b"><span class="section-number-3">4.10</span> HTLCs</h3>
+<div class="outline-text-3" id="text-4-10">
 <p>
 HTLCs..Hashed Time Lock Contracts.<br />
 </p>
@@ -2035,9 +2124,9 @@ An interesting idea to handling the edge cases around HTLCs is to have a firewal
 </div>
 </div>
 
-<div id="outline-container-org3f57703" class="outline-3">
-<h3 id="org3f57703"><span class="section-number-3">4.10</span> PTLCs</h3>
-<div class="outline-text-3" id="text-4-10">
+<div id="outline-container-org8b6cbfd" class="outline-3">
+<h3 id="org8b6cbfd"><span class="section-number-3">4.11</span> PTLCs</h3>
+<div class="outline-text-3" id="text-4-11">
 <p>
 Payment Points<br />
 <a href="https://suredbits.com/payment-points-and-barrier-escrows/">excellent SuredBits blog on PTLCs</a><br />
@@ -2045,9 +2134,9 @@ Payment Points<br />
 </div>
 </div>
 
-<div id="outline-container-org6b5476f" class="outline-3">
-<h3 id="org6b5476f"><span class="section-number-3">4.11</span> Static/Send/Spontaneous/Push Payments</h3>
-<div class="outline-text-3" id="text-4-11">
+<div id="outline-container-orga5bdcbe" class="outline-3">
+<h3 id="orga5bdcbe"><span class="section-number-3">4.12</span> Static/Send/Spontaneous/Push Payments</h3>
+<div class="outline-text-3" id="text-4-12">
 <p>
 Wow, lots of names for an overlapping concept.<br />
 </p>
@@ -2059,9 +2148,9 @@ Wow, lots of names for an overlapping concept.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org741ec4a" class="outline-3">
-<h3 id="org741ec4a"><span class="section-number-3">4.12</span> Future</h3>
-<div class="outline-text-3" id="text-4-12">
+<div id="outline-container-orgf298fa2" class="outline-3">
+<h3 id="orgf298fa2"><span class="section-number-3">4.13</span> Future</h3>
+<div class="outline-text-3" id="text-4-13">
 <p>
 <a href="https://blog.theabacus.io/lightning-network-2-0-b878b9bb356e">challenges and opportunites for ln 2</a><br />
 </p>
@@ -2071,17 +2160,17 @@ Wow, lots of names for an overlapping concept.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org2e2fd38" class="outline-3">
-<h3 id="org2e2fd38"><span class="section-number-3">4.13</span> revocation_secret_derivation</h3>
-<div class="outline-text-3" id="text-4-13">
+<div id="outline-container-org9fcee56" class="outline-3">
+<h3 id="org9fcee56"><span class="section-number-3">4.14</span> revocation_secret_derivation</h3>
+<div class="outline-text-3" id="text-4-14">
 <p>
 TODO<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgc8b9438" class="outline-3">
-<h3 id="orgc8b9438"><span class="section-number-3">4.14</span> Operations</h3>
-<div class="outline-text-3" id="text-4-14">
+<div id="outline-container-org8f94023" class="outline-3">
+<h3 id="org8f94023"><span class="section-number-3">4.15</span> Operations</h3>
+<div class="outline-text-3" id="text-4-15">
 <p>
 The challenges of operating a lightning node deserves its own section. The lightning domain is distinct from on-chain bitcoin due to its own security assumptions, state changes, and end-user experience.<br />
 </p>
@@ -2111,14 +2200,14 @@ Watchtowers can be used to monitor private nodes.<br />
 </div>
 </div>
 
-<div id="outline-container-org614e0bb" class="outline-3">
-<h3 id="org614e0bb"><span class="section-number-3">4.15</span> Limitations</h3>
+<div id="outline-container-orgd82e83b" class="outline-3">
+<h3 id="orgd82e83b"><span class="section-number-3">4.16</span> Limitations</h3>
 </div>
 </div>
 
-<div id="outline-container-org675d21f" class="outline-2">
-<h2 id="org675d21f"><span class="section-number-2">5</span> Privacy</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orgc39941b" class="outline-2">
+<h2 id="privacy"><span class="section-number-2">5</span> <a href="#privacy">Privacy</a></h2>
+<div class="outline-text-2" id="text-privacy">
 <p>
 <i>Privacy and techniques used in chain-analysis.</i><br />
 <a href="https://en.bitcoin.it/wiki/Privacy">privacy wiki</a><br />
@@ -2136,10 +2225,13 @@ common input hueristic: “different public keys used as inputs to a transaction
 <p>
 <a href="https://github.com/6102bitcoin/CoinJoin-Research">coin join wiki</a><br />
 </p>
-</div>
 
-<div id="outline-container-org0963528" class="outline-3">
-<h3 id="org0963528"><span class="section-number-3">5.1</span> CoinJoins</h3>
+<p>
+<a href="https://bitcoin.stackexchange.com/questions/101868/is-there-something-about-bitcoin-that-prevents-us-from-implementing-the-same-pri">Bitcoin vs "privacy coins"</a><br />
+</p>
+</div>
+<div id="outline-container-org87ca13b" class="outline-3">
+<h3 id="org87ca13b"><span class="section-number-3">5.1</span> CoinJoins</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 "So a world where "basically everyone uses CoinJoin" is cool for privacy, but could end up pretty bad for scalability, because these transactions are in addition to the normal payments."  - waxwing<br />
@@ -2147,7 +2239,7 @@ common input hueristic: “different public keys used as inputs to a transaction
 </div>
 
 <ol class="org-ol">
-<li><a id="org717f54e"></a>PayJoin<br />
+<li><a id="orgd9d6550"></a>PayJoin<br />
 <div class="outline-text-5" id="text-5-1-0-1">
 <p>
 <a href="https://joinmarket.me/blog/blog/payjoin/">payjoin by waxwing</a><br />
@@ -2181,7 +2273,7 @@ real world implementation is <a href="https://samouraiwallet.com/stowaway">samou
 </div>
 </li>
 
-<li><a id="org3bc33a7"></a>Pay To EndPoint (P2EP)<br />
+<li><a id="org91ad802"></a>Pay To EndPoint (P2EP)<br />
 <div class="outline-text-5" id="text-5-1-0-2">
 <p>
 <a href="https://blockstream.com/2018/08/08/en-improving-privacy-using-pay-to-endpoint/">p2ep blockstream</a><br />
@@ -2219,8 +2311,8 @@ More Cons/Pros listed in blogpost.<br />
 </ol>
 </div>
 
-<div id="outline-container-orgc06fa13" class="outline-3">
-<h3 id="orgc06fa13"><span class="section-number-3">5.2</span> BIP-79</h3>
+<div id="outline-container-orga1171c3" class="outline-3">
+<h3 id="orga1171c3"><span class="section-number-3">5.2</span> BIP-79</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 <a href="https://github.com/bitcoin/bips/blob/master/bip-0079.mediawiki">link to bip</a><br />
@@ -2228,8 +2320,8 @@ More Cons/Pros listed in blogpost.<br />
 </div>
 </div>
 
-<div id="outline-container-org6d90abe" class="outline-3">
-<h3 id="org6d90abe"><span class="section-number-3">5.3</span> CoinSwaps</h3>
+<div id="outline-container-org9f6ec02" class="outline-3">
+<h3 id="org9f6ec02"><span class="section-number-3">5.3</span> CoinSwaps</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 <a href="https://bitcointalk.org/index.php?topic=321228.0">maxwell on coinswaps</a><br />
@@ -2279,8 +2371,8 @@ HTLCs with presigned transactions can help avoid revealing x.<br />
 </div>
 </div>
 
-<div id="outline-container-orgd19cedf" class="outline-3">
-<h3 id="orgd19cedf"><span class="section-number-3">5.4</span> TumbleBit</h3>
+<div id="outline-container-org6ed03e6" class="outline-3">
+<h3 id="org6ed03e6"><span class="section-number-3">5.4</span> TumbleBit</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 <a href="https://joinmarket.me/blog/blog/tumblebit-for-the-tumble-curious/">waxwing on tumblebit</a><br />
@@ -2305,8 +2397,8 @@ HTLCs with presigned transactions can help avoid revealing x.<br />
 </div>
 </div>
 
-<div id="outline-container-orgd3ba547" class="outline-3">
-<h3 id="orgd3ba547"><span class="section-number-3">5.5</span> SNICKER</h3>
+<div id="outline-container-orge8e87a0" class="outline-3">
+<h3 id="orge8e87a0"><span class="section-number-3">5.5</span> SNICKER</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 <a href="https://gist.github.com/AdamISZ/2c13fb5819bd469ca318156e2cf25d79">link to bip</a><br />
@@ -2322,8 +2414,8 @@ allowing the creation of a two party coinjoin without any synchronisation or int
 </div>
 </div>
 
-<div id="outline-container-org0ac2b32" class="outline-3">
-<h3 id="org0ac2b32"><span class="section-number-3">5.6</span> PaySwap</h3>
+<div id="outline-container-org61b866b" class="outline-3">
+<h3 id="org61b866b"><span class="section-number-3">5.6</span> PaySwap</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017595.html">dev mailing list</a><br />
@@ -2333,12 +2425,12 @@ allowing the creation of a two party coinjoin without any synchronisation or int
 
 
 
-<div id="outline-container-orgd888cf5" class="outline-3">
-<h3 id="orgd888cf5"><span class="section-number-3">5.7</span> More Cryptography</h3>
+<div id="outline-container-orga650f94" class="outline-3">
+<h3 id="orga650f94"><span class="section-number-3">5.7</span> More Cryptography</h3>
 <div class="outline-text-3" id="text-5-7">
 </div>
 <ol class="org-ol">
-<li><a id="org7e2b9e2"></a>Adaptor Signatures<br />
+<li><a id="orgc001148"></a>Adaptor Signatures<br />
 <div class="outline-text-5" id="text-5-7-0-1">
 <p>
  <a href="https://github.com/ElementsProject/scriptless-scripts/blob/master/md/atomic-swap.md">explainer using atomic swaps</a><br />
@@ -2346,7 +2438,7 @@ allowing the creation of a two party coinjoin without any synchronisation or int
 </p>
 </div>
 </li>
-<li><a id="org2f0403f"></a>Schnorr<br />
+<li><a id="orgc302171"></a>Schnorr<br />
 <div class="outline-text-5" id="text-5-7-0-2">
 <p>
 <a href="https://joinmarket.me/blog/blog/liars-cheats-scammers-and-the-schnorr-signature/">waxwing on schnorr sigs</a><br />
@@ -2358,7 +2450,7 @@ allowing the creation of a two party coinjoin without any synchronisation or int
 </p>
 </div>
 </li>
-<li><a id="orgcbd9cf3"></a>Ring Signatures<br />
+<li><a id="orgbf202ab"></a>Ring Signatures<br />
 <div class="outline-text-5" id="text-5-7-0-3">
 <p>
 <a href="https://joinmarket.me/blog/blog/ring-sig">waxwing on ring sigs</a><br />
@@ -2369,8 +2461,8 @@ allowing the creation of a two party coinjoin without any synchronisation or int
 </div>
 
 
-<div id="outline-container-org4241055" class="outline-3">
-<h3 id="org4241055"><span class="section-number-3">5.8</span> Chain Analysis</h3>
+<div id="outline-container-org711094b" class="outline-3">
+<h3 id="org711094b"><span class="section-number-3">5.8</span> Chain Analysis</h3>
 <div class="outline-text-3" id="text-5-8">
 <p>
 Peel chains are strings of transactions commonly used for money laundering, in which entities send funds through several wallets in quick succession, usually breaking off small amounts to cash out at each step and sending the majority on to the next wallet.<br />
@@ -2379,9 +2471,9 @@ Peel chains are strings of transactions commonly used for money laundering, in w
 </div>
 </div>
 
-<div id="outline-container-org7d7e705" class="outline-2">
-<h2 id="org7d7e705"><span class="section-number-2">6</span> Security</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orge3bae7a" class="outline-2">
+<h2 id="security"><span class="section-number-2">6</span> <a href="#security">Security</a></h2>
+<div class="outline-text-2" id="text-security">
 <p>
 <i>Security related information.</i><br />
 <a href="https://www.youtube.com/watch?v=UDbl-2gk7n0">everything is broken</a><br />
@@ -2395,16 +2487,21 @@ Peel chains are strings of transactions commonly used for money laundering, in w
 <a href="https://link.springer.com/chapter/10.1007/978-3-030-00470-5_29">identifying key leakage in bitcoin</a><br />
 </p>
 </div>
-<div id="outline-container-org2373e59" class="outline-3">
-<h3 id="org2373e59"><span class="section-number-3">6.1</span> Hardware Wallets</h3>
+<div id="outline-container-orgacdfb68" class="outline-3">
+<h3 id="orgacdfb68"><span class="section-number-3">6.1</span> Hardware Wallets</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 <a href="https://thecharlatan.github.io/List-Of-Hardware-Wallet-Hacks/">list of hardware wallet hacks</a><br />
 </p>
+
+<p>
+<a href="https://shiftcrypto.ch/blog/remote-multisig-theft-attack-on-the-coldcard-hardware-wallet/">Remote MultiSig Theft Attack on Coldcard</a><br />
+<a href="https://medium.com/blockstream/anti-exfil-stopping-key-exfiltration-589f02facc2e">Key Exfiltration</a><br />
+</p>
 </div>
 </div>
-<div id="outline-container-org8777b33" class="outline-3">
-<h3 id="org8777b33"><span class="section-number-3">6.2</span> Mining</h3>
+<div id="outline-container-orgc8a2eb7" class="outline-3">
+<h3 id="orgc8a2eb7"><span class="section-number-3">6.2</span> Mining</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 Selfish mining attack is when a miner withholds a valid and worked block, and begin mining the next block. The miner has an edge over the network if they withhold the block and attempt to work on the next block.<br />
@@ -2412,15 +2509,15 @@ Selfish mining attack is when a miner withholds a valid and worked block, and be
 </div>
 </div>
 </div>
-<div id="outline-container-orgdff6bc5" class="outline-2">
-<h2 id="orgdff6bc5"><span class="section-number-2">7</span> Bitcoin Core</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-orgfc48931" class="outline-2">
+<h2 id="bitcoin-core"><span class="section-number-2">7</span> <a href="#bitcoin-core">Bitcoin Core</a></h2>
+<div class="outline-text-2" id="text-bitcoin-core">
 <p>
 <i>Notes on Bitcoin Core architecture and development.</i><br />
 </p>
 </div>
-<div id="outline-container-org3ca7afa" class="outline-3">
-<h3 id="org3ca7afa"><span class="section-number-3">7.1</span> Debugging</h3>
+<div id="outline-container-org234cd0b" class="outline-3">
+<h3 id="org234cd0b"><span class="section-number-3">7.1</span> Debugging</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 <a href="https://gist.github.com/fjahr/2cd23ad743a2ddfd4eed957274beca0f">debug wiki</a><br />
@@ -2471,8 +2568,8 @@ Use &#x2013;tracerpc to see the log outputs from the RPCs of the different nodes
 </div>
 </div>
 
-<div id="outline-container-orgd0d3279" class="outline-3">
-<h3 id="orgd0d3279"><span class="section-number-3">7.2</span> Architecture</h3>
+<div id="outline-container-org5a7732c" class="outline-3">
+<h3 id="org5a7732c"><span class="section-number-3">7.2</span> Architecture</h3>
 <div class="outline-text-3" id="text-7-2">
 <p>
 <a href="https://jameso.be/dev++2018/#1">overview of arch</a><br />
@@ -2480,99 +2577,9 @@ Use &#x2013;tracerpc to see the log outputs from the RPCs of the different nodes
 </div>
 </div>
 
-<div id="outline-container-org986f779" class="outline-3">
-<h3 id="org986f779"><span class="section-number-3">7.3</span> Bitcoin PR Review</h3>
+<div id="outline-container-org8392010" class="outline-3">
+<h3 id="org8392010"><span class="section-number-3">7.3</span> Wallet</h3>
 <div class="outline-text-3" id="text-7-3">
-</div>
-<ol class="org-ol">
-<li><a id="orge3e95ee"></a>#17487<br />
-<div class="outline-text-5" id="text-7-3-0-1">
-<p>
-<a href="https://github.com/bitcoin/bitcoin/17487">pr</a><br />
-UTXO cache is responsible for maintaining a view of the spendable coins based upon the txns in blocks. Major bottleneck during block validation.<br />
-</p>
-
-<p>
-UTXO set currently is more than 8 GB.<br />
-</p>
-
-<p>
-For this reason, UTXO cache is across several layes: on-disk and in-memory.<br />
-</p>
-
-<p>
-The -dbcache param controls how much memory we allocate to the in-memory portion. As we validate blocks, we pull coins and we look up from disk into mem until we run out of memory.<br />
-</p>
-
-<p>
-We completely empty the UTXO cache by writing to disk by calling CCoinsViewCache::Flush()<br />
-</p>
-
-<p>
-We periodically flush the coins cache to avoid having to replay blocks if we shutdown improperly.<br />
-</p>
-
-<p>
-Once we flush the cache, we are forced to read from and write to disk for all UTXO operations, which can be notably slower depending on the underlying disk. For this reason, separating the emptying of the cache from the writing to disk might allow us to ensure durability without losing the performance benefits of maintaining the cache.<br />
-</p>
-
-<p>
-Another case that requires writing to disk without necessarily emptying the cache can be found in the assumeutxo project. When loading a UTXO set from a serialized snapshot, it’s preferable to write out the newly constructed chainstate immediately after load to avoid having to reload the snapshot once again after a bad shutdown.<br />
-</p>
-
-<p>
-"the main benefit of this cache is to reduce the number of unnecessary writes, i.e. when a coin is created and then destroyed we save 2 disk writes. But when we flush, even without deleting the coins from RAM, we expect 1 write if the coin is spent before the tip, otherwise no write." - sjors<br />
-</p>
-
-<p>
-"For some reason (why?) you need to flush at the end of loading the snapshot, which normally means no coins are in RAM. This PR changes that last flush to keep stuff around."<br />
-</p>
-</div>
-</li>
-<li><a id="org5af6efd"></a>#17428<br />
-<div class="outline-text-5" id="text-7-3-0-2">
-<p>
-<a href="https://github.com/bitcoin/bitcoin/pull/17428">pr</a><br />
-</p>
-</div>
-</li>
-<li><a id="org6d24bed"></a>#20477<br />
-<div class="outline-text-5" id="text-7-3-0-3">
-<p>
-<a href="https://github.com/bitcoin/bitcoin/pull/20477">PR</a><br />
-</p>
-
-<p>
-Broken into two commits, first moving eviction node selection logic and adding unit testing.<br />
-</p>
-
-<p>
-<a href="https://bitcoincore.reviews/20477">Link to Questions</a><br />
-</p>
-
-<p>
-My Answers:<br />
-</p>
-<ol class="org-ol">
-<li>Keeps a healthy pool of new nodes. Prioritizes nodes with lower latency, better relaying capability.<br /></li>
-<li>Attacker cannot predict which peers are protected. There are some attributes that the attack knows, but is prohibitively expensive to do. Like moving geography to lower ping time. See net.cpp SelectNodeToEvict(&#x2026;)<br /></li>
-<li>If we include these peers, then likely honest peers will be removed later on. Attacker can disconnect a bunch of peers during an inbound request. ?? - No, different threads.<br /></li>
-<li>ASN split the network up better than subnets. IP distribution has gotten mixed up between providers. Cannoy assume IP ranges are in different parts of the world anymore. ASNs are dynamic group of IP addr range assignments based on real world entities.<br /></li>
-<li>No, we do not reveal more than 23% of our addrman to any single peer.<br /></li>
-<li>We can flush out some candidates.??<br /></li>
-<li></li>
-
-<li>Unit tests<br /></li>
-<li>Move semantics in C++11 allow swapping pointer during copy instead. Much more efficient. If x is any type, x&amp;&amp; is the rvalue reference to x. x&amp; is the lvalue reference. Rvalue reference allows compile-time branching. Any moveable object should be considered disposable.<br /></li>
-<li></li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div id="outline-container-org1518682" class="outline-3">
-<h3 id="org1518682"><span class="section-number-3">7.4</span> Wallet</h3>
-<div class="outline-text-3" id="text-7-4">
 <p>
 <a href="https://residency.chaincode.com/presentations/bitcoin/Wallet_Development.pdf">wallet dev presentation by John Newbery</a><br />
 CPubKey - a public key, used to verify signatures. A point on the secp256k1 curve.<br />
@@ -2664,9 +2671,9 @@ submitToMemoryPool(), relayTransaction()<br />
 </div>
 </div>
 
-<div id="outline-container-orgaefe024" class="outline-2">
-<h2 id="orgaefe024"><span class="section-number-2">8</span> History</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-org00b5a72" class="outline-2">
+<h2 id="history"><span class="section-number-2">8</span> <a href="#history">History</a></h2>
+<div class="outline-text-2" id="text-history">
 <p>
 <i>Bitcoin history and misc. trivia items.</i><br />
 </p>
@@ -2688,9 +2695,9 @@ submitToMemoryPool(), relayTransaction()<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org5c222e8" class="outline-2">
-<h2 id="org5c222e8"><span class="section-number-2">9</span> Other</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-orgbc822d2" class="outline-2">
+<h2 id="other"><span class="section-number-2">9</span> <a href="#other">Other</a></h2>
+<div class="outline-text-2" id="text-other">
 <p>
 <i>Notes that do not fit neatly in the other categories.</i><br />
 </p>
@@ -2713,8 +2720,8 @@ Merged mining is the act of using work done on another block chain (the Parent) 
 </p>
 </div>
 
-<div id="outline-container-orgdb229c3" class="outline-3">
-<h3 id="orgdb229c3"><span class="section-number-3">9.1</span> Future directions of bitcoin</h3>
+<div id="outline-container-orgc17579c" class="outline-3">
+<h3 id="orgc17579c"><span class="section-number-3">9.1</span> Future directions of bitcoin</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 <a href="http://diyhpl.us/wiki/transcripts/2018-01-24-rusty-russell-future-bitcoin-tech-directions/">transcript</a><br />
@@ -2746,8 +2753,8 @@ Graftroot<br />
 </div>
 </div>
 
-<div id="outline-container-org3529ee7" class="outline-3">
-<h3 id="org3529ee7"><span class="section-number-3">9.2</span> Utreexo</h3>
+<div id="outline-container-org18cca40" class="outline-3">
+<h3 id="org18cca40"><span class="section-number-3">9.2</span> Utreexo</h3>
 <div class="outline-text-3" id="text-9-2">
 <p>
 <a href="http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-08-utxo-accumulators-and-utreexo/">accumulators</a><br />
@@ -2755,8 +2762,8 @@ Graftroot<br />
 </div>
 </div>
 
-<div id="outline-container-orge412fb4" class="outline-3">
-<h3 id="orge412fb4"><span class="section-number-3">9.3</span> Graftroof</h3>
+<div id="outline-container-orgdc223fb" class="outline-3">
+<h3 id="orgdc223fb"><span class="section-number-3">9.3</span> Graftroof</h3>
 <div class="outline-text-3" id="text-9-3">
 <p>
 The idea of graftroot is that in every contract there is a superset of people that can spend the money.<br />
@@ -2777,8 +2784,8 @@ Graftroot: sigp(script)<br />
 </div>
 </div>
 
-<div id="outline-container-org764fb6d" class="outline-3">
-<h3 id="org764fb6d"><span class="section-number-3">9.4</span> AssumeUTXO</h3>
+<div id="outline-container-org435239d" class="outline-3">
+<h3 id="org435239d"><span class="section-number-3">9.4</span> AssumeUTXO</h3>
 <div class="outline-text-3" id="text-9-4">
 <p>
 You get a serialized UTXO set snapshot obtained by a peer. This all hinges on a content-based hash of the UTXO set. The peer gets headers chain, ensures base of snapshot in chain, load snapshot. They want to verify the base of the snapshot or the blockhash is in the header chain. We load the snapshot which deserializes a bunch of coins and loads it into memory. Then we fake a blockchain; we have a chainstate but no blocks on disk, so it's almost like a big pruned chain. We then validate that the hash of the UTXO set matches what we expected through some hardcoded assumeutxo. This is a compiled parameter value, it can't be specified at runtime by the user which is very important. At that point, we sync the tip and that will be a similar delta to what assumevalid would be now, maybe more frequent because that would be nice. Crucially, we start background verification using a separate chainstate where we do regular initial block download, bnackfill that up to the base of the snapshot, and we compare that to the hash of the start of the snapshot and we verify that.<br />
@@ -2803,8 +2810,8 @@ snapshots can obtained in same manner as block download. Doesn't matter about so
 </div>
 </div>
 
-<div id="outline-container-org3f8a50e" class="outline-3">
-<h3 id="org3f8a50e"><span class="section-number-3">9.5</span> CoinWitness</h3>
+<div id="outline-container-org984ba5f" class="outline-3">
+<h3 id="org984ba5f"><span class="section-number-3">9.5</span> CoinWitness</h3>
 <div class="outline-text-3" id="text-9-5">
 <p>
 Applications of ZK Snarks&#x2026; ". Instead of embedding the rules that govern an output inside the blockchain, you'd instead embed a proof that the rules were followed. Instead of everyone checking that a transaction was permitted to be spent, they'd instead check that you checked." - Maxwell<br />
@@ -2828,8 +2835,8 @@ When a user of one of these coins wants to exit the system (to compact its histo
 </div>
 </div>
 
-<div id="outline-container-orge7a21fd" class="outline-3">
-<h3 id="orge7a21fd"><span class="section-number-3">9.6</span> Covenants</h3>
+<div id="outline-container-orgfa37597" class="outline-3">
+<h3 id="orgfa37597"><span class="section-number-3">9.6</span> Covenants</h3>
 <div class="outline-text-3" id="text-9-6">
 <p>
 A covenant in its most general sense and historical sense, is a solemn promise to engage in or refrain from a specified action.<br />
@@ -2851,8 +2858,8 @@ A covenant in its most general sense and historical sense, is a solemn promise t
 </p>
 </div>
 </div>
-<div id="outline-container-org9415b4b" class="outline-3">
-<h3 id="org9415b4b"><span class="section-number-3">9.7</span> Zero Knowledge Contigent Payment</h3>
+<div id="outline-container-org63ea899" class="outline-3">
+<h3 id="org63ea899"><span class="section-number-3">9.7</span> Zero Knowledge Contigent Payment</h3>
 <div class="outline-text-3" id="text-9-7">
 <p>
 <a href="https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/">zero knowledge payment</a><br />
@@ -2864,8 +2871,8 @@ swapping information for value<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org0c8a023" class="outline-3">
-<h3 id="org0c8a023"><span class="section-number-3">9.8</span> Discreet Log Contracts</h3>
+<div id="outline-container-org005e99d" class="outline-3">
+<h3 id="org005e99d"><span class="section-number-3">9.8</span> Discreet Log Contracts</h3>
 <div class="outline-text-3" id="text-9-8">
 <p>
 <a href="https://adiabat.github.io/dlc.pdf">Whitepaper</a><br />
@@ -2874,9 +2881,9 @@ swapping information for value<br />
 </div>
 </div>
 </div>
-<div id="outline-container-org155b8b9" class="outline-2">
-<h2 id="org155b8b9"><span class="section-number-2">10</span> Statistics</h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-org077749f" class="outline-2">
+<h2 id="statistics"><span class="section-number-2">10</span> <a href="#statistics">Statistics</a></h2>
+<div class="outline-text-2" id="text-statistics">
 <p>
 <i>Analysis of the Bitcoin Blockchain.</i><br />
 </p>
@@ -2922,12 +2929,16 @@ At this momement, the size of the Bitcoin Blockchain is 300 GB. Dating back to 2
 <a href="https://eprint.iacr.org/2018/068">https://eprint.iacr.org/2018/068</a> <br />
 </p></div></div>
 
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing#Mathematical_definition">https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing#Mathematical_definition</a> <br />
+</p></div></div>
+
 
 </div>
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Philip Glazman</p>
-<p class="date">Created: 2021-01-21 Thu 08:27</p>
+<p class="date">Created: 2021-03-11 Thu 09:13</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
