@@ -1,19 +1,20 @@
-#+TITLE: Bitcoin Notes
-#+Description: Bitcoin notes.
+#+TITLE: Bitcoin Book
+#+Description: bitcoinbook.dev.
 #+OPTIONS: \n:t
 #+OPTIONS: toc:nil
 #+OPTIONS: ^:nil
 #+AUTHOR: Philip Glazman
 #+ATTR_HTML: :textarea t :width 80
 #+HTML_HEAD: <link rel="stylesheet" href="https://sandyuraz.com/styles/org.min.css">
+#+HTML_HEAD: <link rel="icon" href="favicon.ico" type="image/x-icon" />
 #+BEGIN_ABSTRACT
 Welcome!
 
-Bitcoin Notes is an updated list of hyperlinks, notes, and text I found to be useful while learning about Bitcoin.
+BitcoinBook.dev started as a list of hyperlinks, notes, and text I found to be useful while learning about Bitcoin.
 
-A lot of these notes were written quickly or copy/pasted from sources. Start with Introduction to get started.
+This project is open-source and contributions are highly encouraged.
 
-If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is best way to reach me.
+If you find any mistakes, [[https://github.com/philipglazman/bitcoinnotes/issues/new][open an Issue on Github]].
 #+END_ABSTRACT
 #+TOC: headlines
 
@@ -479,10 +480,10 @@ If you find any mistakes, [[https://twitter.com/philipglazman][Twitter DM]] is b
   :END:
   /Lightning Network and related off-chain protocols./
 
-   [[https://github.com/lnbook/lnbook][Master Lightning Book]]
-   [[http://dev.lightning.community/overview/][ln overview]]
-   [[https://github.com/t-bast/lightning-docs/blob/master/lightning-txs.md][ln zero to hero]]
-   [[https://github.com/t-bast/lightning-docs][t-bast's notes]]
+  A few exceptional resources to get started:
+  [[https://github.com/lnbook/lnbook][Master Lightning Book]]
+  [[http://dev.lightning.community/overview/][Lightning Overview]]
+  [[https://github.com/t-bast/lightning-docs][t-bast's notes]]
 
    Lightning Network is a scaling solution to keep most transactions off-chain while leveraging the security of the bitcoin chain as an arbitration layer. There are several concepts to review before jumping into the domain. We will start small by covering lightning primitives, then apply these primitives to describe the Lightning Network.
 
