@@ -12,9 +12,4 @@ If we want Bitcoin to be accessible,  we have to document the technical knowledg
 ## State of the Project
 There is a tree of topics outlined in the Table of Contents. Sequentially adding content to each "Chapter" is the current priority. Afterwards, styling and graphics can be added to aid the reader in explanation of certain key concepts.
 
-## Contributing
-The content file is `bitcoin.org`. The best experience is to edit the file using GNU Emacs' [Org Mode](https://orgmode.org/).
-
-With Org Mode, it is very straightforward to [export to HTML](https://orgmode.org/manual/HTML-Export.html) or your [favorite file format](https://orgmode.org/manual/Exporting.html#Exporting)!.
-
 PRs and Issues are very welcome!
