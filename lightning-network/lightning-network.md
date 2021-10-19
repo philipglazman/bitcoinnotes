@@ -6,7 +6,11 @@ _Lightning Network and related off-chain protocols._
 
 A few exceptional resources to get started:
 
-[Master Lightning Book](https://github.com/lnbook/lnbook) [Lightning Overview](http://dev.lightning.community/overview/) [t-bast’s notes](https://github.com/t-bast/lightning-docs)
+[Master Lightning Book](https://github.com/lnbook/lnbook)
+
+[Lightning Overview](http://dev.lightning.community/overview/)
+
+[t-bast’s notes](https://github.com/t-bast/lightning-docs)
 
 Lightning Network is a scaling solution to keep most transactions off-chain while leveraging the security of the bitcoin chain as an arbitration layer. There are several concepts to review before jumping into the domain. We will start small by covering lightning primitives, then apply these primitives to describe the Lightning Network.
 

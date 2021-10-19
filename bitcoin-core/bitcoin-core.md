@@ -1,8 +1,8 @@
 # Bitcoin Core
 
-## Bitcoin Core <a id="20775e10-a153-4cca-a4f9-df58f4535753"></a>
-
 _Notes on Bitcoin Core architecture and development._
+
+[Bitcoin Core daily coverage reports](https://marcofalke.github.io/btc_cov/)
 
 ### Debugging <a id="506a6702-7348-47d0-89dc-0115a6fbc885"></a>
 

@@ -4,6 +4,18 @@
 
 _Privacy and techniques used in chain-analysis._
 
+### Papers
+
+[A Fistful of Bitcoins: Characterizing Payments Among Men with No Names](https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf)
+
+[Anonymous Multi-Hop Locks](https://eprint.iacr.org/2018/472.pdf)
+
+[On the Difficulty of Hiding the Balance of Lightning Network Channels](https://eprint.iacr.org/2019/328.pdf)
+
+[TumbleBit](https://eprint.iacr.org/2016/575.pdf)
+
+[Bitcoin over Tor isn’t a good idea](https://arxiv.org/pdf/1410.6079.pdf)
+
 [Privacy Wiki](https://en.bitcoin.it/wiki/Privacy)
 
 [snowball presentation at ldn bitdevs](https://www.youtube.com/watch?v=peT_9XF2L04)

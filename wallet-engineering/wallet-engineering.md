@@ -27,6 +27,9 @@ A derivation path is the descriptor for identifying the path along the BIP32 tre
 
 Due to the flexibility of BIP32 trees, standards were created for wallet operators. Standards for the BIP32 tree allows for saner backups and easier portability of seeds between wallet services.
 
+[BIP39 Tool (for testing)](https://iancoleman.io/bip39/)
+[Alternative BIP32 Tool (for testing)](https://bip32jp.github.io/english/)
+
 ### BIP-43 <a id="f6bfe271-acae-404e-b90e-8fbb7a1e5746"></a>
 
 The first of these standards is [BIP-43](https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki) which defines the first level of the BIP32 tree as the purpose field.
@@ -61,7 +64,9 @@ A covenant is a bitcoin script that restricts the type of transaction that can s
 
 [Vaults without Covenants](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html)[more by bishop](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017231.html)
 
-[proof of reserves - blockstream](https://blockstream.com/2019/02/04/en-standardizing-bitcoin-proof-of-reserves/)
+[Proof of Reserves by bBlockstream](https://blockstream.com/2019/02/04/en-standardizing-bitcoin-proof-of-reserves/)
+
+[Making Bitcoin Exchanges Transparent](https://tik-old.ee.ethz.ch/file//b89cb24ad2fa4e7ef01426d318c9b98b/decker2015making.pdf)
 
 BIP-127 proposes a standard way to do proof of reserves using a PSBT extension.[link to bip](https://github.com/bitcoin/bips/blob/master/bip-0127.mediawiki)
 
@@ -192,3 +197,5 @@ There are several criticisms of SSS.
 
 [Sharding vs Multisig?](https://bitcoin.stackexchange.com/questions/102007/is-sharding-a-good-alternative-to-multisig)
 
+### Light Clients
+[SPV Flowchart](https://cloud.githubusercontent.com/assets/2216012/9577839/280ba9fa-500f-11e5-9a18-b879e319389b.png)

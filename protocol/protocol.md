@@ -225,7 +225,15 @@ _All things Bitcoin mining._
 
 cgminer is open source miner for ASIC/FPGA miner. Lots of companies forked off this original miner.[https://github.com/ckolivas/](https://github.com/ckolivas/)
 
-[channel payouts in mining](https://bitcointalk.org/index.php?topic=2135429.msg21352028)
+[Channel payouts in mining](https://bitcointalk.org/index.php?topic=2135429.msg21352028)
+
+[The Problem with ASICBOOST](http://www.mit.edu/~jlrubin//public/pdfs/Asicboost.pdf)
+
+[Optimal pool abuse strategy](http://bitcoin.atspace.com/poolcheating.pdf)
+
+[Analysis of Bitcoin Pooled Mining Reward Systems](https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/bitcoin-pool.pdf)
+
+[Characterizing Orphan Transactions](https://arxiv.org/pdf/1912.11541.pdf)
 
 #### GetBlockTemplate <a id="6b1e788a-a4ec-49c3-b548-679b0c4778bd"></a>
 
@@ -264,5 +272,7 @@ Using simple techniques it is possible to reduce the amount of bandwidth necessa
 
 _P2P layer of Bitcoin._ For the Bitcoin network to remain in consensus, the network of nodes must not be partitioned. So for an individual node to remain in consensus with the network, it must have at least one connection to that network of peers that share its consensus rules.
 
-[partition resistance](https://gist.github.com/sdaftuar/c2a3320c751efb078a7c1fd834036cb0)
+[Partition Resistance](https://gist.github.com/sdaftuar/c2a3320c751efb078a7c1fd834036cb0)
+
+[Eclipse Attacks on Bitcoin’s Peer-to-Peer Network](https://eprint.iacr.org/2015/263.pdf)
 

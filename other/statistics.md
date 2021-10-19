@@ -18,3 +18,4 @@ At this momement, the size of the Bitcoin Blockchain is 300 GB. Dating back to 2
 
 [Mempool Observer](https://mempool.observer/)
 
+[Network Monitoring](https://www.dsn.kastel.kit.edu/bitcoin/)
