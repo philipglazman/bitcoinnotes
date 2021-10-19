@@ -84,9 +84,18 @@ Goal of batching is to lower vbytes per payment. Marginal improvmenent after 1 i
 
 ### Coin Selection <a id="d989d56d-f60b-4898-a122-016a6f2678db"></a>
 
-[Challenges of coin selection by lopp](https://medium.com/@lopp/the-challenges-of-optimizing-unspent-output-selection-a3e5d05d13ef) [iohk on coinsel](https://iohk.io/en/blog/posts/2018/07/03/self-organisation-in-coin-selection/) [what is coinsel?](https://bitcoin.stackexchange.com/questions/1077/what-is-the-coin-selection-algorithm) [murch transcript at scaling](https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/coin-selection/)
+[Challenges of coin selection by Lopp](https://medium.com/@lopp/the-challenges-of-optimizing-unspent-output-selection-a3e5d05d13ef)
 
-[bitcoin](https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/coin-selection/)[edge++ transcript](http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/coin-selection/)
+[Coin Selection with Leverage](https://arxiv.org/pdf/1911.01330.pdf)
+
+[IOHK on Coin Selection](https://iohk.io/en/blog/posts/2018/07/03/self-organisation-in-coin-selection/) 
+
+[What is Coin Selection?](https://bitcoin.stackexchange.com/questions/1077/what-is-the-coin-selection-algorithm)
+
+[Murch transcript at Scaling](https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/coin-selection/)
+
+
+[Edge++ Coin Selection transcript](http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/coin-selection/)
 
 The naive approach would be to simply look for the smallest output that is larger than the amount you want to spend and use it, otherwise start adding the next largest outputs until you have enough outputs to meet the spend target. However, this leads to fracturing of outputs until the wallet becomes littered with unspendable “dust.”
 
@@ -131,11 +140,11 @@ It may even be that people find themselves working for the programs because they
 
 old oracle services…[https://docs.oraclize.it/\#home](https://docs.oraclize.it/#home)[http://orisi.org/](http://orisi.org/)[http://earlytemple.com/](http://earlytemple.com/)[https://en.bitcoin.it/wiki/Contract\#Example\_4:\_Using\_external\_state](https://en.bitcoin.it/wiki/Contract#Example_4:_Using_external_state)
 
-1. Scriptless Scripts
+[SuredBits’ blog on scriptless scripts](https://suredbits.com/schnorr-applications-scriptless-scripts/)
 
-   [SuredBits’ blog on scriptless scripts](https://suredbits.com/schnorr-applications-scriptless-scripts/)
+[Poelstra ppt](https://download.wpsoftware.net/bitcoin/wizardry/mw-slides/2018-05-18-l2/slides.pdf)
 
-   [Poelstra ppt](https://download.wpsoftware.net/bitcoin/wizardry/mw-slides/2018-05-18-l2/slides.pdf)
+[Scriptless Scripts](http://diyhpl.us/wiki/transcripts/grincon/2019/scriptless-scripts-with-mimblewimble/)
 
 ### Fee Estimation <a id="62f89fbd-8f4a-4c53-a4ca-90bf68abb12c"></a>
 
@@ -199,3 +208,5 @@ There are several criticisms of SSS.
 
 ### Light Clients
 [SPV Flowchart](https://cloud.githubusercontent.com/assets/2216012/9577839/280ba9fa-500f-11e5-9a18-b879e319389b.png)
+
+

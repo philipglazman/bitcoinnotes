@@ -79,5 +79,11 @@ swapping information for value
 
 ### Discreet Log Contracts <a id="03a91ead-ed13-4cad-b93d-f80abae9b266"></a>
 
-[Whitepaper](https://adiabat.github.io/dlc.pdf)[DLC Spec](https://github.com/discreetlogcontracts/dlcspecs)
+[Whitepaper](https://adiabat.github.io/dlc.pdf)
 
+[DLC Specification](https://github.com/discreetlogcontracts/dlcspecs)
+
+[Adaptor Signatures for DLCs](https://gist.github.com/NicolasDorier/2d585db8e8561c66fa928b4b99a8cad1)
+
+### Cut-through
+[Transaction cut-through](https://bitcointalk.org/index.php?topic=281848.0)

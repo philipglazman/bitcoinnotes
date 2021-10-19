@@ -251,6 +251,8 @@ The design of the Stratum protocol requires pool operators to build and distribu
 
 [StratumV2 Migration](https://insights.deribit.com/market-research/stratum-v2-migration-and-decentralization/)
 
+[StratumV2](https://braiins.com/stratum-v2)
+
 #### Betterhash <a id="083f1957-2713-4ec7-8ba9-25ff6db4ea3a"></a>
 
 * Work protocol: bitcoin
@@ -276,3 +278,4 @@ _P2P layer of Bitcoin._ For the Bitcoin network to remain in consensus, the netw
 
 [Eclipse Attacks on Bitcoin’s Peer-to-Peer Network](https://eprint.iacr.org/2015/263.pdf)
 
+[Transaction Rebroadcasting](https://gist.github.com/amitiuttarwar/b592ee410e1f02ac0d44fcbed4621dba)
