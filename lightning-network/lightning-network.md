@@ -42,13 +42,19 @@ revocable transaction script\_pub\_key: OP\_IF \# Bob’s spend branch - after t
 
 recovcation keys used base points and blinding key. similar to bip32, keys derived using base key.
 
-[revocable transactions](https://rusty.ozlabs.org/?p=450)[HTLCs](https://rusty.ozlabs.org/?p=462)
+[Revocable Transactions](https://rusty.ozlabs.org/?p=450)
 
-[enterprise lightning presentation](https://docs.google.com/presentation/d/1TyF0W3cZbkz4SyZG9qY7Is2pytC1GwSvs9KRKmYblFk/edit#slide=id.p)
+[HTLCs](https://rusty.ozlabs.org/?p=462)
+
+[Enterprise Lightning Network](https://docs.google.com/presentation/d/1TyF0W3cZbkz4SyZG9qY7Is2pytC1GwSvs9KRKmYblFk/edit#slide=id.p)
 
 ### BOLTs <a id="78ad6867-3235-4f9c-ad2f-6009bc706fc6"></a>
 
-[great overview of BOLT by Jim Posen](https://www.youtube.com/watch?v=Ysj2yobFMF4) [how onion routing works with HTLCs](https://www.youtube.com/watch?v=toarjBSPFqI) [presentation by Rene](https://commons.wikimedia.org/wiki/File:Introduction_to_the_Lightning_Network_Protocol_and_the_Basics_of_Lightning_Technology_%28BOLT_aka_Lightning-rfc%29.pdf)
+[BOLT by BOLT](https://www.youtube.com/watch?v=Ysj2yobFMF4)
+
+[Onion Routing with HTLCs](https://www.youtube.com/watch?v=toarjBSPFqI)
+
+[Presentation by Rene](https://commons.wikimedia.org/wiki/File:Introduction_to_the_Lightning_Network_Protocol_and_the_Basics_of_Lightning_Technology_%28BOLT_aka_Lightning-rfc%29.pdf)
 
 BOLT is the Basics of Lightning Technology.
 
@@ -339,17 +345,40 @@ Payment Points[excellent SuredBits blog on PTLCs](https://suredbits.com/payment-
 
 ### Operations <a id="0a685c5c-6a52-4cd2-b3ef-e50ca28e1f40"></a>
 
+[Node Operation](https://github.com/openoms/lightning-node-management)
+
 The challenges of operating a lightning node deserves its own section. The lightning domain is distinct from on-chain bitcoin due to its own security assumptions, state changes, and end-user experience.
 
 The most immediate concern is backup maintance. With on-chain bitcoin, one can is familiar with BIP39 mnemonic seed phrases as the ultimate backup for bitcoin. In lightning, the backup file is responsible for channels. Do **not** take backups of channel state itself. Inaccurate or revoked channel state is can lead to a justice transaction and punishment \(loss of all funds in the channel\). As a result, backups are tricky in lightning.
 
 Static channel backups \(SCBs\) are the best backups for lightning node operators. The backups are called static because they are only obtained once - when the channel is created. Afterwards, the backup is valid until the channel is closed. A SCB allows a node operator to recover funds that are fully settled in a channel. Fully settled funds are bitcoin in commitment outputs, but not HLTCS.
 
-[LND Recovery Documentation](https://github.com/lightningnetwork/lnd/blob/master/docs/recovery.md)[LND PR\#2313](https://github.com/lightningnetwork/lnd/pull/2313)[Automating channel backups for LND](https://gist.github.com/alexbosworth/2c5e185aedbdac45a03655b709e255a3)[Subscribe to channel backups for LND](https://api.lightning.community/#subscribechannelbackups)
+[LND Recovery Documentation](https://github.com/lightningnetwork/lnd/blob/master/docs/recovery.md)
+
+[LND PR\#2313](https://github.com/lightningnetwork/lnd/pull/2313)
+
+[Automating channel backups for LND](https://gist.github.com/alexbosworth/2c5e185aedbdac45a03655b709e255a3)
+
+[Subscribe to channel backups for LND](https://api.lightning.community/#subscribechannelbackups)
 
 In addition to backups, channel management is a large area of focus. A node operator wants to be connected to reliable and honest peers. Factors to consider are uptime, balance, and cost of rebalancing. It is convenient to create a list of decent nodes and maintain a relationship with them. For inbound liquidity, swaps can be used or swap services like Lightning Labs Loop. Loop can be used to refill channels. Managing incoming channel requests can be important in order to prevent undesirable peers. For example, setting a threshold for channel capacity can prevent dust limit problems in the future. It is better to have fewer channels that are well capitalized than many channels with poor capacity.
 
 Watchtowers can be used to monitor private nodes.
+
+#### Tools
+[Moneni](https://moneni.com/)
+
+[LNnodeinsight](https://lnnodeinsight.com/)
+
+[Balance of Satoshis](https://github.com/alexbosworth/balanceofsatoshis)
+
+[charge-lnd](https://github.com/accumulator/charge-lnd)
+
+[rebalance-lnd](https://github.com/C-Otto/rebalance-lnd)
+
+[Node Operator Guide](https://github.com/aljazceru/lightning-network-node-operator)
+
+[Circuit Breaker](https://github.com/lightningequipment/circuitbreaker)
 
 ### Limitations <a id="8667342d-58cb-4078-ad55-7ce644969659"></a>
 

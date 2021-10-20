@@ -4,6 +4,8 @@ _Notes on Bitcoin Core architecture and development._
 
 [Bitcoin Core daily coverage reports](https://marcofalke.github.io/btc_cov/)
 
+[fanquake's Core Review](https://github.com/fanquake/core-review/)
+
 ### Debugging <a id="506a6702-7348-47d0-89dc-0115a6fbc885"></a>
 
 [debug wiki](https://gist.github.com/fjahr/2cd23ad743a2ddfd4eed957274beca0f)

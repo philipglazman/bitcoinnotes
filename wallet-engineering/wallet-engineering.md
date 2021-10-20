@@ -19,6 +19,8 @@ There are 2^31 child keys and 2^31 hardened child keys. The distinction is very 
 
 [Deep Dive on Extended Keys](https://bitcoin.stackexchange.com/questions/62533/key-derivation-in-hd-wallets-using-the-extended-private-key-vs-hardened-derivati)
 
+[A Formal Treatment of Deterministic Wallets](https://eprint.iacr.org/2019/698.pdf)
+
 A derivation path is the descriptor for identifying the path along the BIP32 tree.
 
 ### BIP-39 <a id="900854ef-205f-46ca-9048-8f57c8c74005"></a>

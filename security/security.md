@@ -10,6 +10,12 @@ _Security related information._
 
 [Identifying Key Leakage in Bitcoin](https://link.springer.com/chapter/10.1007/978-3-030-00470-5_29)
 
+[ECDSA Private Key Recovery](https://github.com/tintinweb/ecdsa-private-key-recovery)
+
+[Nonce Reuse](https://strm.sh/post/bitcoin-transaction-nonce-reuse/)
+
+[Stealing Bitcoin With Math](https://speakerdeck.com/filosottile/stealing-bitcoin-with-math-hope-xi)
+
 ### Hardware Wallets <a id="7fdd82e3-863e-40a7-bbf8-6de29a22ae69"></a>
 
 [List of Hardware Wallet Hacks](https://thecharlatan.github.io/List-Of-Hardware-Wallet-Hacks/)
