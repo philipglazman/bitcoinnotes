@@ -181,11 +181,15 @@ Schnorr multi-signature scheme.
 
 Blockstream announcing [MuSig.](https://blockstream.com/2019/02/18/en-musig-a-new-multisignature-standard/)
 
-[actual whitepaper](https://eprint.iacr.org/2018/068.pdf)
+[Whitepaper](https://eprint.iacr.org/2018/068.pdf)
+
+[Simple Schnorr Multi-Signatures with Applications to Bitcoin](https://eprint.iacr.org/2018/068)
 
 [SuredBits’ blog on musig](https://suredbits.com/schnorr-applications-musig/)
 
 [Insecure Shortcuts in MuSig](https://medium.com/blockstream/insecure-shortcuts-in-musig-2ad0d38a97da)
+
+[Key Aggregation for Schnorr Signatures](https://blockstream.com/2018/01/23/en-musig-key-aggregation-schnorr-signatures/)
 
 [MuSig-DN: Deterministic Nonces](https://medium.com/blockstream/musig-dn-schnorr-multisignatures-with-verifiably-deterministic-nonces-27424b5df9d6)
 
@@ -234,6 +238,8 @@ cgminer is open source miner for ASIC/FPGA miner. Lots of companies forked off t
 [Analysis of Bitcoin Pooled Mining Reward Systems](https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/bitcoin-pool.pdf)
 
 [Characterizing Orphan Transactions](https://arxiv.org/pdf/1912.11541.pdf)
+
+[Bitcoin’s Block Timestamp Protection Rules](https://blog.bitmex.com/bitcoins-block-timestamp-protection-rules/)
 
 #### GetBlockTemplate <a id="6b1e788a-a4ec-49c3-b548-679b0c4778bd"></a>
 

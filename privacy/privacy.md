@@ -16,6 +16,8 @@ _Privacy and techniques used in chain-analysis._
 
 [Bitcoin over Tor isn’t a good idea](https://arxiv.org/pdf/1410.6079.pdf)
 
+[Deanonymizing Tor Circuits](https://www.hackerfactor.com/blog/index.php?/archives/868-Deanonymizing-Tor-Circuits.html)
+
 [Privacy Wiki](https://en.bitcoin.it/wiki/Privacy)
 
 [snowball presentation at ldn bitdevs](https://www.youtube.com/watch?v=peT_9XF2L04)

@@ -26,3 +26,5 @@ _Security related information._
 
 Selfish mining attack is when a miner withholds a valid and worked block, and begin mining the next block. The miner has an edge over the network if they withhold the block and attempt to work on the next block.
 
+### Network
+[Internet Routing](https://btc-hijack.ethz.ch/)
