@@ -8,7 +8,9 @@ _Notes on Bitcoin Core architecture and development._
 
 ### Debugging <a id="506a6702-7348-47d0-89dc-0115a6fbc885"></a>
 
-[debug wiki](https://gist.github.com/fjahr/2cd23ad743a2ddfd4eed957274beca0f)
+[Debugging Bitcoin Core](https://gist.github.com/fjahr/2cd23ad743a2ddfd4eed957274beca0f)
+
+[Userspace, Statically Defined Tracing support for Bitcoin Core](https://b10c.me/blog/008-bitcoin-core-usdt-support/)
 
 LogPrintf\(""\) cat debug.log \| grep @@@
 

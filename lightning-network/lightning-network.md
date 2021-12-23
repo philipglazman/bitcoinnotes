@@ -1,7 +1,5 @@
 # Lightning Network
 
-## Lightning Network <a id="4164f973-2f27-40ba-99df-ddecdcdf4c31"></a>
-
 _Lightning Network and related off-chain protocols._
 
 A few exceptional resources to get started:
@@ -32,7 +30,9 @@ channel updates
   * To prevent an attack where Alice voids her payment by broadcasting the initial state of 5BTC/5BTC, there needs to be a way to revoke prior closing transactions. Payment revocation roughly works like the following.
   * Alice must wait 3 days after broadcasting the closing transaction before she can redeem her funds. During this time, Bob is given a chance to reveal a secret that will allow him to sweep Alice’s funds immediately. Alice can thus revoke her claim to the money in some state by giving Bob the secret to the closing transaction. This allows Bob to take all of Alice’s money, but only if Alice attest to this old state by broadcasting the corresponding closing transaction to the blockchain.
 
-Payment channels & revocable transactions[great graphical overview](https://paychan.github.io/bitcoin-payment-channels-taxonomy/)
+Payment channels & revocable transactions
+
+[great graphical overview](https://paychan.github.io/bitcoin-payment-channels-taxonomy/)
 
 txn: Bob’s signature and a relative timelock \(Bob’s spend branch\); or Alice’s signature and a secret revocation hash provided by Bob \(Alice’s revocation branch\).
 
@@ -53,6 +53,8 @@ recovcation keys used base points and blinding key. similar to bip32, keys deriv
 [BOLT by BOLT](https://www.youtube.com/watch?v=Ysj2yobFMF4)
 
 [Onion Routing with HTLCs](https://www.youtube.com/watch?v=toarjBSPFqI)
+
+[Onion Messaging In Depth](https://rusty-lightning.medium.com/onion-messaging-in-depth-d8e384ee4184)
 
 [Presentation by Rene](https://commons.wikimedia.org/wiki/File:Introduction_to_the_Lightning_Network_Protocol_and_the_Basics_of_Lightning_Technology_%28BOLT_aka_Lightning-rfc%29.pdf)
 
@@ -380,5 +382,4 @@ Watchtowers can be used to monitor private nodes.
 
 [Circuit Breaker](https://github.com/lightningequipment/circuitbreaker)
 
-### Limitations <a id="8667342d-58cb-4078-ad55-7ce644969659"></a>
-
+[LNsync](https://medium.com/blockstream/keep-your-node-up-to-date-with-lnsync-e8d8ff7fadb8)

@@ -1,12 +1,12 @@
 # Privacy
-
-## Privacy <a id="0f7882f3-7cfc-4d28-a618-13b2351ea099"></a>
-
 _Privacy and techniques used in chain-analysis._
 
 ### Papers
 
 [A Fistful of Bitcoins: Characterizing Payments Among Men with No Names](https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf)
+
+[AToM: Active Topology Monitoring for the Bitcoin Peer-to-Peer Network
+](https://arxiv.org/abs/2107.12912)
 
 [Anonymous Multi-Hop Locks](https://eprint.iacr.org/2018/472.pdf)
 
